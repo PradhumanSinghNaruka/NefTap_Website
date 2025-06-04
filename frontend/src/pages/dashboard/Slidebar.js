@@ -177,10 +177,10 @@ export default function UserProfile() {
       </div>
 
       <div className="flex-1 p-4 md:p-8">
-        <div className="flex justify-between items-center mb-6">
+        <div className="block justify-between items-center mb-6">
           <h1 className="text-xl md:text-2xl font-bold">Add Your Details</h1>
           {profile && (
-            <p className="text-lg font-thin">
+            <p className="text-sm md:text-lg font-thin">
               Public Profile URL: https://neftap-website-2.onrender.com/userdetail/profile/public/{profile._id}
             </p>
           )}
