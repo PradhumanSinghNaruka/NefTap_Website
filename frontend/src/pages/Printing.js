@@ -221,7 +221,7 @@ function Printing() {
     };
 
     try {
-      const res = await axios.post("http://localhost:4001/card/card", userInfo);
+      const res = await axios.post("https://neftap-website-2.onrender.com/card/card", userInfo);
       console.log(res.data);
 
       if (res.data) {

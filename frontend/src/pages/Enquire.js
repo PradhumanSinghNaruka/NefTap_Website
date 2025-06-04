@@ -24,7 +24,7 @@ function Enquire() {
       message: data.message,
     };
     await axios
-      .post("http://localhost:4001/enquire/enquire", userInfo)
+      .post("https://neftap-website-2.onrender.com/enquire/enquire", userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {

@@ -43,14 +43,14 @@ export default function UserProfile() {
       if (profileId) {
         // Update existing profile
         res = await axios.put(
-          `http://localhost:4001/userdetail/userdetail/${profileId}`,
+          `https://neftap-website-2.onrender.com/userdetail/userdetail/${profileId}`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
       } else {
         // Create new profile
         res = await axios.post(
-          "http://localhost:4001/userdetail/userdetail",
+          "https://neftap-website-2.onrender.com/userdetail/userdetail",
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -113,7 +113,7 @@ export default function UserProfile() {
 
       // Fetch latest profile by email
       axios
-        .get(`http://localhost:4001/userdetail/userdetail/${user.email}`)
+        .get(`https://neftap-website-2.onrender.com/userdetail/userdetail/${user.email}`)
         .then((res) => {
           if (res.data.userdetail) {
             const userDetail = res.data.userdetail;
@@ -181,7 +181,7 @@ export default function UserProfile() {
           <h1 className="text-xl md:text-2xl font-bold">Add Your Details</h1>
           {profile && (
             <p className="text-lg font-thin">
-              Public Profile URL: http://localhost:3000/userdetail/profile/public/{profile._id}
+              Public Profile URL: https://neftap-website-2.onrender.com/userdetail/profile/public/{profile._id}
             </p>
           )}
         </div>

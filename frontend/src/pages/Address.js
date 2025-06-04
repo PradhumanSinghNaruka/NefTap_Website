@@ -31,7 +31,7 @@ function Address() {
       card: data.card,
     };
     await axios
-      .post("http://localhost:4001/address/address", userInfo)
+      .post("https://neftap-website-2.onrender.com/address/address", userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {

@@ -20,7 +20,7 @@ function Contactno() {
       message: data.message,
     };
     await axios
-      .post("http://localhost:4001/contact/contact", userInfo)
+      .post("https://neftap-website-2.onrender.com/contact/contact", userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {

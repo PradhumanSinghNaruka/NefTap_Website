@@ -18,7 +18,7 @@ const PublicProfile = () => {
     const fetchPublicProfile = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4001/userdetail/profile/public/${id}`
+          `https://neftap-website-2.onrender.com/userdetail/profile/public/${id}`
         );
         setUserData(response.data.userdetail);
       } catch (err) {

@@ -19,7 +19,7 @@ function Register() {
       password: data.password,
     };
     await axios
-      .post("http://localhost:4001/register/register", userInfo)
+      .post("https://neftap-website-2.onrender.com/register/register", userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
