@@ -40,7 +40,7 @@ const PublicProfile = () => {
     <>
       <div
         name="Home"
-        className="max-w-screen-2xl container mx-auto px-4 md:px-20 text-back"
+        className="max-w-screen-2xl container mx-auto px-4 md:px-20 text-black"
       >
         <div className="mt-12 text-center space-y-4 border border-black rounded-2xl shadow-2xl shadow-black mb-3 bg-gradient-to-tr from-yellow-300 via-pink-300 to-blue-300 text-black p-6">
           {userData.photo?.url && (
@@ -48,7 +48,7 @@ const PublicProfile = () => {
               src={userData.photo.url}
               alt={`${userData.name}'s profile`}
               style={{ width: "150px", borderRadius: "50%" }}
-              className="text-center border border-white mt-4 ml-20 md:ml-[480px]"
+              className="border border-white mt-4 ml-20 md:ml-[480px]"
             />
           )}
           <h2 className="font-bold text-2xl text-center">{userData.name}</h2>
