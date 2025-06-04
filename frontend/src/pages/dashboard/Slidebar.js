@@ -177,7 +177,7 @@ export default function UserProfile() {
       </div>
 
       <div className="flex-1 p-4 md:p-8">
-        <div className="block justify-between items-center mb-6">
+        <div className="block justify-between items-center mb-6 w-[350]">
           <h1 className="text-xl md:text-2xl font-bold">Add Your Details</h1>
           {profile && (
             <p className="text-sm md:text-lg font-thin">
