@@ -107,7 +107,7 @@ function App() {
   };
 
   // ✅ Hide navbar & footer on specific route
-  const hideLayout = location.pathname.startsWith('/userdetail/profile/public');
+  const hideLayout = location.pathname.startsWith('/profile');
 
   return (
     <>
