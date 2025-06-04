@@ -27,13 +27,11 @@ app.use(express.json());
 dotenv.config();
 
 const PORT = process.env.PORT || 4001;
-const URI = process.env.MongoDBURI;
+const URI = process.env.Mongo_URI;
 
 const startServer = async () => {
   try {
     await mongoose.connect(URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
       serverSelectionTimeoutMS: 30000,
     });
     console.log("Connected to mongoDB");
