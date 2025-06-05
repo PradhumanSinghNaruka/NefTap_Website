@@ -8,7 +8,7 @@ router.get("/userdetail/:email", getUserByEmail); // Fetch user by email
 router.put("/userdetail/:profileId", updateUserDetail); //update user profile
 
 // Public profile accessible by ID without auth
-router.get("/userdetail/profile/public/:id", getPublicUserProfile);
+router.get("/profile/public/:id", getPublicUserProfile);
 
 
 export default router;
