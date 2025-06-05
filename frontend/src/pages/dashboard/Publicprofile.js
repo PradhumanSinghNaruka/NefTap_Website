@@ -53,7 +53,7 @@ const PublicProfile = () => {
           )}
           <h2 className="font-bold text-2xl text-center">{userData.name}</h2>
           <h1 className="text-xl font-semibold">{userData.company}</h1>
-          <div className="flex md:ml-[380px] space-x-14 md:space-x-24">
+          <div className="flex md:ml-[380px] space-x-16 md:space-x-24">
             <p className="flex justify-center mt-2 cursor-pointer border border-black hover:bg-black hover:text-blue-300 duration-300 rounded-full bg-white p-3">
               <a href={`mailto:${userData.email}`} className="text-2xl">
                 <MdAttachEmail />
@@ -76,7 +76,7 @@ const PublicProfile = () => {
               </a>
             </p>
           </div>
-          <div className="flex md:ml-[380px] space-x-14 md:space-x-24">
+          <div className="flex md:ml-[380px] space-x-16 md:space-x-24">
             <p className="flex justify-center mt-8 cursor-pointer border border-black hover:bg-black hover:text-blue-300 duration-300 rounded-full bg-white p-3 mb-4">
               <a
                 href={`https://wa.me/${userData.whatsapp}`}
@@ -106,7 +106,7 @@ const PublicProfile = () => {
               Save Contact
             </button> */}
             <button
-              className="border rounded-lg border-black p-2 w-[300px] md:w-[350px] font-semibold hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-blue-500 text-black duration-400 mb-3"
+              className="border rounded-lg border-black p-2 w-[290px] md:w-[350px] font-semibold hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-blue-500 text-black duration-400 mb-3"
               onClick={() => {
                 const { name, phone, email } = userData;
 
