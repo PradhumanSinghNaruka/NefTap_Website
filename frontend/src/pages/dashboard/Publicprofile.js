@@ -53,7 +53,7 @@ const PublicProfile = () => {
           )}
           <h2 className="font-bold text-2xl text-center">{userData.name}</h2>
           <h1 className="text-xl font-semibold">{userData.company}</h1>
-          <div className="flex md:ml-[380px] space-x-16 md:space-x-24">
+          <div className="flex md:ml-[380px] space-x-16 md:space-x-28">
             <p className="flex justify-center mt-2 cursor-pointer border border-black hover:bg-black hover:text-blue-300 duration-300 rounded-full bg-white p-3">
               <a href={`mailto:${userData.email}`} className="text-2xl">
                 <MdAttachEmail />
@@ -76,7 +76,7 @@ const PublicProfile = () => {
               </a>
             </p>
           </div>
-          <div className="flex md:ml-[380px] space-x-16 md:space-x-24">
+          <div className="flex md:ml-[380px] space-x-16 md:space-x-28">
             <p className="flex justify-center mt-8 cursor-pointer border border-black hover:bg-black hover:text-blue-300 duration-300 rounded-full bg-white p-3 mb-4">
               <a
                 href={`https://wa.me/${userData.whatsapp}`}
