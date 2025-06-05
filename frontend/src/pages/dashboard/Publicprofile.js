@@ -197,7 +197,7 @@ const PublicProfile = () => {
         <h3 className="text-xl font-semibold mb-6">{userData.company}</h3>
 
         {/* Contact Icons Group 1 */}
-        <div className="flex justify-center space-x-8 mb-6 flex-wrap">
+        <div className="flex justify-center space-x-20 mb-6 flex-wrap">
           <a
             href={`mailto:${userData.email}`}
             className="p-3 bg-white rounded-full border border-black text-2xl hover:bg-black hover:text-blue-300 transition duration-300"
@@ -221,7 +221,7 @@ const PublicProfile = () => {
         </div>
 
         {/* Contact Icons Group 2 */}
-        <div className="flex justify-center space-x-8 flex-wrap">
+        <div className="flex justify-center space-x-20 flex-wrap">
           <a
             href={`https://wa.me/${userData.whatsapp}`}
             className="p-3 bg-white rounded-full border border-black text-2xl hover:bg-black hover:text-blue-300 transition duration-300 mb-4"
