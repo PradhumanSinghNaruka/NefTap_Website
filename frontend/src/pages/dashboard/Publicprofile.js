@@ -182,7 +182,7 @@ const PublicProfile = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 mt-12 text-black">
-      <div className="bg-gradient-to-tr from-yellow-300 via-pink-300 to-blue-300 rounded-2xl shadow-2xl p-6 border border-black text-center">
+      <div className="bg-gradient-to-tr from-yellow-300 via-pink-300 to-blue-300 rounded-2xl shadow-2xl shadow-black p-6 border border-black text-center">
         {/* Profile Photo */}
         {userData.photo?.url && (
           <img
