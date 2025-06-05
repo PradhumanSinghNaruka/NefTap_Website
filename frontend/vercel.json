@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/userdetail/profile/public/:id",
+      "source": "/profile/public/:id",
       "destination": "/index.html"
     }
   ]
