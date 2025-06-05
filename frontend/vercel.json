@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/userdetail/profile/public/:id",
+      "destination": "/index.html"
+    }
+  ]
+}
