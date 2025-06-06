@@ -63,16 +63,16 @@ function Questions() {
     <>
       <div
         name="Home"
-        className="max-w-screen-2xl container mx-auto px-4 md:px-20 text-black mb-12 md:mb-28 md:mt-28"
+        className="max-w-screen-2xl container mx-auto px-4 md:px-20 text-black mb-12 md:mb-28 md:mt-4"
       >
         <div className="flex flex-col md:flex-row">
-          <div className="md:w-[400px] mt-6 md:mt-16 space-y-6 order-1 md:order-1 mb-10 md:mb-20">
+          <div className="md:w-1/2 mt-6 md:mt-16 space-y-6 order-1 md:order-1 mb-10 md:mb-20">
             <p className="text-2xl md:text-4xl">FAQ</p>
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
               Frequently Asked Questions
             </h2>
           </div>
-          <div className="md:w-[700px] mt-12 order-2 md:ml-32 space-y-2">
+          <div className="md:w-1/2 mt-12 order-2 space-y-2">
             {faqs.map((faq, index) => (
               <div key={index} className="mb-4 border-b pb-4 space-y-4">
                 <button

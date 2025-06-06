@@ -6,7 +6,7 @@ function Steps() {
   return (
     <>
       <div className="bg-white text-black">
-        <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-white text-black mb-20 mt-0 md:mt-16">
+        <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-white text-black mb-20 mt-0 md:mt-9">
           <div className="container">
             <h1 className="text-2xl md:text-4xl font-bold text-center">
               How Do I Get My Hands on NFC Business Cards?
@@ -16,14 +16,7 @@ function Steps() {
               <br /> simple steps
             </p>
           </div>
-          <div className="hidden md:visible md:flex md:space-x-80 gap-12 mt-12">
-            <h1 className="border rounded-full p-2 md:p-6 border-black md:ml-28 md:mb-12 text-black shadow-xl">
-              1
-            </h1>
-            <h1 className="border rounded-full p-6 border-black mb-12 shadow-xl">2</h1>
-            <h1 className="border rounded-full p-6 border-black  mb-12 shadow-xl">3</h1>
-          </div>
-          <div className="block md:flex space-x-3 md:space-x-32 text-center md:mt-0 mt-8">
+          <div className="block md:flex space-x-3 md:space-x-32 justify-center md:mt-0 py-24">
             <div className="block text-center p-4 bg-black text-white cursor-pointer border rounded-xl w-[300px] ml-3 md:ml-0 space-y-6 hover:bg-white hover:text-black hover:border-black duration-300 shadow-2xl shadow-black">
               <FiShoppingCart className="w-16 h-16 text-center ml-24 md:ml-24 mt-4" />
               <h1 className="text-3xl font-semiblock">Order NafTap</h1>

@@ -86,9 +86,9 @@ function Banner() {
     >
       <div className="flex flex-col md:flex-row">
         {/* Text Section */}
-        <div className="md:w-1/2 mt-12 md:mt-36 space-y-12 order-2 md:order-1 mb-20">
+        <div className="md:w-1/2 mt-12 md:mt-52 space-y-10 order-2 md:order-1 mb-20">
           <h1 className="text-5xl md:text-7xl font-bold">Let's Connect,</h1>
-          <p className="font-thin text-wrap text-3xl md:text-4xl">
+          <p className="font-semibold text-wrap text-3xl md:text-4xl">
             Share Your Profile With Anyone in Just One Single Click!
           </p>
           <p className="text-wrap font-thin">

@@ -20,9 +20,12 @@ function Cards() {
         </marquee>
       </div>
       <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-gradient-to-tr from-[hsl(176,70%,85%)] via-[hsl(246,43%,72%)] to-[#bad2f0] mt-4">
-        <h1 className="font-semibold md:font-bold mt-4 text-2xl md:text-5xl md:ml-12">
-          Find the best digital NFC business card for you:
-        </h1>
+        <div className="mt-4 p-3">
+          <h1 className="font-semibold md:font-bold mt-4 text-2xl md:text-5xl text-center">
+            Find the best digital NFC business card for you:
+          </h1>
+        </div>
+
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 mt-12 md:mt-20 space-y-10 order-2 md:order-1 mb-20">
             <div
@@ -74,9 +77,7 @@ function Cards() {
               </div>
             </div>
           </div>
-          <div
-            className="md:w-1/2 md:mt-20 mt-12 md:ml-12 order-1 space-y-10 md:order-1"
-          >
+          <div className="md:w-1/2 md:mt-20 mt-12 md:ml-12 order-1 space-y-10 md:order-1">
             <div
               className="bg-black text-white border rounded-lg p-4 hover:bg-white hover:text-black duration-500 hover:scale-105"
               style={greenShadow}

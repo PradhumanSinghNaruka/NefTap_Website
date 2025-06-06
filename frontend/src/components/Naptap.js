@@ -9,14 +9,14 @@ function Naptap() {
   return (
     <>
         <div className='max-w-screen-2xl container mx-auto px-4 md:px-20'>
-            <h1 className='text-2xl md:text-4xl font-bold space-y-4 text-black mt-8 md:mt-16 ml-4'>Why NFC Smart Business Card Are Perfect for Events & Seminars ?</h1>
+            <h1 className='text-2xl md:text-4xl font-bold space-y-4 text-black mt-8 text-center'>Why NFC Smart Business Card Are Perfect for Events & Seminars ?</h1>
         </div>
         <div className="max-w-screen-2xl container mx-auto text-white mt-2 md:mt-8">
             <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3 mt-2 md:mt-8 order-2 md:order-1 mb-20">
-                    <div className='h-72 bg-blue-100 text-white'>
-                        <div className='ml-20'>
-                            <FaLink className='w-12 h-12 text-black'></FaLink>
+                    <div className='h-72 bg-gradient-to-tr from-[rgb(211,255,251)] via-[rgb(193,186,255)] to-[hsl(213,100%,90%)] text-white'>
+                        <div className='ml-20 py-2'>
+                            <FaLink className='w-12 h-12 text-black py-2'></FaLink>
                             <h1 className='text-black text-3xl font-bold mt-4'>My Neftap</h1>
                             <p className='text-black mt-4 text-wrap'>Sharing information is now easy with our NFC technology business card. Exchange your contact information, website, portfolio, etc with a single tap on a smartphone.</p>
                         </div>
@@ -29,18 +29,18 @@ function Naptap() {
                         </div>
                     </div>
                 </div>
-                <div className="md:w-1/3 mt-8 h-[575px] order-1 bg-black">
+                <div className="md:w-1/3 mt-8 h-[575px] order-1 bg-gradient-to-tr from-[rgb(167,255,248)] via-[#948cdd] to-[#9dc9ff]">
                     <img src={photo} className="md:w-[400px] md:h-[400px] mt-4" alt=''></img>
                 </div>
                 <div className="md:w-1/3 mt-0 md:mt-8 order-2 md:order-1 mb-20">
-                    <div className='h-72 bg-green-200 text-white'>
+                    <div className='h-72 bg-green-200 text-white py-4'>
                         <div className='ml-20'>
                             <MdOutlinePhonelinkErase className='w-12 h-12 text-black'></MdOutlinePhonelinkErase>
                             <h1 className='text-black text-3xl text-wrap font-bold mt-4'>No App Needed!</h1>
                             <p className='text-black text-wrap mt-4'>Just tap the NFC card—your info appears instantly. Fast, easy, and app-free!</p>
                         </div>
                     </div>
-                    <div className='h-72 bg-blue-100 text-white'>
+                    <div className='h-72 bg-gradient-to-tr from-[rgb(211,255,251)] via-[rgb(193,186,255)] to-[hsl(213,100%,90%)] text-white'>
                         <div className='ml-20'>
                             <MdUpdate className='w-12 h-12 text-black'></MdUpdate>
                             <h1 className='text-black text-3xl font-bold mt-4'>Update Anytime</h1>

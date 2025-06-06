@@ -10,9 +10,9 @@ function Footer() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="max-w-screen-2xl container mx-auto text-white bg-black">
+      <div className="max-w-screen-2xl container mx-auto text-white bg-gradient-to-tr from-[rgb(43,160,152)] via-[#554db1] to-[#3788ec]">
         <div className="flex flex-col md:flex-row mt-24">
-          <div className="md:w-1/2 order-1 bg-black text-white mb-4">
+          <div className="md:w-1/2 order-1 text-white mb-4">
             <div className="ml-4 md:ml-24 mt-16">
               <img src={photo} className="h-10 w-25 cursor-pointer" alt="" />
               <p className="font-bold text-white mt-4">
@@ -38,30 +38,10 @@ function Footer() {
               <p className="mt-2 font-bold cursor-pointer">
                 For Sale : sale@gmail.com
               </p>
-              <br /> <hr className="w-full" />
-              <div className="flex space-x-8">
-                <h1
-                  className="mt-4 font-bold cursor-pointer hover:underline"
-                  onClick={() => navigate("/privacy")}
-                >
-                  Privacy Policy
-                </h1>
-                <h1
-                  className="mt-4 font-bold cursor-pointer hover:underline"
-                  onClick={() => navigate("/termcondition")}
-                >
-                  Term & Condition
-                </h1>
-                <h1
-                  className="mt-4 font-bold cursor-pointer hover:underline"
-                  onClick={() => navigate("/returnrefund")}
-                >
-                  Return & Refund policy
-                </h1>
-              </div>
+              <br />
             </div>
           </div>
-          <div className="md:w-1/6 order-2 mb-4 md:mb-20 bg-black">
+          <div className="md:w-1/6 order-2 mb-4 md:mb-20">
             <div className="ml-6 mt-8 md:mt-16">
               <h1 className="text-3xl">Company</h1>
               <p
@@ -90,7 +70,7 @@ function Footer() {
               </p>
             </div>
           </div>
-          <div className="md:w-1/6 order-2 mb-4 md:mb-20 bg-black">
+          <div className="md:w-1/6 order-2 mb-4 md:mb-20">
             <div className="ml-6 mt-8 md:mt-16">
               <h1 className="text-3xl">Products</h1>
               <p
@@ -119,15 +99,41 @@ function Footer() {
               </p>
             </div>
           </div>
-          <div className="md:w-1/6 order-2 mb-4 md:mb-20 bg-black">
-            <div className="ml-6 mt-4 md:mt-16 flex md:block space-x-4 md:space-x-0">
+          <div className="md:w-1/6 order-2 mb-4 md:mb-20">
+            <div className="ml-2 mt-4 md:mt-16 flex md:block space-x-4">
               <h1 className="font-bold text-3xl">Follow Us</h1>
-              <FaInstagram className="hover:scale-125 duration-300 md:mt-6 w-8 h-8 cursor-pointer" />
-              <FaLinkedin className="hover:scale-125 duration-300 md:mt-6 w-8 h-8 cursor-pointer" />
-              <FaYoutube className="hover:scale-125 duration-300 md:mt-6 w-8 h-8 cursor-pointer" />
-              <CiFacebook className="hover:scale-125 duration-300 md:mt-6 w-8 h-8 cursor-pointer" />
+              <div className="flex space-x-4 ">
+                <FaInstagram className="hover:scale-125 duration-300 md:mt-6 w-7 h-7 cursor-pointer" />
+                <FaLinkedin className="hover:scale-125 duration-300 md:mt-6 w-7 h-7 cursor-pointer" />
+                <FaYoutube className="hover:scale-125 duration-300 md:mt-6 w-7 h-7 cursor-pointer" />
+                <CiFacebook className="hover:scale-125 duration-300 md:mt-6 w-7 h-7 cursor-pointer" />
+              </div>
             </div>
           </div>
+        </div>
+        <hr className="w-full" />
+        <div className="flex space-x-8 ml-2 md:ml-24">
+          <p
+            className="text-sm mt-4 font-bold cursor-pointer hover:underline mb-4"
+            onClick={() => navigate("/privacy")}
+          >
+            Privacy Policy
+          </p>
+          <p
+            className="text-sm mt-4 font-bold cursor-pointer hover:underline"
+            onClick={() => navigate("/termcondition")}
+          >
+            Term & Condition
+          </p>
+          <p
+            className="text-sm mt-4 font-bold cursor-pointer hover:underline"
+            onClick={() => navigate("/returnrefund")}
+          >
+            Return & Refund policy
+          </p>
+          <p className="text-sm mt-4 text-end">
+            Copyright © 2025 Neftap. All rights reserved.
+          </p>
         </div>
       </div>
     </>
