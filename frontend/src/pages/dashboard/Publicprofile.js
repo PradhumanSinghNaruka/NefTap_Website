@@ -181,8 +181,8 @@ const PublicProfile = () => {
   if (!userData) return <div className="text-center mt-10">No profile data found</div>;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 mt-12 text-black">
-      <div className="bg-gradient-to-tr from-yellow-300 via-pink-300 to-blue-300 rounded-2xl shadow-2xl shadow-black p-6 border border-black text-center">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-12 text-black">
+      <div className="bg-gradient-to-tr from-[hsl(176,92%,65%)] via-[rgb(100,89,214)] to-[rgb(85,161,255)] rounded-2xl shadow-2xl shadow-black p-6 border border-black text-center">
         {/* Profile Photo */}
         {userData.photo?.url && (
           <img
@@ -248,7 +248,7 @@ const PublicProfile = () => {
 
         {/* Save Contact Button */}
         <button
-          className="mt-6 w-full sm:w-auto px-6 py-3 font-semibold rounded-lg border border-black bg-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-blue-500 hover:text-black transition duration-400"
+          className="mt-6 w-full sm:w-auto px-6 py-3 font-semibold rounded-lg border border-black bg-white hover:bg-gradient-to-tr from-[hsl(176,92%,65%)] via-[rgb(100,89,214)] to-[rgb(85,161,255)] hover:text-black transition duration-400"
           onClick={() => {
             const { name, number, email } = userData;
 
