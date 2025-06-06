@@ -113,7 +113,9 @@ export default function UserProfile() {
 
       // Fetch latest profile by email
       axios
-        .get(`https://neftap-website-2.onrender.com/userdetail/userdetail/${user.email}`)
+        .get(
+          `https://neftap-website-2.onrender.com/userdetail/userdetail/${user.email}`
+        )
         .then((res) => {
           if (res.data.userdetail) {
             const userDetail = res.data.userdetail;
@@ -137,8 +139,9 @@ export default function UserProfile() {
     window.scrollTo(0, 0);
   }, [pathname]);
   return (
-    <div className="min-h-screen bg-gray-100 mt-24 block md:flex w-[375px] md:w-full max-w-screen-2xl container mx-auto">
-      <div className="w-[375px] md:w-72 bg-white shadow-md flex flex-col items-center p-6 space-y-6">
+    <div className="min-h-screen bg-gray-100 mt-24 flex flex-col md:flex-row w-full max-w-screen-2xl mx-auto px-4">
+      {/* Sidebar */}
+      <div className="w-full md:w-72 bg-white shadow-md flex flex-col items-center p-6 space-y-6 mb-8 md:mb-0">
         <label className="relative w-32 h-32 mb-4 cursor-pointer">
           <input
             type="file"
@@ -160,34 +163,37 @@ export default function UserProfile() {
             className="w-32 h-32 object-cover rounded-full border-4"
           />
         </label>
-        <h1 className="text-xl">Welcome, 👋</h1>
-        <h2 className="text-xl font-semibold mt-2">{profile.name}</h2>
-        <h1>{email}</h1>
-        <p className="text-sm text-gray-500">{profile.company}</p>
+        <h1 className="text-xl text-center">Welcome, 👋</h1>
+        <h2 className="text-xl font-semibold text-center">{profile.name}</h2>
+        <h1 className="text-center">{email}</h1>
+        <p className="text-sm text-gray-500 text-center">{profile.company}</p>
         <button
           onClick={() => {
             localStorage.removeItem("Contactus");
             alert("Logged Out Successfully");
             navigate("/");
           }}
-          className="bg-red-600 text-white px-6 py-2 rounded border hover:bg-red-800 duration-300 w-[200px] mt-12"
+          className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-800 duration-300 w-full max-w-[200px] mt-8"
         >
           Logout
         </button>
       </div>
 
+      {/* Main Content */}
       <div className="flex-1 p-4 md:p-8">
-        <div className="block justify-between items-center mb-6 w-[375px] md:w-full">
+        <div className="mb-6">
           <h1 className="text-xl md:text-2xl font-bold">Add Your Details</h1>
           {profile && (
-            <p className="text-sm md:text-lg font-thin w-[375px] md:w-full">
-              Public Profile URL: https://nef-tap-website.vercel.app/userdetail/profile/public/{profile._id} 
+            <p className="text-sm md:text-lg font-thin break-words">
+              Public Profile URL:
+              https://nef-tap-website.vercel.app/userdetail/profile/public/
+              {profile._id}
             </p>
           )}
         </div>
 
         <form id="user-form" onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-[355px] md:w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               { label: "Full Name", name: "name" },
               { label: "Phone Number", name: "number" },
@@ -215,9 +221,9 @@ export default function UserProfile() {
                       name={field.name}
                       onChange={handleInputChange}
                     />
-                    {errors.name && (
+                    {errors[field.name] && (
                       <span className="text-sm text-red-500">
-                        This field is Required
+                        This field is required
                       </span>
                     )}
                   </>
@@ -228,13 +234,13 @@ export default function UserProfile() {
             ))}
           </div>
 
-          {/* ✅ Save and Cancel buttons moved inside the form */}
-          <div className="flex justify-end mt-6">
+          {/* Buttons */}
+          <div className="flex justify-end mt-6 flex-wrap gap-2">
             {editMode ? (
               <>
                 <button
                   type="submit"
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 font-bold mr-2"
+                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 font-bold"
                 >
                   Save
                 </button>
