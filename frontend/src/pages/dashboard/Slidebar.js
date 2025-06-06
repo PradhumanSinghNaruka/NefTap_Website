@@ -137,7 +137,7 @@ export default function UserProfile() {
     window.scrollTo(0, 0);
   }, [pathname]);
   return (
-    <div className="min-h-screen bg-gray-100 mt-24 block md:flex w-[375px] md:w-full">
+    <div className="min-h-screen bg-gray-100 mt-24 block md:flex w-[375px] md:w-full max-w-screen-2xl container mx-auto">
       <div className="w-[375px] md:w-72 bg-white shadow-md flex flex-col items-center p-6 space-y-6">
         <label className="relative w-32 h-32 mb-4 cursor-pointer">
           <input

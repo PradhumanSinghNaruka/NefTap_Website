@@ -14,10 +14,10 @@ function Login() {
     }, [pathname]);
   return (
     <>
-      <div name="/about" className="text-black mb-0 mt-24">
-        <div className="bg-blue-50">
-          <div className="bg-blue-50">
-            <h1 className="ml-10 md:ml-24 font-bold text-4xl md:text-5xl">About Us</h1>
+      <div name="/about" className="text-black mb-0 mt-20 max-w-screen-2xl container mx-auto">
+        <div className="bg-gradient-to-tr from-[#cafffb] via-[#c1bbff] to-[rgb(192,220,255)]">
+          <div className="bg-gradient-to-tr from-[hsl(176,70%,85%)] via-[rgb(192,185,255)] to-[rgb(200,225,255)]">
+            <h1 className="ml-10 md:ml-24 font-bold text-4xl md:text-5xl py-4">About Us</h1>
             <p className="text-wrap mt-8 ml-10 md:ml-24">
               NafTap is refer to as smart business card with NFC technology
               which <br /> offers you easy sharing of contact information,
@@ -33,7 +33,7 @@ function Login() {
                 <div className="md:w-1/2 order-2 md:order-1 md:ml-24">
                   <img src={photo1} className="h-[300px] w-[300px] md:w-[600px] md:h-[500px] mt-8 md:mt-0 ml-8 md:ml-0"></img>
                 </div>
-                <div className="md:w-1/2 order-1 h-[600px] bg-blue-50 p-12 space-y-4">
+                <div className="md:w-1/2 order-1 h-[600px] p-12 space-y-4">
                   <h1 className="md:mt-2 text-3xl font-semibold flex">
                     About{" "}
                     <p className="text-black text-3xl font-thin ml-4">NafTap</p>
@@ -68,7 +68,7 @@ function Login() {
             </div>
             <div className="mt-4">
               <div className="flex flex-col md:flex-row md:ml-16">
-                <div className="md:w-1/2 order-1 h-[600px] bg-blue-50 p-12 space-y-4">
+                <div className="md:w-1/2 order-1 h-[600px] p-12 space-y-4">
                   <h1 className="md:mt-2 text-3xl font-semibold block">
                     Customise NefTap{" "}
                     <p className="text-black text-3xl font-thin">

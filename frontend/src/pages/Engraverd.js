@@ -109,11 +109,11 @@ function Engraved({onAddToCart}) {
     const navigate = useNavigate();
   return (
     <>
-      <div className="bg-blue-50">
+      <div className="bg-gradient-to-tr from-[#c8fffb] via-[#c0b9ff] to-[rgb(201,226,255)] max-w-screen-2xl container mx-auto">
         <div name="/influencer" className="text-black mb-0 mt-24">
-          <div className="bg-blue-50">
-            <div className="bg-blue-50">
-              <h1 className="text-2xl md:text-4xl font-semibold mt-4 md:mt-8 ml-6 md:ml-20">
+          <div className="bg-gradient-to-tr from-[#c8fffb] via-[#c0b9ff] to-[rgb(201,226,255)]">
+            <div className="bg-gradient-to-tr from-[#c8fffb] via-[#c0b9ff] to-[rgb(201,226,255)]">
+              <h1 className="text-2xl md:text-4xl font-semibold mt-4 md:mt-8 ml-6 md:ml-20 py-3">
                 Engraved Business Cards With QR Code
               </h1>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 md:ml-20 md:mr-20">

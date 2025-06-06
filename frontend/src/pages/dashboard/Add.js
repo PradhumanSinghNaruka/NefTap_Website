@@ -9,7 +9,7 @@ function Add() {
   const navigate = useNavigate();
   const location = useLocation();
   return (
-    <div className="px-4 md:px-10">
+    <div className="px-4 md:px-10 max-w-screen-2xl container mx-auto">
       <div className="flex flex-col md:flex-row">
         <div className="md:w-[250px] mt-12 md:mt-24 space-y-4 order-2 md:order-1 mb-20">
           <div>

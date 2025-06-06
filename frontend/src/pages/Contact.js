@@ -49,10 +49,10 @@ function Contact() {
     }, [pathname]);
   return (
     <>
-      <div name="/contact" className="text-black mt-20 mb-0 h-full bg-blue-50">
+      <div name="/contact" className="text-black mt-20 mb-0 h-full bg-gradient-to-tr from-[#c8fffb] via-[#c0b9ff] to-[rgb(201,226,255)] max-w-screen-2xl container mx-auto">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col md:flex-row shadow-lg">
-            <div className="md:w-1/2 order-1 h-full bg-blue-50 p-8">
+            <div className="md:w-1/2 order-1 h-full p-8">
               <h1 className="md:mt-2 ml-4 md:ml-12 text-4xl md:text-5xl font-bold">
                 Make Us A Call
               </h1>
@@ -142,8 +142,8 @@ function Contact() {
                 </button>
               </div>
             </div>
-            <div className="md:w-3/4 order-2 md:order-1 bg-blue-50">
-              <img src={photo} className="h-[300px] md:h-[580px]"></img>
+            <div className="md:w-1/2 order-2 md:order-1">
+              <img src={photo} className="h-[580px]"></img>
             </div>
           </div>
         </form>

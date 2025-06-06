@@ -44,13 +44,13 @@ function Login() {
     }, [pathname]);
   return (
     <>
-      <div name="/login" className="text-black mt-20 h-[390px] mb-0">
+      <div name="/login" className="text-black mt-20 h-[390px] max-w-screen-2xl container mx-auto">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2 order-2 md:order-1">
-              <img src={photo} className="w-full h-full"></img>
+              <img src={photo} className="w-full h-[500px]"></img>
             </div>
-            <div className="md:w-1/2 order-1 h-[600px] bg-blue-50 p-8 md:p-12">
+            <div className="md:w-1/2 order-1 h-[500px] bg-blue-100 p-8 md:p-12">
               <h1 className="md:mt-2 ml-6 md:ml-24 text-xl md:text-3xl font-semibold">
                 Login Into Your Account
               </h1>

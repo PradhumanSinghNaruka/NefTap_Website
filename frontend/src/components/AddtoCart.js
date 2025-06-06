@@ -9,7 +9,7 @@ function AddtoCart({ cartItems, onRemove }) {
     window.scrollTo(0, 0);
   }, [pathname]);
   return (
-    <div className="mt-24 p-4">
+    <div className="mt-24 p-4 max-w-screen-2xl container mx-auto">
       <h1 className="text-4xl font-semibold text-center mb-8">Your Cart</h1>
       {cartItems.length === 0 ? (
         <p className="text-center text-xl">No product added to cart.</p>

@@ -53,17 +53,17 @@ function Enquire() {
     <>
       <div
         name="/enquire"
-        className="text-black mt-20 h-full md:h-full mb-0"
+        className="max-w-screen-2xl container mx-auto text-black mt-20 h-full md:h-full mb-0 bg-gradient-to-tr from-[hsl(176,70%,85%)] via-[hsl(246,43%,72%)] to-[#bad2f0]"
       >
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="block md:flex flex-col md:flex-row">
-            <div className="w-[365px] md:w-1/2 order-2 md:order-1 bg-blue-50">
+            <div className="w-[365px] md:w-1/2 order-2 md:order-1">
               <img
                 src={photo}
-                className="w-[360px] h-[360px] md:w-full md:h-full"
+                className="w-[320px] h-[320px] md:w-full md:h-full"
               ></img>
             </div>
-            <div className="w-[365px] md:w-1/2 order-1 bg-blue-50">
+            <div className="w-[365px] md:w-1/2 order-1">
               <h1 className="md:mt-4 ml-4 md:ml-24 text-2xl font-semibold">
                 Bulk Order Enquiry Form
               </h1>
@@ -74,7 +74,7 @@ function Enquire() {
                 <div className="block md:flex mt-4 md:mt-0 ml-4 md:ml-0 md:space-x-10">
                   <div className="block">
                     <input
-                      className="shadow rounded-md appearance-none border py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[200px]"
+                      className="shadow rounded-md appearance-none border py-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[220px]"
                       id="name"
                       type="text"
                       placeholder="Name"
@@ -89,7 +89,7 @@ function Enquire() {
                   </div>
                   <div className="block">
                     <input
-                      className="shadow mt-4 md:mt-0 rounded-lg appearance-none border py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[200px]"
+                      className="shadow mt-4 md:mt-0 rounded-lg appearance-none border py-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[220px]"
                       id="email"
                       type="email"
                       placeholder="Email"
@@ -106,7 +106,7 @@ function Enquire() {
                 <div className="block md:flex md:space-x-10 ml-4 md:ml-0">
                   <div className="block mt-2">
                     <input
-                      className="shadow rounded-md appearance-none border py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[200px]"
+                      className="shadow rounded-md appearance-none border py-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[220px]"
                       id="number"
                       type="number"
                       placeholder="Phone Number"
@@ -121,7 +121,7 @@ function Enquire() {
                   </div>
                   <div className="block mt-2">
                     <input
-                      className="shadow rounded-lg appearance-none border py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[200px] mt-4 md:mt-0"
+                      className="shadow rounded-lg appearance-none border py-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[220px] mt-4 md:mt-0"
                       id="cards"
                       type="number"
                       placeholder="Number of cards"
@@ -138,7 +138,7 @@ function Enquire() {
                 <div className="flex md:space-x-10">
                   <div className="block mt-2">
                     <input
-                      className="hadow rounded-lg appearance-none border py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[200px] mt-4 md:mt-0 ml-4 md:ml-0"
+                      className="hadow rounded-lg appearance-none border py-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[220px] mt-4 md:mt-0 ml-4 md:ml-0"
                       id="city"
                       type="text"
                       placeholder="City"
@@ -154,7 +154,7 @@ function Enquire() {
                 </div>
                 <div className="mt-3">
                   <textarea
-                    className="hadow rounded-lg appearance-none border py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[200px] mt-4 md:mt-0 ml-4 md:ml-0"
+                    className="hadow rounded-lg appearance-none border py-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[220px] mt-4 md:mt-0 ml-4 md:ml-0"
                     id="message"
                     name="message"
                     type="text"
