@@ -111,8 +111,8 @@ function Navbar() {
 
   return (
     <>
-      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 h-20 shadow-md shadow-blue-50 fixed top-0 left-0 right-0 z-50 bg-black text-white">
-        <div className="flex justify-between items-center h-20 text-white">
+      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 h-20 shadow-md fixed top-0 left-0 right-0 z-50 bg-white text-black">
+        <div className="flex justify-between items-center h-20 text-black">
           <div className="flex">
             <img src={photo} className="h-10 w-25 cursor-pointer" alt="Logo" onClick={()=> navigate("/")} />
           </div>
@@ -121,7 +121,7 @@ function Navbar() {
               {navItems.map(({ id, text, path, scroll }) => (
                 <li
                   key={id}
-                  className="hover:scale-105 text-white font-thin hover:text-blue-700 duration-300 cursor-pointer"
+                  className="hover:scale-105 text-black font-semibold hover:text-blue-700 duration-300 cursor-pointer"
                 >
                   {scroll ? (
                     <ScrollLink
@@ -131,14 +131,14 @@ function Navbar() {
                       offset={-70}
                       activeClass="active"
                       spy={true}
-                      className="text-white"
+                      className="text-black"
                     >
                       {text}
                     </ScrollLink>
                   ) : (
                     <span
                       onClick={() => navigate(path)}
-                      className="text-white"
+                      className="text-black"
                     >
                       {text}
                     </span>
@@ -149,7 +149,7 @@ function Navbar() {
           </div>
           <div
             onClick={() => setMenu(!menu)}
-            className="text-white cursor-pointer mt-6 flex space-x-12"
+            className="text-black cursor-pointer mt-6 flex space-x-12"
           >
             <div>
               <FaPhoneAlt

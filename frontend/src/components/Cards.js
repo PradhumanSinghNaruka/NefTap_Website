@@ -19,7 +19,7 @@ function Cards() {
           </p>
         </marquee>
       </div>
-      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-blue-100 mt-4">
+      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-gradient-to-tr from-[hsl(176,70%,85%)] via-[hsl(246,43%,72%)] to-[#bad2f0] mt-4">
         <h1 className="font-semibold md:font-bold mt-4 text-2xl md:text-5xl md:ml-12">
           Find the best digital NFC business card for you:
         </h1>
