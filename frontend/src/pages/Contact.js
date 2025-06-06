@@ -143,7 +143,7 @@ function Contact() {
               </div>
             </div>
             <div className="md:w-1/2 order-2 md:order-1">
-              <img src={photo} className="h-[580px]"></img>
+              <img src={photo} className="h-[280px] md:h-[580px]"></img>
             </div>
           </div>
         </form>
