@@ -53,7 +53,7 @@ function Enquire() {
     <>
       <div
         name="/enquire"
-        className="max-w-screen-2xl container mx-auto text-black mt-20 h-full md:h-full mb-0 bg-gradient-to-tr from-[hsl(176,70%,85%)] via-[hsl(246,43%,72%)] to-[#bad2f0]"
+        className="max-w-screen-2xl container mx-auto text-black mt-20 h-full md:h-full mb-0"
       >
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="block md:flex flex-col md:flex-row">

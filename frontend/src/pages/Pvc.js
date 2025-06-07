@@ -265,7 +265,7 @@ function Pvc({ onAddToCart }) {
   }, [pathname]);
 
   return (
-    <div className="bg-gradient-to-tr from-[#c8fffb] via-[#c0b9ff] to-[rgb(201,226,255)] max-w-screen-2xl container mx-auto">
+    <div className="max-w-screen-2xl container mx-auto">
       <div className="text-black mb-0 mt-24">
         <h1 className="text-2xl md:text-5xl font-semibold mt-4 md:mt-8 ml-6 md:ml-20 py-3">
           PVC Business Cards With QR Code

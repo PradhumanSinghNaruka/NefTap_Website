@@ -15,8 +15,8 @@ function Login() {
   return (
     <>
       <div name="/about" className="text-black mb-0 mt-20 max-w-screen-2xl container mx-auto">
-        <div className="bg-gradient-to-tr from-[#cafffb] via-[#c1bbff] to-[rgb(192,220,255)]">
-          <div className="bg-gradient-to-tr from-[hsl(176,70%,85%)] via-[rgb(192,185,255)] to-[rgb(200,225,255)]">
+        <div className="">
+          <div className="">
             <h1 className="ml-10 md:ml-24 font-bold text-4xl md:text-5xl py-4">About Us</h1>
             <p className="text-wrap mt-8 ml-10 md:ml-24">
               NafTap is refer to as smart business card with NFC technology

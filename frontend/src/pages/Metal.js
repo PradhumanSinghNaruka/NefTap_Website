@@ -111,7 +111,7 @@ function Shop({onAddToCart}) {
   const navigate = useNavigate();
   return (
     <>
-      <div className="bg-gradient-to-tr from-[#c8fffb] via-[#c0b9ff] to-[rgb(201,226,255)] max-w-screen-2xl container mx-auto">
+      <div className="max-w-screen-2xl container mx-auto">
         <div name="/influencer" className="text-black mb-0 mt-24">
           <div className="bg-blue-50">
             <div className="bg-gradient-to-tr from-[#c8fffb] via-[#c0b9ff] to-[rgb(201,226,255)]">
