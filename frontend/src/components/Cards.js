@@ -62,7 +62,7 @@ function Cards() {
                   <h1 className="font-bold text-3xl">NFC Cards</h1>
                   <p className="">
                     These smart business cards are made just for influencers to
-                    network with a dash of style!
+                    network with a dash of style cards !
                   </p>
                   <button
                     className="p-3 bg-black text-white border font-bold rounded-md hover:bg-white hover:text-black hover:border-black duration-700"
