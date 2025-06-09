@@ -31,21 +31,21 @@
 import db from "../config/db.js";
 export const contact = async(req, res) => {
     try {
-        const { name, email, message } = req.body;
+        const { number, email, message } = req.body;
         const [existingContact] = await db.execute("SELECT * FROM contacts WHERE email = ?", [email]);
         if(existingContact.length > 0){
             return res.status(400).json({ message: "Email already exists"});
         }
 
         const [result] = await db.execute(
-            "INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)",
-            [name, email, message]
+            "INSERT INTO contacts (number, email, message) VALUES (?, ?, ?)",
+            [number, email, message]
         );
         res.status(201).json({
             message: "Submitted Successfully",
             contact: {
                 id: result.insertId,
-                name,
+                number,
                 email,
                 message
             },
