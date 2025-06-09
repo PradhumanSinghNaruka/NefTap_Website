@@ -101,7 +101,7 @@ function Contact() {
                   {...register("number", { required: true })}
                 />
 
-                {errors.name && (
+                {errors.number && (
                   <span className="text-sm text-red-600">
                     This field is required
                   </span>

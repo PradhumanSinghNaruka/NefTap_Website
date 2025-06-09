@@ -143,7 +143,7 @@ function Register() {
           alert(res.data.message); // backend ka message show karega
           setTimeout(() => {
             navigate(from, { replace: true });
-          }, 1500);
+          }, 1500); 
         }
       })
       .catch((err) => {

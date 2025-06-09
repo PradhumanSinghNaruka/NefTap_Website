@@ -46,7 +46,7 @@ export const contactus = async (req, res) => {
 
     // Insert new user
     const [result] = await db.execute(
-      "INSERT INTO contactuss (name, email, number, city, message) VALUES (?, ?, ?)",
+      "INSERT INTO contactuss (name, email, number, city, message) VALUES (?, ?, ?, ?, ?)",
       [name, email, number, city, message]
     );
 
