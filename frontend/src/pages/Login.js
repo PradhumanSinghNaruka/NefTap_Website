@@ -44,7 +44,7 @@ function Login() {
     }, [pathname]);
   return (
     <>
-      <div name="/login" className="text-black mt-20 h-full max-w-screen-2xl container mx-auto">
+      <div name="/login" className="text-black mt-20 h-[400px] max-w-screen-2xl container mx-auto">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2 order-2 md:order-1">

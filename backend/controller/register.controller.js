@@ -52,7 +52,7 @@
 //     }
 // };
 
-import bcryptjs from "bcryptjs";
+import bcryptjs from "bcryptjs"; 
 import db from "../config/db.js";  // Your MySQL connection pool or promise-based connection
 
 export const register = async (req, res) => {
@@ -60,17 +60,17 @@ export const register = async (req, res) => {
     const { name, email, password } = req.body;
 
     // Check if user already exists
-    const [existingUser] = await db.execute("SELECT * FROM register WHERE email = ?", [email]);
+    const [existingUser] = await db.execute("SELECT * FROM registers WHERE email = ?", [email]);
     if (existingUser.length > 0) {
-      return res.status(400).json({ message: "Email already exists" });
+      return res.status(400).json({ message: "Email already exists" }); 
     }
 
     // Hash password
-    const hashPassword = await bcryptjs.hash(password, 10);
+    const hashPassword = await bcryptjs.hash(password, 10); 
 
     // Insert new user
     const [result] = await db.execute(
-      "INSERT INTO register (name, email, password) VALUES (?, ?, ?)",
+      "INSERT INTO registers (name, email, password) VALUES (?, ?, ?)",
       [name, email, hashPassword]
     );
 
@@ -93,7 +93,7 @@ export const login = async (req, res) => {
     const { email, password } = req.body;
 
     // Get user by email
-    const [users] = await db.execute("SELECT * FROM register WHERE email = ?", [email]);
+    const [users] = await db.execute("SELECT * FROM registers WHERE email = ?", [email]);
     if (users.length === 0) {
       return res.status(400).json({ message: "Invalid username or password" });
     }
