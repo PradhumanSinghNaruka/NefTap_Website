@@ -22,9 +22,9 @@ function Contactno() {
     await axios
       .post("https://neftap-website-2.onrender.com/contact/contact", userInfo)
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data && res.data.message);
         if (res.data) {
-          alert("Submit Successfully");
+          alert(res.data.message);
           window.location.reload();
           setTimeout(() => {}, 3000);
           navigate(from, { replace: true });
@@ -64,7 +64,7 @@ function Contactno() {
                 {...register("number", { required: true })}
               />
               <br />
-              {errors.email && (
+              {errors.number && (
                 <span className="text-sm text-red-500">
                   This field is required
                 </span>
@@ -80,7 +80,7 @@ function Contactno() {
                 {...register("email", { required: true })}
               />
               <br />
-              {errors.number && (
+              {errors.email && (
                 <span className="text-sm text-red-500">
                   This field is required
                 </span>
