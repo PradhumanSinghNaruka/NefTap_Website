@@ -39,8 +39,8 @@ export const contactus = async (req, res) => {
     const { name, email, number, city, message } = req.body;
 
     // Check if user already exists
-    const [existingUser] = await db.execute("SELECT * FROM contactuss WHERE email = ?", [email]);
-    if (existingUser.length > 0) {
+    const [existingContactus] = await db.execute("SELECT * FROM contactuss WHERE email = ?", [email]);
+    if (existingContactus.length > 0) {
       return res.status(400).json({ message: "Email already exists" }); 
     }
 
