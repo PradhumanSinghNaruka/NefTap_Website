@@ -43,14 +43,14 @@ export default function UserProfile() {
       if (profileId) {
         // Update existing profile
         res = await axios.put(
-          `http://localhost:4001/userdetail/userdetail/${profileId}`,
+          `https://neftap-website-2.onrender.com/userdetail/userdetail/${profileId}`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
       } else {
         // Create new profile
         res = await axios.post(
-          "http://localhost:4001/userdetail/userdetail",
+          "https://neftap-website-2.onrender.com/userdetail/userdetail",
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
