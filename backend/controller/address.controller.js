@@ -53,7 +53,7 @@ export const address = async(req, res) => {
     }
 
     const [result] = await db.execute(
-      "INSERT INTO addresses (first, last, email, number, address, country, state, city, pin, card) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)",
+      "INSERT INTO addresses (first, last, email, number, address, country, state, city, pin, card) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
       [first, last, email, number, address, country, state, city, pin, card]
     );
     res.status(201).json({
