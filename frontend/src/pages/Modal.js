@@ -7,8 +7,9 @@ function Modal() {
   return (
     <>
       <button
-        className="btn"
+        className="btn font-bold hover:text-blue-700 duration-300"
         onClick={() => document.getElementById("my_modal_3").showModal()}
+
       >
         Click Here
       </button>

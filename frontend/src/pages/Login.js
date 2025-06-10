@@ -221,7 +221,6 @@ function Login() {
                     className="font-bold cursor-pointer ml-2 hover:text-blue-900"
                     onClick={() => document.getElementById("my_modal_3").showModal()}
                   >
-                    Sign Up
                   </span>
                   <Modal />
                 </p>

@@ -1,14 +1,13 @@
 import Userdetail from "../modal/userdetail.modal.js";
 import cloudinary from "../Cloudinary.js";
 
-// Save or Update User Profile
 export const userdetail = async (req, res) => {
   try {
     const { name, number, whatsapp, instagram, facebook, youtube, email, company } = req.body;
 
     let photoData = {};
 
-    // Handle photo upload if exists
+  
     if (req.files && req.files.photo) {
       const file = req.files.photo;
       const allowedFormats = ["image/jpeg", "image/png", "image/jpg"];
@@ -24,7 +23,7 @@ export const userdetail = async (req, res) => {
       photoData.url = cloudinaryResponse.secure_url;
     }
 
-    // Check if user already exists
+    
     let user = await Userdetail.findOne({ email });
 
     if (user) {
@@ -43,7 +42,7 @@ export const userdetail = async (req, res) => {
     { new: true }
   );
 } else {
-      // Create new user
+      
       user = new Userdetail({
         name,
         number,
@@ -85,12 +84,12 @@ export const updateUserDetail = async (req, res) => {
         return res.status(400).json({ message: "Invalid photo format. Only JPG and PNG allowed." });
       }
 
-      // Delete old image if exists
+      
       if (user.photo?.public_id) {
         await cloudinary.uploader.destroy(user.photo.public_id);
       }
 
-      // Upload new photo
+      
       const cloudinaryResponse = await cloudinary.uploader.upload(file.tempFilePath, {
         folder: "user_photos",
       });
