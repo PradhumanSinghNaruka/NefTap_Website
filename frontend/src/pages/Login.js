@@ -174,7 +174,7 @@ function Login() {
 
             {/* Form */}
             <div className="md:w-1/2 order-1 h-[500px] bg-blue-100 p-8 md:p-12">
-              <h1 className="md:mt-2 ml-6 md:ml-24 text-xl md:text-3xl font-semibold">
+              <h1 className="md:mt-2 ml-6 md:ml-24 text-2xl md:text-3xl font-semibold">
                 Login Into Your Account
               </h1>
               <div className="md:ml-24 md:mt-6 space-y-2 inline-grid">
@@ -195,7 +195,7 @@ function Login() {
                 {/* Password */}
                 <label className="block text-black font-bold mt-4">Password</label>
                 <input
-                  className="shadow rounded-lg appearance-none border py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow rounded-lg appearance-none border py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
                   type="password"
                   placeholder="Enter your Password"
                   {...register("password", { required: true })}
@@ -209,7 +209,7 @@ function Login() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="font-semibold text-xl border rounded-md p-2 w-[350px] bg-black text-white hover:bg-white hover:text-black hover:border-black duration-300"
+                  className="font-semibold text-xl border rounded-md p-2 w-[300px] md:w-[350px] bg-black text-white hover:bg-white hover:text-black hover:border-black duration-300"
                 >
                   Login
                 </button>
