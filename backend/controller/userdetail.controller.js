@@ -347,6 +347,25 @@ export const getUserByEmail = async (req, res) => {
 };
 
 //public profile
+// export const getPublicUserProfile = async (req, res) => {
+//   try {
+//     const userId = req.params.id;
+
+//     const [rows] = await db.execute(
+//       "SELECT id, name, email, company, number, whatsapp, instagram, facebook, youtube, photo FROM userprofile WHERE id = ?",
+//       [userId]
+//     );
+
+//     if (rows.length === 0) {
+//       return res.status(404).json({ message: "User not found" });
+//     }
+
+//     res.status(200).json({ userdetail: rows[0] });
+//   } catch (error) {
+//     console.error("Error fetching public profile:", error.message);
+//     res.status(500).json({ message: "Internal Server Error" });
+//   }
+// };
 export const getPublicUserProfile = async (req, res) => {
   try {
     const userId = req.params.id;
@@ -360,9 +379,21 @@ export const getPublicUserProfile = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    res.status(200).json({ userdetail: rows[0] });
+    const user = rows[0];
+
+    if (user.photo) {
+      try {
+        user.photo = JSON.parse(user.photo);
+      } catch (err) {
+        console.error("Failed to parse photo JSON:", err.message);
+        user.photo = null; // fallback
+      }
+    }
+
+    res.status(200).json({ userdetail: user });
   } catch (error) {
     console.error("Error fetching public profile:", error.message);
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
