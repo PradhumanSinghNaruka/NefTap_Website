@@ -462,7 +462,7 @@ export default function UserProfile() {
                 href={`https://nef-tap-website.vercel.app/userdetail/profile/public/${profile.id}`}
                 target="_blank"
                 rel="noreferrer"
-                className="text-blue-600 underline"
+                className="text-transparent bg-clip-text bg-gradient-to-tr from-[rgb(43,160,152)] via-[#554db1] to-[#3788ec] underline"
               >
                 https://nef-tap-website.vercel.app/userdetail/profile/public/
                 {profile.id}
