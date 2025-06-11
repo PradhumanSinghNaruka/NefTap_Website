@@ -16,9 +16,9 @@
 import express from "express";
 import {
   userdetail,
-  getUserByEmail,
   updateUserDetail,
-  getPublicUserProfile,
+  getUserByEmail,
+  getPublicUserProfile
 } from "../controller/userdetail.controller.js";
 
 const router = express.Router();
