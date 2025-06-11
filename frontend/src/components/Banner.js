@@ -111,7 +111,7 @@ function Banner() {
             src={photo}
             className="rounded-full md:w-[450px] md:h-[450px] w-[300px] h-[300px] mx-auto"
             alt="NFC Image"
-          />
+          />          
         </div>
       </div>
     </div>
