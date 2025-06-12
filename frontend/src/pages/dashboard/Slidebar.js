@@ -297,7 +297,7 @@ export default function UserProfile() {
 
   const [showQR, setShowQR] = useState(false);
 
-  const profileLink = `https://nef-tap-website.vercel.app/userdetail/profile/public/${profile.id}`;
+  const profileLink = `https://neftap.com/userdetail/profile/public/${profile.id}`;
 
   const toggleQR = () => {
     setShowQR(!showQR);
@@ -472,12 +472,12 @@ export default function UserProfile() {
             <p className="text-sm md:text-lg font-thin break-words">
               Public Profile URL:{" "}
               <a
-                href={`https://neftap.com//userdetail/profile/public/${profile.id}`}
+                href={`https://neftap.com/userdetail/profile/public/${profile.id}`}
                 target="_blank"
                 rel="noreferrer"
                 className="text-transparent bg-clip-text bg-gradient-to-tr from-[rgb(43,160,152)] via-[#554db1] to-[#3788ec] underline"
               >
-                https://neftap.com//userdetail/profile/public/
+                https://neftap.com/userdetail/profile/public/
                 {profile.id}
               </a>
             </p>
