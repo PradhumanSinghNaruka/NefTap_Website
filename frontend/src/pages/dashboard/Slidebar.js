@@ -485,9 +485,9 @@ export default function UserProfile() {
           <div className="mt-6">
             <button
               onClick={toggleQR}
-              className="px-4 py-2 bg-gradient-to-tr from-[rgb(43,160,152)] via-[#554db1] to-[#3788ec] transition"
+              className="px-4 py-2 bg-gradient-to-tr from-[hsl(176,100%,69%)] via-[hsl(245,100%,76%)] to-[rgb(76,153,247)] transition border rounded-lg text-white font-semibold"
             >
-              {showQR ? "Hide QR Code" : "Generate QR Code"}
+              {showQR ? "Hide QR Code" : "Generate QR"}
             </button>
           </div>
           {showQR && (
