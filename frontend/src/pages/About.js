@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import photo from "../image/aboutus.png";
-import photo1 from "../image/about.png";
+import photo1 from "../image/17.png";
 import Modal from "./Modal";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import { FaUsers } from "react-icons/fa";
@@ -31,7 +31,7 @@ function Login() {
             <div className="mt-8">
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 order-2 md:order-1 md:ml-24">
-                  <img src={photo1} className="h-[300px] w-[300px] md:w-[600px] md:h-[500px] mt-8 md:mt-0 ml-8 md:ml-0"></img>
+                  <img src={photo1} className="h-[300px] w-[300px] md:w-[600px] md:h-[500px] mt-8 md:mt-0 ml-8 md:ml-0 border rounded-3xl"></img>
                 </div>
                 <div className="md:w-1/2 order-1 h-[600px] p-12 space-y-4">
                   <h1 className="md:mt-2 text-3xl font-semibold flex">
@@ -97,7 +97,7 @@ function Login() {
                   </div>
                 </div>
                 <div className="md:w-1/2 order-2 md:order-1 md:mr-14">
-                  <img src={photo1} className="h-[300px] w-[300px] md:w-[600px] md:h-[500px] mt-8 md:mt-0 ml-8 md:ml-0"></img>
+                  <img src={photo1} className="h-[300px] w-[300px] md:w-[600px] md:h-[500px] mt-8 md:mt-0 ml-8 md:ml-0 border rounded-3xl"></img>
                 </div>
               </div>
             </div>
