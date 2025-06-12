@@ -275,7 +275,7 @@ import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import QRCode from "react-qr-code";
 
-export default function UserProfile({ userId }) {
+export default function UserProfile({ profile }) {
   const [editMode, setEditMode] = useState(false);
   const [email, setEmail] = useState("");
   const [photoFile, setPhotoFile] = useState(null);
@@ -485,7 +485,7 @@ export default function UserProfile({ userId }) {
           <div className="mt-6">
             <button
               onClick={toggleQR}
-              className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+              className="px-4 py-2 bg-gradient-to-tr from-[rgb(43,160,152)] via-[#554db1] to-[#3788ec] transition"
             >
               {showQR ? "Hide QR Code" : "Generate QR Code"}
             </button>
