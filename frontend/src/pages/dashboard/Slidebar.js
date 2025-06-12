@@ -275,7 +275,7 @@ import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import QRCode from "react-qr-code";
 
-export default function UserProfile({ profile }) {
+export default function UserProfile() {
   const [editMode, setEditMode] = useState(false);
   const [email, setEmail] = useState("");
   const [photoFile, setPhotoFile] = useState(null);
@@ -500,7 +500,7 @@ export default function UserProfile({ profile }) {
                 download="profile-qr.png"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-blue-500 underline"
+                className="text-sm text-[#2ba098] underline"  
               >
                 Download QR Code
               </a>
