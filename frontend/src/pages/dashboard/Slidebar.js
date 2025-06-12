@@ -297,7 +297,7 @@ export default function UserProfile({ userId }) {
 
   const [showQR, setShowQR] = useState(false);
 
-  const profileLink = `https://nef-tap-website.vercel.app/userdetail/profile/public/${userId}`;
+  const profileLink = `https://nef-tap-website.vercel.app/userdetail/profile/public/${profile.id}`;
 
   const toggleQR = () => {
     setShowQR(!showQR);
@@ -507,7 +507,7 @@ export default function UserProfile({ userId }) {
             </div>
           )}
 
-          
+
         </div>
 
         <form id="user-form" onSubmit={handleSubmit(onSubmit)}>
