@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import photo from "../image/call.png";
+import photo from "../image/contact.jpg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";

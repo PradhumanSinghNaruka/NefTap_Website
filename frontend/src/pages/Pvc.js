@@ -148,13 +148,27 @@
 // Pvc.js
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import photo1 from "../image/10.jpg";
+import photo2 from "../image/9.jpg";
+import photo3 from "../image/8.jpg";
+import photo4 from "../image/7.jpg";
+import photo5 from "../image/6.jpg";
+import photo6 from "../image/5.jpg";
+import photo7 from "../image/4.jpg";
+import photo8 from "../image/3.jpg";
+import photo9 from "../image/12.jpg";
+import photo10 from "../image/11.jpg";
+import photo11 from "../image/1.jpg";
+import photo12 from "../image/2.jpg";
+import photo13 from "../image/15.jpg";
+
 
 function Pvc({ onAddToCart }) {
   const carddata = [
     {
       id: 1,
       image:
-        "https://neftap.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-06-at-6.40.03-PM-7.jpeg",
+        photo1,
       name: "Black Elite Neftap Card",
       price: 10.5,
       rating: 5,
@@ -162,7 +176,7 @@ function Pvc({ onAddToCart }) {
     {
       id: 2,
       image:
-        "https://neftap.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-06-at-6.40.03-PM-6.jpeg",
+        photo2,
       name: "Golden Luxe Neftap Card",
       price: 10.5,
       rating: 5,
@@ -170,7 +184,7 @@ function Pvc({ onAddToCart }) {
     {
       id: 3,
       image:
-        "https://neftap.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-06-at-6.40.03-PM-5.jpeg",
+        photo3,
       name: "Royal Curve Neftap Card",
       price: 10.5,
       rating: 5,
@@ -178,7 +192,7 @@ function Pvc({ onAddToCart }) {
     {
       id: 4,
       image:
-        "https://neftap.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-06-at-6.40.03-PM-4.jpeg",
+        photo4,
       name: "Urban Edge Neftap Card",
       price: 10.5,
       rating: 4.5,
@@ -186,7 +200,7 @@ function Pvc({ onAddToCart }) {
     {
       id: 5,
       image:
-        "https://neftap.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-06-at-6.40.03-PM-3.jpeg",
+        photo5,
       name: "White Modern Neftap Card",
       price: 10.5,
       rating: 5,
@@ -194,7 +208,7 @@ function Pvc({ onAddToCart }) {
     {
       id: 6,
       image:
-        "https://neftap.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-06-at-6.40.03-PM-2.jpeg",
+        photo6,
       name: "Red Stripe Neftap Card",
       price: 10.5,
       rating: 4.2,
@@ -202,7 +216,7 @@ function Pvc({ onAddToCart }) {
     {
       id: 7,
       image:
-        "https://neftap.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-06-at-6.40.03-PM-1.jpeg",
+        photo7,
       name: "Graphite Bold Neftap Card",
       price: 10.5,
       rating: 4.2,
@@ -210,7 +224,7 @@ function Pvc({ onAddToCart }) {
     {
       id: 8,
       image:
-        "https://neftap.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-06-at-6.40.03-PM.jpeg",
+        photo8,
       name: "DualTone Neftap Card",
       price: 10.5,
       rating: 4.2,
@@ -218,7 +232,7 @@ function Pvc({ onAddToCart }) {
     {
       id: 9,
       image:
-        "https://neftap.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-06-at-6.40.03-PM.jpeg",
+        photo9,
       name: "CornerStreak Neftap Card",
       price: 10.5,
       rating: 4.2,
@@ -226,7 +240,7 @@ function Pvc({ onAddToCart }) {
     {
       id: 10,
       image:
-        "https://neftap.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-06-at-6.40.01-PM-1.jpeg",
+        photo10,
       name: "WaveLine Neftap Card",
       price: 10.5,
       rating: 4.2,
@@ -234,7 +248,7 @@ function Pvc({ onAddToCart }) {
     {
       id: 11,
       image:
-        "https://neftap.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-06-at-6.30.25-PM.jpeg",
+        photo11,
       name: "Shadow Luxe Neftap Card",
       price: 10.5,
       rating: 4.2,
@@ -242,7 +256,7 @@ function Pvc({ onAddToCart }) {
     {
       id: 12,
       image:
-        "https://neftap.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-05-at-6.33.43-PM.jpeg",
+        photo12,
       name: "Transparent Smart Card",
       price: 11.8,
       rating: 5,
@@ -250,7 +264,7 @@ function Pvc({ onAddToCart }) {
     {
       id: 13,
       image:
-        "https://neftap.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-06-at-6.40.03-PM-1.jpeg",
+        photo13,
       name: "Classic Red Neftap Card",
       price: 10.5,
       rating: 5,

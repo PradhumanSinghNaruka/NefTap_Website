@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import photo from "../image/image5.png";
+import photo from "../image/contact1.jpg";
 import Modal from "./Modal";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
