@@ -273,8 +273,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
+import QRCode from "react-qr-code";
 
-export default function UserProfile() {
+export default function UserProfile({ userId }) {
   const [editMode, setEditMode] = useState(false);
   const [email, setEmail] = useState("");
   const [photoFile, setPhotoFile] = useState(null);
@@ -293,6 +294,14 @@ export default function UserProfile() {
 
   const navigate = useNavigate();
   const location = useLocation();
+
+  const [showQR, setShowQR] = useState(false);
+
+  const profileLink = `https://nef-tap-website.vercel.app/userdetail/profile/public/${userId}`;
+
+  const toggleQR = () => {
+    setShowQR(!showQR);
+  };
 
   const {
     register,
@@ -346,7 +355,9 @@ export default function UserProfile() {
       }
     } catch (err) {
       console.error(err);
-      alert("Error: " + (err.response?.data?.message || "Something went wrong"));
+      alert(
+        "Error: " + (err.response?.data?.message || "Something went wrong")
+      );
     }
   };
 
@@ -388,7 +399,9 @@ export default function UserProfile() {
 
       // Fetch latest profile by email
       axios
-        .get(`https://neftap-website-2.onrender.com/userdetail/userdetail/${userdetail.email}`)
+        .get(
+          `https://neftap-website-2.onrender.com/userdetail/userdetail/${userdetail.email}`
+        )
         .then((res) => {
           if (res.data.user) {
             const userDetail = res.data.user;
@@ -469,6 +482,32 @@ export default function UserProfile() {
               </a>
             </p>
           )}
+          <div className="mt-6">
+            <button
+              onClick={toggleQR}
+              className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+            >
+              {showQR ? "Hide QR Code" : "Generate QR Code"}
+            </button>
+          </div>
+          {showQR && (
+            <div className="mt-4 flex flex-col items-center space-y-4">
+              <QRCode value={profileLink} size={180} />
+              <a
+                href={`https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(
+                  profileLink
+                )}&size=200x200`}
+                download="profile-qr.png"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-blue-500 underline"
+              >
+                Download QR Code
+              </a>
+            </div>
+          )}
+
+          
         </div>
 
         <form id="user-form" onSubmit={handleSubmit(onSubmit)}>
