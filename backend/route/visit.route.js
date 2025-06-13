@@ -1,8 +1,8 @@
 import express from "express";
-import { trackVisit } from "../controllers/visit.controller.js";
+import { visit } from "../controller/visit.controller.js";
 
 const router = express.Router();
 
-router.post("/visit", trackVisit);
+router.post("/visit", visit);
 
 export default router;

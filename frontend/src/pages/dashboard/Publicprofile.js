@@ -152,7 +152,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaSquareInstagram, FaSquareWhatsapp } from "react-icons/fa6";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 
-const PublicProfile = ({userId }) => {
+const PublicProfile = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");

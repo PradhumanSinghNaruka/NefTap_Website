@@ -52,7 +52,7 @@
 //     }
 // };
 
-import bcryptjs from "bcryptjs"; 
+import bcryptjs from "bcryptjs";  
 import db from "../config/db.js";  // Your MySQL connection pool or promise-based connection
 
 export const register = async (req, res) => {
