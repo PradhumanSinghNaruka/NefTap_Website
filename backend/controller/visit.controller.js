@@ -6,9 +6,10 @@ export const visit = async (req, res) => {
   }
 
   try {
+    // Use CURRENT_TIMESTAMP in SQL instead of passing new Date() from JS
     await db.execute(
-      "INSERT INTO publicURL (userid, source, timestamp) VALUES (?, ?, ?)",
-      [userId, source, new Date()]
+      "INSERT INTO publicURL (userid, source, timestamp) VALUES (?, ?, CURRENT_TIMESTAMP)",
+      [userId, source]
     );
     res.status(200).json({ message: "Visit tracked" });
   } catch (err) {
