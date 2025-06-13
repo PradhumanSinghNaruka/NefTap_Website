@@ -5,7 +5,7 @@ export const visit = async (req, res) => {
 
   try {
     await db.execute(
-      "INSERT INTO public (user_id, source) VALUES (?, ?)",
+      "INSERT INTO publicURL (user_id, source) VALUES (?, ?)",
       [userId, source]
     );
     res.status(200).json({ message: "Visit tracked" });
