@@ -1,12 +1,12 @@
 import db from "../config/db.js";
 
 export const visit = async (req, res) => {
-  const { userId, source } = req.body;
+  const { userid, source, timestamp } = req.body;
 
   try {
     await db.execute(
       "INSERT INTO publicURL (userid, source, timestamp) VALUES (?, ?, ?)",
-      [userId, source]
+      [userid, source, timestamp]
     );
     res.status(200).json({ message: "Visit tracked" });
   } catch (err) {
