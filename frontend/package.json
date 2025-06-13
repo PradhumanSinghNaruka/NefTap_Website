@@ -15,6 +15,7 @@
     "bcryptjs": "^3.0.2",
     "dom": "^0.0.3",
     "express": "^5.1.0",
+    "gsap": "^3.13.0",
     "jsonwebtoken": "^9.0.2",
     "multer": "^2.0.0",
     "nodemailer": "^7.0.3",
