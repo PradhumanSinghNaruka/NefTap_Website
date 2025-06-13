@@ -140,7 +140,9 @@ function Banner() {
   }, [pathname]);
 
   useEffect(() => {
-    // Text animations
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
     gsap.from(headingRef.current, {
       y: -50,
       opacity: 0,
@@ -156,7 +158,6 @@ function Banner() {
       ease: "power3.out",
     });
 
-    // Image animation
     gsap.from(cardRef.current, {
       scale: 0.7,
       opacity: 0,
@@ -166,7 +167,6 @@ function Banner() {
     });
   }, []);
 
-  // Button Hover Animations
   const handleMouseEnter = () => {
     gsap.to(buttonRef.current, {
       scale: 1,
@@ -188,46 +188,46 @@ function Banner() {
   return (
     <div
       name="Home"
-      className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-gradient-to-tr from-[rgb(43,160,152)] via-[#554db1] to-[#3788ec] text-white"
+      className="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-20 py-10 bg-gradient-to-tr from-[rgb(43,160,152)] via-[#554db1] to-[#3788ec] text-white"
     >
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row items-center">
         {/* Text Section */}
-        <div className="md:w-1/2 mt-12 md:mt-36 space-y-10 order-2 md:order-1 mb-20">
+        <div className="w-full md:w-1/2 mt-12 md:mt-28 space-y-6 md:space-y-10 order-2 md:order-1 mb-10 md:mb-20">
           <h1
             ref={headingRef}
-            className="text-5xl md:text-7xl font-bold"
+            className="text-3xl md:text-7xl font-bold leading-tight text-center md:text-left"
           >
             Let's Connect,
           </h1>
           <p
             ref={paraRef}
-            className="font-semibold text-wrap text-3xl md:text-4xl"
+            className="font-semibold text-xl md:text-4xl text-center md:text-left"
           >
             Share Your Profile With Anyone in Just One Single Click!
           </p>
-          <p className="text-wrap font-thin">
-            Make sharing information fun and easy with this smart business
-            card which utilizes NFC technology. Say goodbye to traditional
-            business paper visiting cards and embrace the future with
-            <p className="text-xl font-thin">NFC enabled business cards.</p>
+          <p className="font-light text-sm md:text-xl text-center md:text-left">
+            Make sharing information fun and easy with this smart business card which utilizes NFC technology. Say goodbye to traditional business cards and embrace the future with{" "}
+            <span className="text-base font-medium">NFC-enabled business cards.</span>
           </p>
-          <button
-            ref={buttonRef}
-            className="border rounded-md px-4 py-2 font-bold text-2xl border-black bg-white hover:bg-gradient-to-tr from-[rgb(43,160,152)] via-[hsl(245,35%,51%)] to-[hsl(213,69%,50%)] text-black hover:text-white hover:border-white"
-            onClick={() => navigate("/pvc")}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            Buy Now
-          </button>
+          <div className="flex justify-center md:justify-start">
+            <button
+              ref={buttonRef}
+              className="border rounded-md px-6 py-3 font-bold text-xl border-black bg-white hover:bg-gradient-to-tr from-[rgb(43,160,152)] via-[hsl(245,35%,51%)] to-[hsl(213,69%,50%)] text-black hover:text-white hover:border-white"
+              onClick={() => navigate("/pvc")}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              Buy Now
+            </button>
+          </div>
         </div>
 
         {/* Image Section */}
-        <div className="md:w-1/2 md:mt-32 mt-24 order-1 md:ml-40">
+        <div className="w-full md:w-1/2 mt-10 md:mt-16 order-1 flex justify-center items-center">
           <img
             ref={cardRef}
             src={photo}
-            className="rounded-full md:w-[450px] md:h-[450px] w-[300px] h-[300px] mx-auto"
+            className="rounded-full w-[250px] h-[250px] md:w-[450px] md:h-[450px]"
             alt="NFC Image"
           />
         </div>
