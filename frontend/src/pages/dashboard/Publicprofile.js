@@ -152,11 +152,26 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaSquareInstagram, FaSquareWhatsapp } from "react-icons/fa6";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 
-const PublicProfile = () => {
+const PublicProfile = ({userId }) => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const { id } = useParams();
+
+  useEffect(() => {
+    const source = window.location.search.includes("qr=true") ? "qrCode" : "publicURL";
+
+    fetch("https://neftap-website-2.onrender.com/api/visit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userId,
+        source,
+      }),
+    });
+  }, [userId]);
 
   useEffect(() => {
     const fetchPublicProfile = async () => {
