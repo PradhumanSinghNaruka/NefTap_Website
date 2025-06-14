@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import * as motion from "motion/react-client";
+
 function Questions() {
   const faqs = [
     {
@@ -58,19 +60,75 @@ function Questions() {
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+  const ball = {
+    width: 200,
+    height: 200,
+    borderRadius: "50%",
+    background:
+      "linear-gradient(to right, rgb(43,160,152), hsl(246,50%,72%), #bad2f0)",
+  };
+  const ball2 = {
+    width: 100,
+    height: 100,
+    borderRadius: "50%",
+    background: 
+    "linear-gradient(to right, rgb(43,160,152), hsl(246,50%,72%), #bad2f0)"
+  };
 
   return (
     <>
       <div
         name="Home"
-        className="max-w-screen-2xl container mx-auto px-4 md:px-20 text-black mb-12 md:mb-28 md:mt-4"
+        className="max-w-screen-2xl container mx-auto px-4 md:px-20 text-black mb-12 md:mb-24 md:mt-4"
       >
         <div className="flex flex-col md:flex-row">
-          <div className="md:w-1/2 mt-6 md:mt-16 space-y-6 order-1 md:order-1 mb-10 md:mb-20">
+          <div className="md:w-1/2 mt-6 md:mt-16 order-1 md:order-1 mb-10 md:mb-20">
             <p className="text-2xl md:text-4xl">FAQ</p>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold mb-2 md:mb-20 mt-4">
               Frequently Asked Questions
             </h2>
+            <motion.div
+              style={ball}
+              className="hidden md:block"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: [0, -10, 0, 10, 0],
+                rotate: [0, 2, 0, -2, 0],
+              }}
+              transition={{
+                duration: 1,
+                ease: "easeInOut",
+              }}
+              whileHover={{
+                scale: 1.05,
+                rotateX: 10,
+                rotateY: -10,
+                transition: { type: "spring", stiffness: 200, damping: 12 },
+              }}
+            />
+            <motion.div
+              style={ball2}
+              className="hidden md:block"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: [0, -10, 0, 10, 0],
+                rotate: [0, 2, 0, -2, 0],
+              }}
+              transition={{
+                duration: 1,
+                ease: "easeInOut",
+              }}
+              whileHover={{
+                scale: 1.05,
+                rotateX: 10,
+                rotateY: -10,
+                transition: { type: "spring", stiffness: 200, damping: 12 },
+              }}
+            />
           </div>
           <div className="md:w-1/2 mt-12 order-2 space-y-2">
             {faqs.map((faq, index) => (

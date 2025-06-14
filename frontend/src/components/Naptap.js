@@ -74,26 +74,32 @@ function Naptap() {
     if (window.innerWidth < 768) return;
 
     gsap.from(textRef.current, {
-      y: 50,
+      y: -100,
       opacity: 0,
-      scale: 0.8,
-      duration: 0.8,
+      duration: 1,
       ease: "power2.out",
+      scrollTrigger: {
+        trigger: textRef.current,
+        start: "top 80%",
+        toggleActions: "play reverse play reverse",
+      },
     });
 
     cardsRef.current.forEach((card, index) => {
-      gsap.from(card, {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        delay: index * 0.3,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 80%",
-          toggleActions: "play reverse play reverse",
-        },
-      });
+      if (window.innerWidth >= 768) {
+        gsap.from(card, {
+          y: 100,
+          opacity: 0,
+          duration: 1,
+          delay: index * 0.3,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse",
+          },
+        });
+      }
     });
   }, []);
   return (
@@ -113,7 +119,7 @@ function Naptap() {
           <div className="md:w-1/3 mt-2 md:mt-8 order-2 md:order-1 mb-20">
             <div
               ref={(el) => (cardsRef.current[0] = el)}
-              className="h-72 bg-gradient-to-tr from-[rgb(211,255,251)] via-[rgb(193,186,255)] to-[hsl(213,100%,90%)] text-white hidden md:block"
+              className="h-72 bg-gradient-to-tr from-[rgb(211,255,251)] via-[rgb(193,186,255)] to-[hsl(213,100%,90%)] text-white"
             >
               <div className="ml-20 py-2">
                 <FaLink className="w-12 h-12 text-black py-2" />
@@ -130,7 +136,7 @@ function Naptap() {
 
             <div
               ref={(el) => (cardsRef.current[1] = el)}
-              className="h-72 bg-green-200 text-white hidden md:block"
+              className="h-72 bg-green-200 text-white"
             >
               <div className="ml-20">
                 <MdOutlineShare className="w-12 h-12 text-black" />
@@ -158,7 +164,7 @@ function Naptap() {
           <div className="md:w-1/3 mt-0 md:mt-8 order-2 md:order-1 mb-20">
             <div
               ref={(el) => (cardsRef.current[2] = el)}
-              className="h-72 bg-green-200 text-white py-4 hidden md:block"
+              className="h-72 bg-green-200 text-white py-4"
             >
               <div className="ml-20">
                 <MdOutlinePhonelinkErase className="w-12 h-12 text-black" />
@@ -174,7 +180,7 @@ function Naptap() {
 
             <div
               ref={(el) => (cardsRef.current[3] = el)}
-              className="h-72 bg-gradient-to-tr from-[rgb(211,255,251)] via-[rgb(193,186,255)] to-[hsl(213,100%,90%)] text-white hidden md:block"
+              className="h-72 bg-gradient-to-tr from-[rgb(211,255,251)] via-[rgb(193,186,255)] to-[hsl(213,100%,90%)] text-white"
             >
               <div className="ml-20">
                 <MdUpdate className="w-12 h-12 text-black" />

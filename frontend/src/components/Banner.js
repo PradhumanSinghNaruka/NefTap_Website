@@ -175,7 +175,7 @@ function Banner() {
   const handleMouseEnter = () => {
     gsap.to(buttonRef.current, {
       scale: 1.07,
-      boxShadow: "0 0 20px rgba(43,160,152,0.6)",
+      boxShadow: "0 0 30px rgba(80,160,170,20)",
       duration: 0.3,
       ease: "power2.out",
     });
