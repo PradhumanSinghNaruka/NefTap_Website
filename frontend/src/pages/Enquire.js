@@ -1,12 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import photo from "../image/contact1.jpg";
 import Modal from "./Modal";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import gsap from "gsap";
 function Enquire() {
   const location = useLocation();
   const navigate = useNavigate();
+  const cardRef = useRef(null);
+  const heidingRef = useRef(null);
+  const paraRef = useRef(null);
   const from = location.state?.from?.pathname || "/contact";
   const {
     register,
@@ -49,6 +53,32 @@ function Enquire() {
     useEffect(() => {
       window.scrollTo(0, 0);
     }, [pathname]);
+
+    useEffect(() => {
+      if (window.innerWidth < 768) return;
+        gsap.from(cardRef.current, {
+          scale: 0.7,
+          opacity: 0,
+          duration: 0.8,
+          delay: 0.7,
+          ease: "back.out(1.7)",
+        });
+
+        gsap.from(heidingRef.current, {
+          y: -50,
+          opacity: 0,
+          duration: 0.8,
+          ease: "back.out(1.7)",
+        });
+
+        gsap.from(paraRef.current, {
+          y: 30,
+          opacity: 0,
+          delay: 0.5,
+          duration: 1,
+          ease: "back.out(1.7)",
+        });
+    },[]);
   return (
     <>
       <div
@@ -60,17 +90,18 @@ function Enquire() {
             <div className="w-[365px] md:w-1/2 order-2 md:order-1">
               <img
                 src={photo}
+                ref={cardRef}
                 className="w-[320px] h-[320px] md:w-full md:h-full"
               ></img>
             </div>
-            <div className="w-[365px] md:w-1/2 order-1">
-              <h1 className="md:mt-4 ml-4 md:ml-24 text-2xl font-semibold">
+            <div className="w-[365px] md:w-1/2 order-1 bg-gray-100">
+              <h1 ref={heidingRef} className="md:mt-4 ml-4 md:ml-24 text-2xl font-semibold">
                 Bulk Order Enquiry Form
               </h1>
-              <h1 className="text-black font-semibold text-sm md:text-3xl mt-4 md:mt-4 ml-4 md:ml-24 text-wrap">
+              <h1 ref={paraRef} className="text-black font-semibold text-sm md:text-3xl mt-4 md:mt-4 ml-4 md:ml-24 text-wrap">
                 Fill the form and our team will get in touch with you.
               </h1>
-              <div className="md:ml-24 md:mt-6 space-y-6 inline-grid">
+              <div ref={paraRef} className="md:ml-24 md:mt-6 space-y-6 inline-grid">
                 <div className="block md:flex mt-4 md:mt-0 ml-4 md:ml-0 md:space-x-10">
                   <div className="block">
                     <input

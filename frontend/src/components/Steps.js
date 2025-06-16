@@ -144,10 +144,10 @@ function Steps() {
   const textRef = useRef(null);
   const leftRef = useRef(null);
   const rightRef = useRef(null);
-  const cardsRef = useRef([]); // ✅ make it an array
+  const cardsRef = useRef([]);
 
   useEffect(() => {
-    if (window.innerWidth < 768) return;
+    if (window.innerWidth <= 768) return;
       gsap.from(textRef.current, {
         x: -100,
         opacity: 0,

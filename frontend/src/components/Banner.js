@@ -141,17 +141,13 @@ function Banner() {
   }, [pathname]);
 
   useEffect(() => {
-    // Run animations only if screen width is >= 768px (tablet/laptop/desktop)
     if (window.innerWidth >= 768) {
-      // Heading animation
       gsap.from(headingRef.current, {
         y: -50,
         opacity: 0,
         duration: 1,
         ease: "power3.out",
       });
-
-      // Paragraph animation
       gsap.from(paraRef.current, {
         y: 30,
         opacity: 0,
@@ -159,8 +155,6 @@ function Banner() {
         duration: 1,
         ease: "power3.out",
       });
-
-      // Image animation
       gsap.from(cardRef.current, {
         scale: 0.7,
         opacity: 0,
@@ -170,8 +164,6 @@ function Banner() {
       });
     }
   }, []);
-
-  // Button hover animation (only works on devices with mouse, no need to block it)
   const handleMouseEnter = () => {
     gsap.to(buttonRef.current, {
       scale: 1.07,
@@ -180,7 +172,6 @@ function Banner() {
       ease: "power2.out",
     });
   };
-
   const handleMouseLeave = () => {
     gsap.to(buttonRef.current, {
       scale: 1,
@@ -196,7 +187,6 @@ function Banner() {
       className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-gradient-to-tr from-[rgb(43,160,152)] via-[#554db1] to-[#3788ec] text-white"
     >
       <div className="flex flex-col md:flex-row">
-        {/* Text Section */}
         <div className="md:w-1/2 mt-12 md:mt-36 space-y-10 order-2 md:order-1 mb-20">
           <h1 ref={headingRef} className="text-5xl md:text-7xl font-bold">
             Let's Connect,
@@ -224,7 +214,6 @@ function Banner() {
           </button>
         </div>
 
-        {/* Image Section */}
         <div className="md:w-1/2 md:mt-32 mt-24 order-1 md:ml-40">
           <img
             ref={cardRef}

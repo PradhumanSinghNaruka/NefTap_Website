@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import photo from "../image/contact.jpg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import gsap from "gsap";
 function Contact() {
   const location = useLocation();
   const navigate = useNavigate();
+  const heidingRef = useRef(null);
+  const heidingsRef = useRef(null);
   const from = location.state?.from?.pathname || "/contact";
   const {
     register,
@@ -47,12 +50,30 @@ function Contact() {
     useEffect(() => {
       window.scrollTo(0, 0);
     }, [pathname]);
+
+    useEffect(() => {
+      if(window.innerWidth < 768) return;
+
+      gsap.from(heidingRef.current, {
+        y: -50,
+        opacity: 0,
+        duration: 1,
+        ease: "back.out(1.7)",
+      });
+
+      gsap.from(heidingsRef.current, {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+      });
+    },[])
   return (
     <>
       <div name="/contact" className="text-black mt-20 mb-0 h-full max-w-screen-2xl container mx-auto">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col md:flex-row shadow-lg">
-            <div className="md:w-1/2 order-1 h-full p-8">
+            <div ref={heidingsRef} className="md:w-1/2 order-1 h-full p-8">
               <h1 className="md:mt-2 ml-4 md:ml-12 text-4xl md:text-5xl font-bold">
                 Make Us A Call
               </h1>
@@ -142,7 +163,7 @@ function Contact() {
                 </button>
               </div>
             </div>
-            <div className="md:w-1/2 order-2 md:order-1">
+            <div ref={heidingRef} className="md:w-1/2 order-2 md:order-1">
               <img src={photo} className="h-[280px] md:h-[580px]"></img>
             </div>
           </div>

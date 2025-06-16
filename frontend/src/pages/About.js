@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import photo from "../image/aboutus.png";
 import photo1 from "../image/17.png";
 import Modal from "./Modal";
@@ -6,19 +6,141 @@ import { IoPhonePortraitOutline } from "react-icons/io5";
 import { FaUsers } from "react-icons/fa";
 import { FaAddressCard } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 function Login() {
+  const headingRef = useRef(null);
+  const paraRef = useRef(null);
+  const parasRef = useRef([]);
+  const imageRef = useRef(null);
+  const cardRef = useRef([]);
+  const cardsRef = useRef([]);
+  const headingsRef = useRef([]);
   const { pathname } = useLocation();
-  
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (window.innerWidth < 768) return;
+      gsap.from(headingRef.current, {
+        y: -50,
+        opacity: 0,
+        duration: 1.6,
+        ease: "power3.out",
+      });
+
+      gsap.from(paraRef.current, {
+        y: 30,
+        opacity: 0,
+        delay: 0.5,
+        duration: 1,
+      });
+
+      gsap.from(imageRef.current, {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        delay: 1,
+      });
+      cardRef.current.forEach((card, i) => {
+        gsap.fromTo(
+          card,
+          { scale: 0.85, opacity: 0, y: 30 },
+          {
+            scale: 1,
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+            ease: "power4.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play reverse play reverse",
+              scrub: false,
+            },
+          }
+        );
+      });
+      cardsRef.current.forEach((cards, i) => {
+        gsap.fromTo(
+          cards,
+          { scale: 0.85, opacity: 0, y: 30 },
+          {
+            scale: 1,
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+            ease: "power4.out",
+            scrollTrigger: {
+              trigger: cards,
+              start: "top 85%",
+              toggleActions: "play reverse play reverse",
+              scrub: false,
+            },
+          }
+        );
+      });
+
+      headingsRef.current.forEach((headings, i) => {
+        gsap.fromTo(
+          headings,
+          { scale: 0.5, opacity: 0, y: 30 },
+          {
+            scale: 1,
+            opacity: 1,
+            y:0,
+            duration: 1.5,
+            ease: "power4.out",
+            scrollTrigger: {
+              trigger: headings,
+              start: "top 85%",
+              scrub: false,
+              toggleActions: "play reverse play reverse",
+            },
+          }
+        );
+      });
+      parasRef.current.forEach((paras, i) => {
+        gsap.fromTo(
+          paras,
+          { scale: 0.5, opacity: 0, y: 30 },
+          {
+            scale: 1,
+            opacity: 1,
+            y:0,
+            duration: 1.5,
+            ease: "power4.out",
+            scrollTrigger: {
+              trigger: paras,
+              start: "top 85%",
+              scrub: false,
+              toggleActions: "play reverse play reverse",
+            },
+          }
+        );
+      });
+  }, []);
+
   return (
     <>
-      <div name="/about" className="text-black mb-0 mt-20 max-w-screen-2xl container mx-auto">
+      <div
+        name="/about"
+        className="text-black mb-0 mt-20 max-w-screen-2xl container mx-auto"
+      >
         <div className="">
           <div className="">
-            <h1 className="ml-10 md:ml-24 font-bold text-4xl md:text-5xl py-4">About Us</h1>
-            <p className="text-wrap mt-8 ml-10 md:ml-24">
+            <h1
+              ref={headingRef}
+              className="ml-10 md:ml-24 font-bold text-4xl md:text-5xl py-4"
+            >
+              About Us
+            </h1>
+            <p ref={paraRef} className="text-wrap mt-8 ml-10 md:ml-24">
               NafTap is refer to as smart business card with NFC technology
               which <br /> offers you easy sharing of contact information,
               social media
@@ -27,14 +149,20 @@ function Login() {
               <br />
               Crafting bespoke solutions, we redefine connectivity and style.
             </p>
-            <img src={photo}></img>
+            <img ref={imageRef} src={photo}></img>
             <div className="mt-8">
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 order-2 md:order-1 md:ml-24">
-                  <img src={photo1} className="h-[300px] w-[300px] md:w-[600px] md:h-[500px] mt-8 md:mt-0 ml-8 md:ml-0 border rounded-3xl"></img>
+                  <img
+                    ref={(el) => (cardRef.current[0] = el)}
+                    src={photo1}
+                    className="h-[300px] w-[300px] md:w-[600px] md:h-[500px] mt-8 md:mt-0 ml-8 md:ml-0 border rounded-3xl"
+                  ></img>
                 </div>
-                <div className="md:w-1/2 order-1 h-[600px] p-12 space-y-4">
-                  <h1 className="md:mt-2 text-3xl font-semibold flex">
+                <div ref={(el) => (parasRef.current[0] = el)}  className="md:w-1/2 order-1 h-[600px] p-12 space-y-4">
+                  <h1
+                    className="md:mt-2 text-3xl font-semibold flex"
+                  >
                     About{" "}
                     <p className="text-black text-3xl font-thin ml-4">NafTap</p>
                   </h1>
@@ -68,7 +196,7 @@ function Login() {
             </div>
             <div className="mt-4">
               <div className="flex flex-col md:flex-row md:ml-16">
-                <div className="md:w-1/2 order-1 h-[600px] p-12 space-y-4">
+                <div ref={(el) => (headingsRef.current[0] = el)}  className="md:w-1/2 order-1 h-[600px] p-12 space-y-4">
                   <h1 className="md:mt-2 text-3xl font-semibold block">
                     Customise NefTap{" "}
                     <p className="text-black text-3xl font-thin">
@@ -83,21 +211,29 @@ function Login() {
                       starter.
                     </p>
                     <h1 className="border rounded-lg bg-white shadow-xl duration-300 p-2 mt-8 flex">
-                      <FaUsers className="h-[60px] w-[100px] md:h-[100px] md:ml-4 text-blue-900"/>
+                      <FaUsers className="h-[60px] w-[100px] md:h-[100px] md:ml-4 text-blue-900" />
                       <div className="block">
-                        <h1 className="text-3xl md:text-5xl p-4 md:ml-8">75K+ user</h1>
+                        <h1 className="text-3xl md:text-5xl p-4 md:ml-8">
+                          75K+ user
+                        </h1>
                       </div>
                     </h1>
                     <h1 className="border rounded-lg bg-white shadow-xl duration-300 p-2 mt-8 flex">
                       <FaAddressCard className="h-[60px] w-[100px] md:h-[100px] md:ml-4 text-blue-900" />
                       <div className="block">
-                        <h1 className="text-3xl md:text-5xl p-4 md:ml-8">85K+ card</h1>
+                        <h1 className="text-3xl md:text-5xl p-4 md:ml-8">
+                          85K+ card
+                        </h1>
                       </div>
                     </h1>
                   </div>
                 </div>
                 <div className="md:w-1/2 order-2 md:order-1 md:mr-14">
-                  <img src={photo1} className="h-[300px] w-[300px] md:w-[600px] md:h-[500px] mt-8 md:mt-0 ml-8 md:ml-0 border rounded-3xl"></img>
+                  <img
+                    ref={(el) => (cardsRef.current[0] = el)}
+                    src={photo1}
+                    className="h-[300px] w-[300px] md:w-[600px] md:h-[500px] mt-8 md:mt-0 ml-8 md:ml-0 border rounded-3xl"
+                  ></img>
                 </div>
               </div>
             </div>

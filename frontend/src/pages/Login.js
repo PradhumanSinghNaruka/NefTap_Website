@@ -3,7 +3,7 @@
 // import Modal from "./Modal";
 // import { useForm } from "react-hook-form";
 // import axios from "axios";
-// import { useLocation, useNavigate } from "react-router-dom"; 
+// import { useLocation, useNavigate } from "react-router-dom";
 // function Login() {
 //   const {
 //     register,
@@ -19,7 +19,7 @@
 //       password: data.password,
 //     };
 //     await axios
-//       .post("https://neftap-website-2.onrender.com/register/login", userInfo) 
+//       .post("https://neftap-website-2.onrender.com/register/login", userInfo)
 //       .then((res) => {
 //         console.log(res.data);
 //         if (res.data) {
@@ -38,7 +38,7 @@
 //       });
 //   };
 //   const { pathname } = useLocation();
-  
+
 //     useEffect(() => {
 //       window.scrollTo(0, 0);
 //     }, [pathname]);
@@ -108,14 +108,12 @@
 
 // export default Login;
 
-
 import React, { useEffect } from "react";
 import photo from "../image/contactBanner.png";
 import Modal from "./Modal";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-
 function Login() {
   const {
     register,
@@ -126,7 +124,6 @@ function Login() {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/dashboard";
-
   const onSubmit = async (data) => {
     const userInfo = {
       email: data.email,
@@ -169,7 +166,11 @@ function Login() {
           <div className="flex flex-col md:flex-row">
             {/* Image */}
             <div className="md:w-1/2 order-2 md:order-1">
-              <img src={photo} alt="Login Banner" className="w-full h-[500px]" />
+              <img
+                src={photo}
+                alt="Login Banner"
+                className="w-full h-[500px]"
+              />
             </div>
 
             {/* Form */}
@@ -193,7 +194,9 @@ function Login() {
                 )}
 
                 {/* Password */}
-                <label className="block text-black font-bold mt-4">Password</label>
+                <label className="block text-black font-bold mt-4">
+                  Password
+                </label>
                 <input
                   className="shadow rounded-lg appearance-none border py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
                   type="password"
@@ -205,23 +208,21 @@ function Login() {
                     This field is required
                   </span>
                 )}
-
-                {/* Submit Button */}
                 <button
                   type="submit"
                   className="font-semibold text-xl border rounded-md p-2 w-[300px] md:w-[350px] bg-black text-white hover:bg-white hover:text-black hover:border-black duration-300"
                 >
                   Login
                 </button>
-
                 {/* Modal Link */}
                 <p className="flex">
                   Don't have login details?
                   <span
                     className="font-bold cursor-pointer ml-2 hover:text-blue-900"
-                    onClick={() => document.getElementById("my_modal_3").showModal()}
-                  >
-                  </span>
+                    onClick={() =>
+                      document.getElementById("my_modal_3").showModal()
+                    }
+                  ></span>
                   <Modal />
                 </p>
               </div>
