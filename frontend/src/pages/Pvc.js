@@ -146,7 +146,7 @@
 // export default Pvc;
 
 // Pvc.js
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Pvc({ onAddToCart }) {
