@@ -165,7 +165,7 @@ function Login() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col md:flex-row">
             {/* Image */}
-            <div className="md:w-1/2 order-2 md:order-1">
+            <div className="md:w-1/2 order-2 md:order-1 hidden md:flex">
               <img
                 src={photo}
                 alt="Login Banner"
