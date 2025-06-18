@@ -159,6 +159,22 @@ const PublicProfile = () => {
   const { id } = useParams();
 
   useEffect(() => {
+  if (!userData) return;
+
+  const source = window.location.search.includes("qr=true") ? "qrCode" : "publicURL";
+
+  fetch("https://neftap-website-2.onrender.com/api/visit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ userid: userData._id, source }),
+  })
+    .then((res) => res.json())
+    .then((data) => console.log("Tracked:", data))
+    .catch((err) => console.error("Tracking Failed:", err));
+}, [userData]);
+
+
+  useEffect(() => {
     const fetchPublicProfile = async () => {
       try {
         const response = await axios.get(

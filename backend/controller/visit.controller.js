@@ -1,4 +1,5 @@
 import db from "../config/db.js";
+
 export const visit = async (req, res) => {
   const { userid, source } = req.body;
 
@@ -8,13 +9,20 @@ export const visit = async (req, res) => {
 
   try {
     await db.execute(
-      "INSERT INTO publicURL (userid, source, timestamp) VALUES (?, ?, CURRENT_TIMESTAMP)",
+      `INSERT INTO profile_visits (userid, source, visitCount)
+       VALUES (?, ?, 1)
+       ON DUPLICATE KEY UPDATE 
+         visitCount = visitCount + 1,
+         source = VALUES(source)`,
       [userid, source]
     );
-    res.status(200).json({ message: "Visit tracked" });
+
+    res.status(200).json({ message: "Visit tracked successfully" });
   } catch (err) {
-    console.error("Error tracking visit:", err);
-    res.status(500).json({ message: "Error tracking visit", error: err.message });
+    res.status(500).json({
+      message: "Error tracking visit",
+      error: err.message,
+    });
   }
 };
 
@@ -23,13 +31,12 @@ export const getVisitCount = async (req, res) => {
 
   try {
     const [rows] = await db.execute(
-      "SELECT COUNT(*) as total FROM publicURL WHERE userid = ?",
+      "SELECT visitCount FROM profile_visits WHERE userid = ?",
       [userid]
     );
-
-    res.status(200).json({ totalVisits: rows[0].total });
+    const count = rows[0]?.visitCount || 0;
+    res.status(200).send(count.toString()); 
   } catch (err) {
-    console.error("Error fetching visit count:", err);
-    res.status(500).json({ message: "Error fetching visit count", error: err.message });
+    res.status(500).send("0");
   }
 };
