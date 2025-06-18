@@ -169,7 +169,7 @@ const PublicProfile = () => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      userId: userData._id,
+      userid: userData._id,
       source,
     }),
   })

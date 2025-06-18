@@ -6,7 +6,6 @@ export const visit = async (req, res) => {
   }
 
   try {
-    // Use CURRENT_TIMESTAMP in SQL instead of passing new Date() from JS
     await db.execute(
       "INSERT INTO publicURL (userid, source, timestamp) VALUES (?, ?, CURRENT_TIMESTAMP)",
       [userid, source]
@@ -15,5 +14,21 @@ export const visit = async (req, res) => {
   } catch (err) {
     console.error("Error tracking visit:", err);
     res.status(500).json({ message: "Error tracking visit", error: err.message });
+  }
+};
+
+export const getVisitCount = async (req, res) => {
+  const { userid } = req.params;
+
+  try {
+    const [rows] = await db.execute(
+      "SELECT COUNT(*) as total FROM publicURL WHERE userid = ?",
+      [userid]
+    );
+
+    res.status(200).json({ totalVisits: rows[0].total });
+  } catch (err) {
+    console.error("Error fetching visit count:", err);
+    res.status(500).json({ message: "Error fetching visit count", error: err.message });
   }
 };
