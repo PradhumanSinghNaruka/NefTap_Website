@@ -159,27 +159,39 @@ const PublicProfile = () => {
   const { id } = useParams();
 
   useEffect(() => {
-  if (!userData || !userData._id) return;
+  const fetchPublicProfile = async () => {
+    try {
+      const response = await axios.get(
+        `https://neftap-website-2.onrender.com/userdetail/profile/public/${id}`
+      );
+      const data = response.data.userdetail;
+      setUserData(data);
+      const source = window.location.search.includes("qr=true") ? "qrCode" : "publicURL";
 
-  const source = window.location.search.includes("qr=true")
-    ? "qrCode"
-    : "publicURL";
+      fetch("https://neftap-website-2.onrender.com/api/visit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userid: data._id,
+          source,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log("Tracked:", data))
+        .catch((err) => console.error("Track failed:", err));
 
-  fetch("https://neftap-website-2.onrender.com/api/visit", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      userid: userData._id,
-      source,
-    }),
-  })
-    .then((res) => res.json())
-    .then((data) => console.log("Tracked:", data))
-    .catch((err) => console.error("Track failed:", err));
-}, [userData]);
+    } catch (err) {
+      setError("Failed to load profile.");
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  fetchPublicProfile();
+}, [id]);  
 
 
   useEffect(() => {
