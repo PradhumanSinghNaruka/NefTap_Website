@@ -1,3 +1,4 @@
+import db from "../config/db.js";
 export const visit = async (req, res) => {
   const { userid, source } = req.body;
 

@@ -166,7 +166,7 @@ const PublicProfile = () => {
         );
         setUserData(response.data.userdetail);
 
-        
+
         const source = window.location.search.includes("qr=true")
         ? "qrCode"
         : "publicURL";
@@ -177,7 +177,7 @@ const PublicProfile = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          userid: data._id,
+          userid: userData._id,
           source,
         }),
       })

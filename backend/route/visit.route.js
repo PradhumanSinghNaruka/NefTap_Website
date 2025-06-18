@@ -1,5 +1,5 @@
 import express from "express";
-import { visit, getVisitCount } from "../controller/visit.controller.js";
+import { visit, getVisitCount } from "../controller/visit.controller.js"
 
 const router = express.Router();
 
