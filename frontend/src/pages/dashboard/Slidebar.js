@@ -274,6 +274,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import QRCode from "react-qr-code";
+import { useParams } from "react-router-dom";
 
 export default function UserProfile() {
   const [editMode, setEditMode] = useState(false);
@@ -423,23 +424,24 @@ export default function UserProfile() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  const [visitCount, setVisitCount] = useState(0);
-  const userid = localStorage.getItem("userid");
-  useEffect(() => {
-    const fetchVisitCount = async () => {
-      try {
-        const response = await fetch(
-          `https://neftap-website-2.onrender.com/api/visit/count/${userid}`
-        );
-        const countText = await response.text();
-        setVisitCount(Number(countText));
-      } catch (err) {
-        console.error("Failed to fetch visit count", err);
-      }
-    };
+  const [visitCount, setVisitCount] = useState(null);
+const { id } = useParams();
 
-    fetchVisitCount();
-  }, [userid]);
+useEffect(() => {
+  const fetchVisitCount = async () => {
+    try {
+      const response = await axios.get(
+        `https://neftap-website-2.onrender.com/api/visit/count/${id}`
+      );
+      const count = response.data.visit;
+      setVisitCount(Number(count));
+    } catch (err) {
+      console.error("Failed to fetch visit count", err);
+    }
+  };
+
+  fetchVisitCount();
+}, [id]);
 
   return (
     <div className="min-h-screen bg-gray-100 mt-24 flex flex-col md:flex-row w-full max-w-screen-2xl mx-auto px-4">
