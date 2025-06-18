@@ -159,19 +159,27 @@ const PublicProfile = () => {
   const { id } = useParams();
 
   useEffect(() => {
-  if (!userData) return;
+  if (!userData || !userData._id) return;
 
-  const source = window.location.search.includes("qr=true") ? "qrCode" : "publicURL";
+  const source = window.location.search.includes("qr=true")
+    ? "qrCode"
+    : "publicURL";
 
   fetch("https://neftap-website-2.onrender.com/api/visit", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ userid: userData._id, source }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userid: userData._id,
+      source,
+    }),
   })
     .then((res) => res.json())
     .then((data) => console.log("Tracked:", data))
-    .catch((err) => console.error("Tracking Failed:", err));
+    .catch((err) => console.error("Track failed:", err));
 }, [userData]);
+
 
 
   useEffect(() => {
