@@ -166,26 +166,6 @@ const PublicProfile = () => {
         );
         setUserData(response.data.userdetail);
 
-
-        const source = window.location.search.includes("qr=true")
-        ? "qrCode"
-        : "publicURL";
-
-      fetch("https://neftap-website-2.onrender.com/api/visit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userid: userData._id,
-          source,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => console.log("Tracked:", data))
-        .catch((err) => console.error("Track failed:", err));
-
-
       } catch (err) {
         setError("Failed to load profile. First Buy And Create Profile");
         console.error(err);
