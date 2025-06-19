@@ -159,8 +159,8 @@ const PublicProfile = () => {
   const trackVisit = async () => {
     try {
       await axios.post("https://neftap-website-2.onrender.com/api/visit", {
-        userid: id,             // from useParams()
-        source: "public-page",  // ya 'qr-code', 'shared-link' etc.
+        userid: id,     
+        source: "public-page",  
       });
       console.log("✅ Visit tracked successfully");
     } catch (err) {
