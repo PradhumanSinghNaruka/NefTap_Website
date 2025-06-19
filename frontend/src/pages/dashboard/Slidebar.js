@@ -474,7 +474,7 @@ export default function UserProfile() {
         <p className="text-sm text-gray-500 text-center">{profile.company}</p>
         <p className="text-gray-600 font-medium">
           👀 Your Public Profile Views:{" "}
-          <span className="text-blue-500 font-bold">{visitCount}</span>
+          <span className="text-blue-500 font-bold">{visitCount.visitCount}</span>
         </p>
         <button
           onClick={() => {
