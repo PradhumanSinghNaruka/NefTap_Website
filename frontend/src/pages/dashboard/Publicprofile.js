@@ -158,18 +158,21 @@ const PublicProfile = () => {
   useEffect(() => {
   const trackVisit = async () => {
     try {
+      if (!id) return;
+
       await axios.post("https://neftap-website-2.onrender.com/api/visit", {
         userid: id,
-        source: "public-link",
+        source: "public-profile"
       });
-      console.log("Visit Tracked");
+
+      console.log("✅ Visit tracked for ID:", id);
     } catch (err) {
-      console.error("Visit track failed", err);
+      console.error("Failed to track visit:", err.message);
     }
   };
 
   trackVisit();
-}, []);
+}, [id]);
 
   useEffect(() => {
     const fetchPublicProfile = async () => {
