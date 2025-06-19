@@ -156,7 +156,6 @@ const PublicProfile = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [userId, setUserId] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
@@ -167,13 +166,6 @@ const PublicProfile = () => {
       );
       const data = response.data.userdetail;
       setUserData(data);
-      const source = window.location.search.includes("qr=true") ? "qrCode" : "publicURL";
-
-      const responseid = await axios.get(
-        `https://neftap-website-2.onrender.com/api/visit/${id}`
-      );
-      const dataid = responseid.dataid._id;
-      setUserId(dataid);
 
     } catch (err) {
       setError("Failed to load profile.");

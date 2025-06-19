@@ -281,6 +281,8 @@ export default function UserProfile() {
   const [email, setEmail] = useState("");
   const [photoFile, setPhotoFile] = useState(null);
   const [profileId, setProfileId] = useState(null);
+  const [visitCount, setVisitCount] = useState(null);
+  const { id } = useParams();
   const [profile, setProfile] = useState({
     name: "",
     number: "",
@@ -424,24 +426,21 @@ export default function UserProfile() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  const [visitCount, setVisitCount] = useState(null);
-const { id } = useParams();
+  useEffect(() => {
+    const fetchVisitCount = async () => {
+      try {
+        const response = await axios.get(
+          `https://neftap-website-2.onrender.com/api/visit/count/${id}`
+        );
+        const count = response.data.visit;
+        setVisitCount(Number(count));
+      } catch (err) {
+        console.error("Failed to fetch visit count", err);
+      }
+    };
 
-useEffect(() => {
-  const fetchVisitCount = async () => {
-    try {
-      const response = await axios.get(
-        `https://neftap-website-2.onrender.com/api/visit/count/${id}`
-      );
-      const count = response.data.visit;
-      setVisitCount(Number(count));
-    } catch (err) {
-      console.error("Failed to fetch visit count", err);
-    }
-  };
-
-  fetchVisitCount();
-}, [id]);
+    fetchVisitCount();
+  }, [id]);
 
   return (
     <div className="min-h-screen bg-gray-100 mt-24 flex flex-col md:flex-row w-full max-w-screen-2xl mx-auto px-4">
@@ -473,7 +472,8 @@ useEffect(() => {
         <h1 className="text-center">{email}</h1>
         <p className="text-sm text-gray-500 text-center">{profile.company}</p>
         <p className="text-gray-600 font-medium">
-          👀 Your Public Profile Views: <span className="text-blue-500 font-bold">{visitCount}</span>
+          👀 Your Public Profile Views:{" "}
+          <span className="text-blue-500 font-bold">{visitCount}</span>
         </p>
         <button
           onClick={() => {
