@@ -1,3 +1,4 @@
+// visit.controller.js
 import db from "../config/db.js";
 
 export const visit = async (req, res) => {
@@ -12,19 +13,21 @@ export const visit = async (req, res) => {
       `INSERT INTO profile_visits (userid, source, visitCount)
        VALUES (?, ?, 1)
        ON DUPLICATE KEY UPDATE 
-         visitCount = visitCount + 1,
-         source = VALUES(source)`,
+         visitCount = visitCount + 1`
+      ,
       [userid, source]
     );
 
     res.status(200).json({ message: "Visit tracked successfully" });
   } catch (err) {
+    console.error("Visit tracking error:", err);
     res.status(500).json({
       message: "Error tracking visit",
       error: err.message,
     });
   }
 };
+
 
 export const getVisitCount = async (req, res) => {
   const { userid } = req.params;
