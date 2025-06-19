@@ -748,7 +748,7 @@ export default function UserProfile() {
   const fetchVisitCount = async (profileId) => {
     try {
       if (!profileId) {
-        console.warn("❌ No profile ID for visit count.");
+        console.warn("No profile ID for visit count.");
         return;
       }
 
@@ -761,7 +761,7 @@ export default function UserProfile() {
       const count = Number(response.data);
       setVisitCount(!isNaN(count) ? count : 0);
     } catch (err) {
-      console.error("❌ Failed to fetch visit count", err);
+      console.error("Failed to fetch visit count", err);
       alert("Failed to fetch visit count");
     }
   };
@@ -785,7 +785,7 @@ export default function UserProfile() {
             setProfile(userDetail);
             setProfileId(userDetail.id);
             localStorage.setItem("Contactus", JSON.stringify(userDetail));
-            fetchVisitCount(userDetail.id); // ✅ Visit count fetched after setting profile
+            fetchVisitCount(userDetail.id);
           }
         })
         .catch((err) => {
@@ -800,7 +800,7 @@ export default function UserProfile() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
-  
+
   return (
     <div className="min-h-screen bg-gray-100 mt-24 flex flex-col md:flex-row w-full max-w-screen-2xl mx-auto px-4">
       {/* Sidebar */}

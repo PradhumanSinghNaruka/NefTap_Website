@@ -142,8 +142,6 @@
 
 // export default PublicProfile;
 
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -159,36 +157,22 @@ const PublicProfile = () => {
   const { id } = useParams();
 
   useEffect(() => {
-  const fetchPublicProfile = async () => {
-    try {
-      const response = await axios.get(
-        `https://neftap-website-2.onrender.com/userdetail/profile/public/${id}`
-      );
-      const data = response.data.userdetail;
-      setUserData(data);
-
-    } catch (err) {
-      setError("Failed to load profile.");
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  fetchPublicProfile();
-}, [id]);  
-
-
-  useEffect(() => {
     const fetchPublicProfile = async () => {
       try {
+        //fetch profile
         const response = await axios.get(
           `https://neftap-website-2.onrender.com/userdetail/profile/public/${id}`
         );
-        setUserData(response.data.userdetail);
+        const data = response.data.userdetail;
+        setUserData(data);
 
+        //track visit
+        await axios.post("https://neftap-website-2.onrender.com/api/visit", {
+          userid: id, 
+          source: "public-page",
+        });
       } catch (err) {
-        setError("Failed to load profile. First Buy And Create Profile");
+        setError("Failed to load profile or track visit.");
         console.error(err);
       } finally {
         setLoading(false);
@@ -198,9 +182,12 @@ const PublicProfile = () => {
     fetchPublicProfile();
   }, [id]);
 
-  if (loading) return <div className="text-center mt-10">Loading profile...</div>;
-  if (error) return <div className="text-center mt-10 text-red-600">Error: {error}</div>;
-  if (!userData) return <div className="text-center mt-10">No profile data found</div>;
+  if (loading)
+    return <div className="text-center mt-10">Loading profile...</div>;
+  if (error)
+    return <div className="text-center mt-10 text-red-600">Error: {error}</div>;
+  if (!userData)
+    return <div className="text-center mt-10">No profile data found</div>;
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-12 text-black">
