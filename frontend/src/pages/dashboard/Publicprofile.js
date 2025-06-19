@@ -164,7 +164,7 @@ const PublicProfile = () => {
         userid: id,
         source: "public-profile"
       });
-
+      console.log("🧾 ID sent to backend:", id);
       console.log("✅ Visit tracked for ID:", id);
     } catch (err) {
       console.error("Failed to track visit:", err.message);
