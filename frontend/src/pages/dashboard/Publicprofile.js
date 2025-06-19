@@ -155,6 +155,21 @@ const PublicProfile = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const { id } = useParams();
+  useEffect(() => {
+  const trackVisit = async () => {
+    try {
+      await axios.post("https://neftap-website-2.onrender.com/api/visit", {
+        userid: id,             // from useParams()
+        source: "public-page",  // ya 'qr-code', 'shared-link' etc.
+      });
+      console.log("✅ Visit tracked successfully");
+    } catch (err) {
+      console.error("❌ Failed to track visit", err);
+    }
+  };
+
+  trackVisit(); // Trigger visit count on first load
+}, [id]);
 
   useEffect(() => {
     const fetchPublicProfile = async () => {
@@ -165,12 +180,6 @@ const PublicProfile = () => {
         );
         const data = response.data.userdetail;
         setUserData(data);
-
-        //track visit
-        await axios.post("https://neftap-website-2.onrender.com/api/visit", {
-          userid: id, 
-          source: "public-page",
-        });
       } catch (err) {
         setError("Failed to load profile or track visit.");
         console.error(err);
