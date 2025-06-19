@@ -427,21 +427,33 @@ export default function UserProfile() {
   }, [location.pathname]);
 
   useEffect(() => {
-    const fetchVisitCount = async () => {
-      try {
-        const response = await axios.get(
-          `https://neftap-website-2.onrender.com/api/visit/count/${id}`
-        );
-        const count = response.data.visit;
-        setVisitCount(response.data.visit.visitCount);
-        alert("frtch successfully");
-      } catch (err) {
-        alert("Failed to fetch visit count", err);
-      }
-    };
+  const fetchVisitCount = async () => {
+    try {
+      const response = await axios.get(
+        `https://neftap-website-2.onrender.com/api/visit/count/${id}`
+      );
 
-    fetchVisitCount();
-  }, [id]);
+      console.log("✅ Response:", response.data);
+      const visit = response.data.visit;
+
+      if (typeof visit === "number") {
+        setVisitCount(visit);
+      } else if (typeof visit === "object" && visit?.visitCount !== undefined) {
+        setVisitCount(visit.visitCount);
+      } else {
+        console.warn("Unexpected visit format:", visit);
+        setVisitCount(0);
+      }
+
+    } catch (err) {
+      console.error("Failed to fetch visit count", err);
+      alert("Failed to fetch visit count");
+    }
+  };
+
+  fetchVisitCount();
+}, [id]);
+
 
   return (
     <div className="min-h-screen bg-gray-100 mt-24 flex flex-col md:flex-row w-full max-w-screen-2xl mx-auto px-4">
