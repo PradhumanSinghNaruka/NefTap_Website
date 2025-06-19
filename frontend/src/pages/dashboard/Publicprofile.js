@@ -168,6 +168,7 @@ const PublicProfile = () => {
         userid: parseInt(id),     // ✅ ensure INT if your MySQL `userid` is INT
         source: "publicURL",
       });
+      window.location.href = `https://neftap.com/userdetail/profile/public/${id}`;
       console.log("✅ Visit Tracked for ID:", id);
     } catch (err) {
       console.error("❌ Failed to track visit:", err.response?.data || err.message);
