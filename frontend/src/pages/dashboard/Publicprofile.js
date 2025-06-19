@@ -151,12 +151,11 @@ import { FaSquareInstagram, FaSquareWhatsapp } from "react-icons/fa6";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 
 const PublicProfile = () => {
-  const { id } = useParams(); // ✅ move here
+  const { id } = useParams();
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // ✅ Visit Tracking
   useEffect(() => {
     const trackVisit = async () => {
       if (!id) {
@@ -164,24 +163,27 @@ const PublicProfile = () => {
         return;
       }
 
-      console.log("Tracking visit for ID:", id);
-
       try {
-        const res = await axios.post("https://neftap-website-2.onrender.com/api/visit", {
-          userid: id,
-          source: "public-profile",
-        });
+        const res = await axios.post(
+          "https://neftap-website-2.onrender.com/api/visit",
+          {
+            userid: id,
+            source: "public-profile",
+          }
+        );
 
         console.log("Tracked:", res.data);
       } catch (err) {
-        console.error("Failed to track visit:", err.response?.data || err.message);
+        console.error(
+          "Failed to track visit:",
+          err.response?.data || err.message
+        );
       }
     };
 
     trackVisit();
   }, [id]);
 
-  // ✅ Fetch Public Profile
   useEffect(() => {
     const fetchPublicProfile = async () => {
       try {
@@ -201,9 +203,12 @@ const PublicProfile = () => {
     fetchPublicProfile();
   }, [id]);
 
-  if (loading) return <div className="text-center mt-10">Loading profile...</div>;
-  if (error) return <div className="text-center mt-10 text-red-600">Error: {error}</div>;
-  if (!userData) return <div className="text-center mt-10">No profile data found</div>;
+  if (loading)
+    return <div className="text-center mt-10">Loading profile...</div>;
+  if (error)
+    return <div className="text-center mt-10 text-red-600">Error: {error}</div>;
+  if (!userData)
+    return <div className="text-center mt-10">No profile data found</div>;
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-12 text-black">
