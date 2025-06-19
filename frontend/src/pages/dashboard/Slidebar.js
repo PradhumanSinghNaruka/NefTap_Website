@@ -434,8 +434,9 @@ export default function UserProfile() {
         );
         const count = response.data.visit;
         setVisitCount(Number(count));
+        alert("frtch successfully");
       } catch (err) {
-        console.error("Failed to fetch visit count", err);
+        alert("Failed to fetch visit count", err);
       }
     };
 
