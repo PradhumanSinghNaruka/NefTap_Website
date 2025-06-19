@@ -432,6 +432,7 @@ export default function UserProfile() {
         const response = await axios.get(
           `https://neftap-website-2.onrender.com/api/visit/count/${id}`
         );
+        console.log("🆔 ID used for visit count:", id);
 
         console.log("✅ Response:", response.data);
 
