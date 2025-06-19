@@ -433,7 +433,7 @@ export default function UserProfile() {
           `https://neftap-website-2.onrender.com/api/visit/count/${id}`
         );
         const count = response.data.visit;
-        setVisitCount(Number(count));
+        setVisitCount(response.data.visit.visitCount);
         alert("frtch successfully");
       } catch (err) {
         alert("Failed to fetch visit count", err);
@@ -472,10 +472,12 @@ export default function UserProfile() {
         <h2 className="text-xl font-semibold text-center">{profile.name}</h2>
         <h1 className="text-center">{email}</h1>
         <p className="text-sm text-gray-500 text-center">{profile.company}</p>
-        <p className="text-gray-600 font-medium">
-          👀 Your Public Profile Views:{" "}
-          <span className="text-blue-500 font-bold">{visitCount.visitCount}</span>
-        </p>
+        {visitCount !== null && (
+          <p className="text-gray-600 font-medium">
+            👀 Your Public Profile Views:{" "}
+            <span className="text-blue-500 font-bold">{visitCount}</span>
+          </p>
+        )}
         <button
           onClick={() => {
             localStorage.removeItem("Contactus");
