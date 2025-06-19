@@ -163,23 +163,24 @@ const PublicProfile = () => {
       return;
     }
 
+    console.log("🔍 Sending visit track request for id:", id);
+
     try {
-      const res = await axios.post(
-        "https://neftap-website-2.onrender.com/api/visit",
-        {
+      const response = await fetch("https://neftap-website-2.onrender.com/api/visit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
           userid: id,
           source: "publicURL",
-        },
-        {
-          headers: {
-            "Content-Type": "application/json"
-          }
-        }
-      );
-      console.log("📌 ID from URL:", id);
-      console.log("✅ Visit Tracked:", res.data);
-    } catch (err) {
-      console.error("❌ Visit Track Failed:", err.response?.data || err.message);
+        }),
+      });
+
+      const data = await response.json();
+      console.log("✅ Visit Tracked:", data);
+    } catch (error) {
+      console.error("❌ Visit Tracking Failed:", error);
     }
   };
 
