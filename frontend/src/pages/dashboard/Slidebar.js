@@ -427,33 +427,30 @@ export default function UserProfile() {
   }, [location.pathname]);
 
   useEffect(() => {
-  const fetchVisitCount = async () => {
-    try {
-      const response = await axios.get(
-        `https://neftap-website-2.onrender.com/api/visit/count/${id}`
-      );
+    const fetchVisitCount = async () => {
+      try {
+        const response = await axios.get(
+          `https://neftap-website-2.onrender.com/api/visit/count/${id}`
+        );
 
-      console.log("✅ Response:", response.data);
-      const visit = response.data.visit;
+        console.log("✅ Response:", response.data);
 
-      if (typeof visit === "number") {
-        setVisitCount(visit);
-      } else if (typeof visit === "object" && visit?.visitCount !== undefined) {
-        setVisitCount(visit.visitCount);
-      } else {
-        console.warn("Unexpected visit format:", visit);
-        setVisitCount(0);
+        const count = Number(response.data);
+
+        if (!isNaN(count)) {
+          setVisitCount(count);
+        } else {
+          console.warn("Response is not a number:", response.data);
+          setVisitCount(0);
+        }
+      } catch (err) {
+        console.error("Failed to fetch visit count", err);
+        alert("Failed to fetch visit count");
       }
+    };
 
-    } catch (err) {
-      console.error("Failed to fetch visit count", err);
-      alert("Failed to fetch visit count");
-    }
-  };
-
-  fetchVisitCount();
-}, [id]);
-
+    fetchVisitCount();
+  }, [id]);
 
   return (
     <div className="min-h-screen bg-gray-100 mt-24 flex flex-col md:flex-row w-full max-w-screen-2xl mx-auto px-4">
@@ -484,12 +481,11 @@ export default function UserProfile() {
         <h2 className="text-xl font-semibold text-center">{profile.name}</h2>
         <h1 className="text-center">{email}</h1>
         <p className="text-sm text-gray-500 text-center">{profile.company}</p>
-        {visitCount !== null && (
-          <p className="text-gray-600 font-medium">
-            👀 Your Public Profile Views:{" "}
-            <span className="text-blue-500 font-bold">{visitCount}</span>
-          </p>
-        )}
+        <p className="text-gray-600 font-medium">
+          👀 Your Public Profile Views:{" "}
+          <span className="text-blue-500 font-bold">{visitCount}</span>
+        </p>
+
         <button
           onClick={() => {
             localStorage.removeItem("Contactus");
