@@ -156,6 +156,7 @@ const PublicProfile = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [userId, setUserId] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
@@ -168,19 +169,11 @@ const PublicProfile = () => {
       setUserData(data);
       const source = window.location.search.includes("qr=true") ? "qrCode" : "publicURL";
 
-      fetch(`https://neftap-website-2.onrender.com/api/visit/${id}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userid: data._id,
-          source,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => console.log("Tracked:", data))
-        .catch((err) => console.error("Track failed:", err));
+      const responseid = await axios.get(
+        `https://neftap-website-2.onrender.com/api/visit/${id}`
+      );
+      const dataid = responseid.dataid._id;
+      setUserId(dataid);
 
     } catch (err) {
       setError("Failed to load profile.");
