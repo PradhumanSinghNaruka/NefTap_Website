@@ -830,12 +830,10 @@ export default function UserProfile() {
         <h2 className="text-xl font-semibold text-center">{profile.name}</h2>
         <h1 className="text-center">{email}</h1>
         <p className="text-sm text-gray-500 text-center">{profile.company}</p>
-        {visitCount !== null && (
           <p className="text-gray-600 font-medium">
             👀 Your Public Profile Views:{" "}
             <span className="text-blue-500 font-bold">{visitCount}</span>
-          </p>
-        )}
+          </p>        
         <button
           onClick={() => {
             localStorage.removeItem("Contactus");
