@@ -429,15 +429,21 @@ export default function UserProfile() {
   useEffect(() => {
     const fetchVisitCount = async () => {
       try {
-        const response = await axios.get(
-          `https://neftap-website-2.onrender.com/api/visit/count/${id}`
-        );
-        console.log("🆔 ID used for visit count:", id);
+        const userData = JSON.parse(localStorage.getItem("Contactus"));
+        const profileId = userData?.id;
 
-        console.log("✅ Response:", response.data);
+        if (!profileId) {
+          console.warn("No profile ID found in localStorage.");
+          return;
+        }
+
+        const response = await axios.get(
+          `https://neftap-website-2.onrender.com/api/visit/count/${profileId}`
+        );
+
+        console.log("✅ Visit Count Response:", response.data);
 
         const count = Number(response.data);
-
         if (!isNaN(count)) {
           setVisitCount(count);
         } else {
@@ -451,7 +457,7 @@ export default function UserProfile() {
     };
 
     fetchVisitCount();
-  }, [id]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 mt-24 flex flex-col md:flex-row w-full max-w-screen-2xl mx-auto px-4">
@@ -482,11 +488,12 @@ export default function UserProfile() {
         <h2 className="text-xl font-semibold text-center">{profile.name}</h2>
         <h1 className="text-center">{email}</h1>
         <p className="text-sm text-gray-500 text-center">{profile.company}</p>
-        <p className="text-gray-600 font-medium">
-          👀 Your Public Profile Views:{" "}
-          <span className="text-blue-500 font-bold">{visitCount}</span>
-        </p>
-
+        {visitCount !== null && (
+          <p className="text-gray-600 font-medium">
+            👀 Your Public Profile Views:{" "}
+            <span className="text-blue-500 font-bold">{visitCount}</span>
+          </p>
+        )}
         <button
           onClick={() => {
             localStorage.removeItem("Contactus");
