@@ -156,23 +156,34 @@ const PublicProfile = () => {
   const [error, setError] = useState("");
   const { id } = useParams();
   useEffect(() => {
-  const trackVisit = async () => {
-    try {
-      if (!id) return;
+    const trackVisit = async () => {
+      if (!id) {
+        console.warn("❌ No ID from URL");
+        return;
+      }
 
-      await axios.post("https://neftap-website-2.onrender.com/api/visit", {
-        userid: id,
-        source: "public-profile"
-      });
-      console.log("🧾 ID sent to backend:", id);
-      console.log("✅ Visit tracked for ID:", id);
-    } catch (err) {
-      console.error("Failed to track visit:", err.message);
-    }
-  };
+      console.log("🆔 Tracking visit for ID:", id);
 
-  trackVisit();
-}, [id]);
+      try {
+        const res = await axios.post(
+          "https://neftap-website-2.onrender.com/api/visit",
+          {
+            userid: id,
+            source: "public-profile",
+          }
+        );
+
+        console.log("Visit tracked successfully:", res.data);
+      } catch (err) {
+        console.error(
+          "Failed to track visit:",
+          err.response?.data || err.message
+        );
+      }
+    };
+
+    trackVisit();
+  }, [id]);
 
   useEffect(() => {
     const fetchPublicProfile = async () => {
