@@ -159,26 +159,32 @@ const PublicProfile = () => {
   useEffect(() => {
   const trackVisit = async () => {
     if (!id) {
-      console.warn("No ID from URL, cannot track visit");
+      console.warn("❌ ID missing from URL");
       return;
     }
 
     try {
-      await axios.post("https://neftap-website-2.onrender.com/api/visit", {
-        userid: parseInt(id),     // ✅ ensure INT if your MySQL `userid` is INT
-        source: "publicURL",
-      });
-      window.location.href = `https://neftap.com/userdetail/profile/public/${id}`;
-      console.log("✅ Visit Tracked for ID:", id);
+      const res = await axios.post(
+        "https://neftap-website-2.onrender.com/api/visit",
+        {
+          userid: id,
+          source: "publicURL",
+        },
+        {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+      console.log("📌 ID from URL:", id);
+      console.log("✅ Visit Tracked:", res.data);
     } catch (err) {
-      console.error("❌ Failed to track visit:", err.response?.data || err.message);
+      console.error("❌ Visit Track Failed:", err.response?.data || err.message);
     }
   };
 
   trackVisit();
 }, [id]);
-
-
 
   useEffect(() => {
     const fetchPublicProfile = async () => {
