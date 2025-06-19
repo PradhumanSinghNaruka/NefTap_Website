@@ -12,7 +12,7 @@ export const visit = async (req, res) => {
        ON DUPLICATE KEY UPDATE 
          visitCount = visitCount + 1,
          source = VALUES(source)`,
-      [userid, source]
+      [userid, source, visitCount]
     );
 
     res.status(200).json({ message: "Visit tracked successfully" });

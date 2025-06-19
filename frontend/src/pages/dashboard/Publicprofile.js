@@ -168,8 +168,8 @@ const PublicProfile = () => {
       setUserData(data);
       const source = window.location.search.includes("qr=true") ? "qrCode" : "publicURL";
 
-      fetch("https://neftap-website-2.onrender.com/api/visit", {
-        method: "POST",
+      fetch(`https://neftap-website-2.onrender.com/api/visit/${id}`, {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
