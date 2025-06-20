@@ -158,6 +158,8 @@ const PublicProfile = () => {
   const [visitCount, setVisitCount] = useState(0);
 
   console.log("id is:", id);
+  const testId = id || "dummy";
+  console.log("Final ID being used:", testId);
 
   useEffect(() => {
   const hasVisited = localStorage.getItem(`visited-${id}`);
