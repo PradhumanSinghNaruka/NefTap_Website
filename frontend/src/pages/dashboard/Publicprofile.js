@@ -266,7 +266,10 @@ const PublicProfile = () => {
 
         {/* Save Contact Button */}
         <button
-          className="mt-6 w-full sm:w-auto px-6 py-3 font-semibold rounded-lg border border-black bg-amber-300 text-white hover:bg-white hover:text-black duration-400"
+          style={{
+    backgroundColor: "#d2a75b",
+  }}
+          className="mt-6 w-full sm:w-auto px-6 py-3 font-semibold rounded-lg border text-white hover:bg-white hover:text-black duration-400"
           onClick={() => {
             const { name, number, email } = userData;
 
