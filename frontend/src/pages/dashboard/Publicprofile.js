@@ -167,10 +167,6 @@ const PublicProfile = () => {
         })
         .catch(err => console.error("Visit not recorded:", err));
     }
-
-    axios.get(`https://neftap-website-2.onrender.com/api/visit/${id}`)
-      .then(res => setVisitCount(res.data.visitCount))
-      .catch(err => console.error("Error fetching visit count:", err));
   }, [id]);
 
   useEffect(() => {
