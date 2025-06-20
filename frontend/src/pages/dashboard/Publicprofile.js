@@ -157,6 +157,8 @@ const PublicProfile = () => {
   const { id } = useParams();
   const [visitCount, setVisitCount] = useState(0);
 
+  console.log("id is:", id);
+
   useEffect(() => {
   const hasVisited = localStorage.getItem(`visited-${id}`);
 
@@ -168,7 +170,7 @@ const PublicProfile = () => {
       .catch(err => console.error("Visit not recorded:", err));
   }
 
-  axios.get(`https://neftap-website-2.onrender.com/api/visit/${id}`)  // 👈 USE SAME GET URL as backend
+  axios.get(`https://neftap-website-2.onrender.com/api/visit/${id}`)
     .then((res) => {
       setVisitCount(res.data.visitCount);
     })
