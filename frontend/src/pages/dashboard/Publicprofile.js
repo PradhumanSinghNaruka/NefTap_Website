@@ -200,7 +200,7 @@ const PublicProfile = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-12 text-black">
-      <div className="bg-gradient-to-tr from-[hsl(176,92%,65%)] via-[rgb(100,89,214)] to-[rgb(85,161,255)] rounded-2xl shadow-2xl shadow-black p-6 border border-black text-center">
+      <div className="bg-white rounded-2xl shadow-xl shadow-black p-6 border border-black text-center">
         {/* Profile Photo */}
         {userData.photo?.url && (
           <img
@@ -218,7 +218,7 @@ const PublicProfile = () => {
         <div className="flex justify-center space-x-8 md:space-x-20 mb-6 flex-wrap">
           <a
             href={`mailto:${userData.email}`}
-            className="p-3 bg-white rounded-full border border-black text-2xl hover:bg-black hover:text-blue-300 transition duration-300"
+            className="p-3 bg-#c59c59 text-white rounded-full border border-black text-2xl hover:bg-white hover:text-black transition duration-300"
           >
             <MdAttachEmail />
           </a>
