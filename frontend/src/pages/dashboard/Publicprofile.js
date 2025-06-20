@@ -218,13 +218,19 @@ const PublicProfile = () => {
         <div className="flex justify-center space-x-8 md:space-x-20 mb-6 flex-wrap">
           <a
             href={`mailto:${userData.email}`}
-            className="p-3 bg-amber-300 text-white rounded-full border border-black text-2xl hover:bg-white hover:text-black transition duration-300"
+            style={{
+    backgroundColor: "#d2a75b"
+  }}
+            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300"
           >
             <MdAttachEmail />
           </a>
           <a
             href={`tel:${userData.number}`}
-            className="p-3 bg-amber-300 text-white rounded-full border border-black text-2xl hover:bg-white hover:text-black transition duration-300"
+            style={{
+    backgroundColor: "#d2a75b"
+  }}
+            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300"
           >
             <FaPhoneAlt />
           </a>
@@ -232,7 +238,10 @@ const PublicProfile = () => {
             href={userData.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-amber-300 text-white rounded-full border border-black text-2xl hover:bg-white hover:text-black transition duration-300"
+            style={{
+    backgroundColor: "#d2a75b"
+  }}
+            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300"
           >
             <FaSquareInstagram />
           </a>
@@ -242,7 +251,10 @@ const PublicProfile = () => {
         <div className="flex justify-center space-x-8 md:space-x-20 flex-wrap">
           <a
             href={`https://wa.me/${userData.whatsapp}`}
-            className="p-3 bg-amber-300 text-white rounded-full border border-black text-2xl hover:bg-white hover:text-black transition duration-300 mb-4"
+            style={{
+    backgroundColor: "#d2a75b"
+  }}
+            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300 mb-4"
           >
             <FaSquareWhatsapp />
           </a>
@@ -250,7 +262,10 @@ const PublicProfile = () => {
             href={userData.facebook}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-amber-300 text-white rounded-full border border-black text-2xl hover:bg-white hover:text-black transition duration-300 mb-4"
+            style={{
+    backgroundColor: "#d2a75b"
+  }}
+            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:border-black hover:text-black transition duration-300 mb-4"
           >
             <FaFacebook />
           </a>
@@ -258,7 +273,10 @@ const PublicProfile = () => {
             href={userData.youtube}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-amber-300 text-white rounded-full border border-black text-2xl hover:bg-white hover:text-black transition duration-300 mb-4"
+            style={{
+    backgroundColor: "#d2a75b"
+  }}
+            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300 mb-4"
           >
             <FaYoutube />
           </a>
@@ -267,9 +285,9 @@ const PublicProfile = () => {
         {/* Save Contact Button */}
         <button
           style={{
-    backgroundColor: "#d2a75b",
+    backgroundColor: "#d2a75b"
   }}
-          className="mt-6 w-full sm:w-auto px-6 py-3 font-semibold rounded-lg border text-white hover:bg-white hover:text-black duration-400"
+          className="mt-6 w-full sm:w-auto px-6 py-3 font-semibold rounded-lg border text-white hover:bg-white hover:text-black duration-300"
           onClick={() => {
             const { name, number, email } = userData;
 
