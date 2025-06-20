@@ -21,7 +21,7 @@ function Footer() {
                 productive.All rights reserved.
               </p>
               <p className="font-bold mt-4">
-                DIGIROKET PRIVATE LIMITED
+                NEFTAP PRIVATE LIMITED
                 <br />
                 2nd Floor Balaji Communication
                 <br />
@@ -33,10 +33,10 @@ function Footer() {
               </p>
               <p className="mt-8 font-bold">Office Hours : 10:00 to 6:30</p>
               <p className="mt-2 font-bold cursor-pointer">
-                For Enquire : digiroket@gmail.com
+                For Enquire : neftap@gmail.com/
               </p>
               <p className="mt-2 font-bold cursor-pointer">
-                For Sale : sale@gmail.com
+                For Sale : neftap@gmail.com/
               </p>
               <br />
             </div>

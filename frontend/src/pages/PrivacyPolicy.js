@@ -12,18 +12,18 @@ function PrivacyPolicy() {
       <h1 className="text-3xl md:text-5xl mt-28 font-bold text-center">Privacy Policy</h1>
       <div className="text-gray-600 mt-14">
         <h1 className="text-start text-xl md:text-3xl font-semibold text-black">
-          Privacy Policy for DIGIROKET Private Limited
+          Privacy Policy for NefTap
         </h1>
         <br />
         <p className="text-gray-600">
-          At NefTap, accessible from https://www.NefTap.com/, one of our main
+          At NefTap, accessible from https://neftap.com/, one of our main
           priorities is the privacy of our visitors. This Privacy Policy
           document contains types of information that is collected and recorded
           by Neftap and how we use it. If you have additional questions or
           require more information about our Privacy Policy, do not hesitate to
           contact us. This Privacy Policy applies only to our online activities
           and is valid for visitors to our website with regards to the
-          information that they shared and/or collect in RichKardz. This policy
+          information that they shared and/or collect in NefTap. This policy
           is not applicable to any information collected offline or via channels
           other than this website.
         </p>
@@ -72,7 +72,7 @@ function PrivacyPolicy() {
           Communicate with you, either directly or through one of our partners,
           including for customer service, to provide you with updates and other
           information relating to the website, and for marketing and promotional
-          purposes Send you emails Find and prevent fraud
+          purposes Send you emails Find and prevent fraud.
         </p>
       </div>
       <div className="text-gray-600 mt-4">
@@ -217,7 +217,7 @@ function PrivacyPolicy() {
           These changes are effective immediately, after they are posted on this
           page.<br/> Contact Us<br/> If you have any questions or suggestions about our
           Privacy Policy, do not hesitate to contact us on
-          support@richkardz.com.
+          support@neftap.com.
         </p>
       </div>
     </div>

@@ -16,8 +16,8 @@ function Termcondition() {
         <p className="">Welcome to NafTap!</p> <br />
         <p>
           These terms and conditions outline the rules and regulations for the
-          use of DIGIROKET PRIVATE LIMITED's Website, located at
-          https://www.Naftap.com.
+          use of NefTap Website, located at
+          https://neftap.com/.
         </p>
         <p>
           By accessing this website we assume you accept these terms and
@@ -46,7 +46,7 @@ function Termcondition() {
         <br />
         <p className="text-gray-600">
           We employ the use of cookies. By accessing NefTap, you agreed to
-          use cookies in agreement with the DIGIROKET PRIVATE LIMITED's
+          use cookies in agreement with the NefTap
           Privacy Policy. Most interactive websites use cookies to let us
           retrieve the user’s details for each visit. Cookies are used by our
           website to enable the functionality of certain areas to make it easier
@@ -60,7 +60,7 @@ function Termcondition() {
         </h1>
         <br />
         <p className="text-gray-600">
-          Unless otherwise stated, DIGIROKET FASHIONS PRIVATE LIMITED and/or its
+          Its
           licensors own the intellectual property rights for all material on
           NefTap. All intellectual property rights are reserved. You may
           access this from NefTap for your own personal use subject to
@@ -71,17 +71,16 @@ function Termcondition() {
           - Redistribute content from NefTap <br />
           This Agreement shall begin from the date of purchase by the customer.
           Parts of this website offer an opportunity for users to post and
-          exchange opinions and information in certain areas of the website. J2D
-          FASHIONS PRIVATE LIMITED does not filter, edit, publish or review
+          exchange opinions and information in certain areas of the website. 
+          Does not filter, edit, publish or review
           Comments prior to their presence on the website. Comments do not
-          reflect the views and opinions of J2D FASHIONS PRIVATE LIMITED, its
+          reflect the views and opinions of, its
           agents and/or affiliates. Comments reflect the views and opinions of
           the person who posts their views and opinions. To the extent permitted
-          by applicable laws, J2D FASHIONS PRIVATE LIMITED shall not be liable
+          by applicable laws, shall not be liable
           for the Comments or for any liability, damages or expenses caused
           and/or suffered as a result of any use of and/or posting of and/or
-          appearance of the Comments on this website. DIGIROKET PRIVATE
-          LIMITED reserves the right to monitor all Comments and to remove any
+          appearance of the Comments on this website. NefTap reserves the right to monitor all Comments and to remove any
           Comments which can be considered inappropriate, offensive or causes
           breach of these Terms and Conditions.
           <br />
@@ -95,7 +94,7 @@ function Termcondition() {
           an invasion of privacy
           <br /> - The Comments will not be used to solicit or promote business
           or custom or present commercial activities or unlawful activity.
-          <br /> - You hereby grant DIGIROKET PRIVATE LIMITED a non-exclusive
+          <br /> - You hereby grant NefTap a non-exclusive
           licence to use, reproduce, edit and authorise others to use, reproduce
           and edit any of your Comments in any and all forms, formats or media.
         </p>
@@ -136,7 +135,7 @@ function Termcondition() {
           <br /> (b) the organisation does not have any negative records with
           us;
           <br /> (c) the benefit to us from the visibility of the hyperlink
-          compensates for the absence of DIGIROKET PRIVATE LIMITED; and{" "}
+          compensates for the absence of NefTap; and{" "}
           <br /> (d) the link is in the context of general resource information.
           These organisations may link to our home page so long as the link:
           <br /> (a) is not in any way deceptive;
