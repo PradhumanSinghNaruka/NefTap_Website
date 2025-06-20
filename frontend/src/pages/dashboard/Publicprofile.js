@@ -160,7 +160,7 @@ const PublicProfile = () => {
   if (!id) return;
   console.log("✅ Visit Tracking for User ID:", id);
 
-  axios.post(`https://neftap-website-2.onrender.com/api/visit/${id}`)
+  axios.post(`https://neftap.com/api/visit/${id}`)
     .then(() => console.log("✅ Visit recorded"))
     .catch(err => console.error("❌ Track failed:", err));
 
