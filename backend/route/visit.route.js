@@ -1,9 +1,9 @@
 import express from "express";
-import { visit, getVisitCount } from "../controller/visit.controller.js";
-
 const router = express.Router();
+import visitController from '../controller/visit.controller.js';
 
-router.post("/visit", visit);
-router.get("/visit/count/:userid", getVisitCount);
+router.post('/visit/:userid', visitController.incrementVisit);
 
-export default router;
+router.get('/visit/:userid', visitController.getVisitCount);
+
+module.exports = router;

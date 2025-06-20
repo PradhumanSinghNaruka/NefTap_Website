@@ -151,41 +151,27 @@ import { FaSquareInstagram, FaSquareWhatsapp } from "react-icons/fa6";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 
 const PublicProfile = () => {
-  const { id } = useParams();
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const { id } = useParams();
+  const [visitCount, setVisitCount] = useState(0);
 
   useEffect(() => {
-  const trackVisit = async () => {
-    if (!id) {
-      console.warn("❌ ID missing from URL");
-      return;
+    const hasVisited = localStorage.getItem(`visited-${id}`);
+
+    if (!hasVisited) {
+      axios.post(`https://neftap-website-2.onrender.com/api/visit/${id}`)
+        .then(() => {
+          localStorage.setItem(`visited-${id}`, "true");
+        })
+        .catch(err => console.error("Visit not recorded:", err));
     }
 
-    console.log("🔍 Sending visit track request for id:", id);
-
-    try {
-      const response = await fetch("https://neftap-website-2.onrender.com/api/visit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userid: id,
-          source: "publicURL",
-        }),
-      });
-
-      const data = await response.json();
-      console.log("✅ Visit Tracked:", data);
-    } catch (error) {
-      console.error("❌ Visit Tracking Failed:", error);
-    }
-  };
-
-  trackVisit();
-}, [id]);
+    axios.get(`https://neftap-website-2.onrender.com/api/visit/${id}`)
+      .then(res => setVisitCount(res.data.visitCount))
+      .catch(err => console.error("Error fetching visit count:", err));
+  }, [id]);
 
   useEffect(() => {
     const fetchPublicProfile = async () => {

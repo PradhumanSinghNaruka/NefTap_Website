@@ -1,44 +1,37 @@
 // visit.controller.js
 import db from "../config/db.js";
+exports.incrementVisit = async (req, res) => {
+  const { userid } = req.params;
 
-export const visit = async (req, res) => {
   try {
-    const { userid, source } = req.body;
+    const [rows] = await db.query('SELECT visit_count FROM profile_visits WHERE userid = ?', [userid]);
 
-    if (!userid || !source) {
-      return res.status(400).json({ message: "userId and source are required" });
+    if (rows.length > 0) {
+      await db.query('UPDATE profile_visits SET visit_count = visit_count + 1 WHERE userid = ?', [userid]);
+    } else {
+      await db.query('INSERT INTO profile_visits (userid, visit_count) VALUES (?, 1)', [userid]);
     }
 
-    await db.execute(
-      `INSERT INTO profile_visits (userid, source, visitCount)
-       VALUES (?, ?, 1)
-       ON DUPLICATE KEY UPDATE 
-         visitCount = visitCount + 1`
-      ,
-      [userid, source]
-    );
-
-    res.status(200).json({ message: "Visit tracked successfully" });
+    res.status(200).json({ message: 'Visit count updated successfully' });
   } catch (err) {
-    console.error("Visit tracking error:", err);
-    res.status(500).json({
-      message: "Error tracking visit",
-      error: err.message,
-    });
+    console.error('Error updating visit count:', err);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 };
 
-
-export const getVisitCount = async (req, res) => {
+exports.getVisitCount = async (req, res) => {
   const { userid } = req.params;
+
   try {
-    const [rows] = await db.execute(
-      "SELECT visitCount FROM profile_visits WHERE userid = ?",
-      [userid]
-    );
-    const count = rows[0]?.visitCount || 0;
-    res.status(200).send(count.toString());
+    const [rows] = await db.query('SELECT visit_count FROM profile_visits WHERE userid = ?', [userid]);
+
+    if (rows.length > 0) {
+      res.status(200).json({ visitCount: rows[0].visit_count });
+    } else {
+      res.status(200).json({ visitCount: 0 });
+    }
   } catch (err) {
-    res.status(500).send("0");
+    console.error('Error fetching visit count:', err);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 };
