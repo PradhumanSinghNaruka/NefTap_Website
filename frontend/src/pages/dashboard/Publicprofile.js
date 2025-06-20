@@ -156,29 +156,22 @@ const PublicProfile = () => {
   const [error, setError] = useState("");
   const { id } = useParams();
   const [visitCount, setVisitCount] = useState(0);
-
   useEffect(() => {
-    const path = window.location.pathname;
-    const parts = path.split('/');
-    const userId = parts[parts.length - 1];
-    console.log("✅ Extracted User ID:", userId);
+  if (!id) return;
+  console.log("✅ Visit Tracking for User ID:", id);
 
-    if (!userId) return;
+  axios.post(`https://neftap-website-2.onrender.com/api/visit/${id}`)
+    .then(() => console.log("✅ Visit recorded"))
+    .catch(err => console.error("❌ Track failed:", err));
 
-    // POST to increase count
-    axios.post(`https://neftap-website-2.onrender.com/api/visit/${userId}`)
-      .then(() => console.log("✅ Visit recorded"))
-      .catch(err => console.error("❌ Track failed:", err));
+  axios.get(`https://neftap-website-2.onrender.com/api/visit/${id}`)
+    .then((res) => {
+      console.log("✅ Visit Count:", res.data);
+      setVisitCount(res.data.visitCount || 0);
+    })
+    .catch((err) => console.error("❌ Fetch failed:", err));
+}, [id]);
 
-    // GET to get count
-    axios.get(`https://neftap-website-2.onrender.com/api/visit/${userId}`)
-      .then((res) => {
-        console.log("✅ Visit Count:", res.data);
-        setVisitCount(res.data.visitCount || 0);
-      })
-      .catch((err) => console.error("❌ Fetch failed:", err));
-  }, []);
-  
   useEffect(() => {
     const fetchPublicProfile = async () => {
       try {
