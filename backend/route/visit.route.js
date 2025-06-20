@@ -1,9 +1,9 @@
 import express from "express";
+import { incrementVisit, getVisitCount } from "../controller/visit.controller.js";
+
 const router = express.Router();
-import visitController from '../controller/visit.controller.js';
 
-router.post('/visit/:userid', visitController.incrementVisit);
+router.post('/visit/:userid', incrementVisit);
+router.get('/visit/:userid', getVisitCount); // keep same endpoint in frontend
 
-router.get('/visit/:userid', visitController.getVisitCount);
-
-module.exports = router;
+export default router;

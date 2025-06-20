@@ -158,16 +158,23 @@ const PublicProfile = () => {
   const [visitCount, setVisitCount] = useState(0);
 
   useEffect(() => {
-    const hasVisited = localStorage.getItem(`visited-${id}`);
+  const hasVisited = localStorage.getItem(`visited-${id}`);
 
-    if (!hasVisited) {
-      axios.post(`https://neftap-website-2.onrender.com/api/visit/${id}`)
-        .then(() => {
-          localStorage.setItem(`visited-${id}`, "true");
-        })
-        .catch(err => console.error("Visit not recorded:", err));
-    }
-  }, [id]);
+  if (!hasVisited) {
+    axios.post(`https://neftap-website-2.onrender.com/api/visit/${id}`)
+      .then(() => {
+        localStorage.setItem(`visited-${id}`, "true");
+      })
+      .catch(err => console.error("Visit not recorded:", err));
+  }
+
+  axios.get(`https://neftap-website-2.onrender.com/api/visit/${id}`)  // 👈 USE SAME GET URL as backend
+    .then((res) => {
+      setVisitCount(res.data.visitCount);
+    })
+    .catch((err) => console.error("GET visit count error:", err));
+}, [id]);
+
 
   useEffect(() => {
     const fetchPublicProfile = async () => {

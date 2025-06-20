@@ -746,25 +746,23 @@ export default function UserProfile() {
   };
 
   const fetchVisitCount = async (profileId) => {
-    try {
-      if (!profileId) {
-        console.warn("No profile ID for visit count.");
-        return;
-      }
-
-      const response = await axios.get(
-        `https://neftap-website-2.onrender.com/api/visit/count/${profileId}`
-      );
-
-      console.log("✅ Visit Count Response:", response.data);
-
-      const count = Number(response.data);
-      setVisitCount(!isNaN(count) ? count : 0);
-    } catch (err) {
-      console.error("Failed to fetch visit count", err);
-      alert("Failed to fetch visit count");
+  try {
+    if (!profileId) {
+      console.warn("No profile ID for visit count.");
+      return;
     }
-  };
+
+    const response = await axios.get(
+      `https://neftap-website-2.onrender.com/api/visit/${profileId}` // 👈 MATCH THIS WITH BACKEND
+    );
+
+    const count = Number(response.data.visitCount); // 👈 FIX: access via `response.data.visitCount`
+    setVisitCount(!isNaN(count) ? count : 0);
+  } catch (err) {
+    console.error("Failed to fetch visit count", err);
+  }
+};
+
 
   useEffect(() => {
     const userData = localStorage.getItem("Contactus");

@@ -1,6 +1,6 @@
-// visit.controller.js
 import db from "../config/db.js";
-exports.incrementVisit = async (req, res) => {
+
+export const incrementVisit = async (req, res) => {
   const { userid } = req.params;
 
   try {
@@ -19,7 +19,7 @@ exports.incrementVisit = async (req, res) => {
   }
 };
 
-exports.getVisitCount = async (req, res) => {
+export const getVisitCount = async (req, res) => {
   const { userid } = req.params;
 
   try {
