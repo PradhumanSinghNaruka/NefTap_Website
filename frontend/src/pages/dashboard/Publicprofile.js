@@ -199,7 +199,7 @@ const PublicProfile = () => {
     return <div className="text-center mt-10">No profile data found</div>;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-12 text-black">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-9 text-black">
       <div className="bg-white rounded-2xl shadow-sm shadow-black p-6 border border-black text-center">
         {/* Profile Photo */}
         {userData.photo?.url && (
