@@ -201,7 +201,7 @@ function Termcondition() {
           liabilities arising in contract, in tort and for breach of statutory
           duty. <br/>As long as the website and the information and services on the
           website are provided free of charge, we will not be liable for any
-          loss or damage of any nature.<br/> *Note: RichKardz reserves the right to
+          loss or damage of any nature.<br/> *Note: NefTap reserves the right to
           change any of its policy without any prior notice.
         </p>
       </div>

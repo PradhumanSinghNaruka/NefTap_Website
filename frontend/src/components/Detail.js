@@ -53,7 +53,7 @@ function Detail() {
             <br />
             6. Future-Proof: In a world that's increasingly digital, NFC
             technology is here to stay. Stay ahead of the curve and show you're
-            tech-savvy with Rich Kardz NFC business cards.
+            tech-savvy with NefTap NFC business cards.
           </p>
           <br />
           <h1 className="text-xl font-semibold underline">
