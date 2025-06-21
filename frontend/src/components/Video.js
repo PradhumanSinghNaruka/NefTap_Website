@@ -23,7 +23,7 @@ function Video() {
   return (
     <>
       <div className="max-w-screen-2xl container mx-auto px-4 md:px-20">
-        <div className="relative flex items-center justify-center">
+        <div className="relative flex items-center justify-center mt-28">
           {/* Left Image - only on md and above */}
           <motion.img
             src={photo}
@@ -74,7 +74,7 @@ function Video() {
         </div>
       </div>
       <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-white mt-10 md:mt-28">
-        <div className="justify-center item-center md:ml-52">
+        <div className="flex justify-center">
           <img
             src="https://img.youtube.com/vi/I6brxApr_XU/maxresdefault.jpg"
             alt="YouTube Thumbnail"

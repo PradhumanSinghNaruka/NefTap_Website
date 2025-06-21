@@ -100,8 +100,8 @@ function Footer() {
             </div>
           </div>
           <div className="md:w-1/6 order-2 mb-4 md:mb-20">
-            <div className="ml-2 mt-4 md:mt-16 flex md:block space-x-4">
-              <h1 className="font-bold text-3xl">Follow Us</h1>
+            <div className="ml-6 md:ml-2 mt-4 md:mt-16 flex md:block space-x-4">
+              <h1 className="text-3xl">Follow Us</h1>
               <div className="flex space-x-4 ">
                 <FaInstagram className="hover:scale-125 duration-300 md:mt-6 w-7 h-7 cursor-pointer" />
                 <FaLinkedin className="hover:scale-125 duration-300 md:mt-6 w-7 h-7 cursor-pointer" />
@@ -112,28 +112,39 @@ function Footer() {
           </div>
         </div>
         <hr className="w-full" />
-        <div className="flex space-x-8 ml-2 md:ml-24">
-          <p
-            className="text-sm mt-4 font-bold cursor-pointer hover:underline mb-4"
-            onClick={() => navigate("/privacy")}
-          >
-            Privacy Policy
-          </p>
-          <p
-            className="text-sm mt-4 font-bold cursor-pointer hover:underline"
-            onClick={() => navigate("/termcondition")}
-          >
-            Term & Condition
-          </p>
-          <p
-            className="text-sm mt-4 font-bold cursor-pointer hover:underline"
-            onClick={() => navigate("/returnrefund")}
-          >
-            Return & Refund policy
-          </p>
-          <p className="text-sm mt-4 text-end">
-            Copyright © 2025 Neftap. All rights reserved.
-          </p>
+
+        <div
+          name="Home"
+          className="max-w-screen-2xl container mx-auto px-4 md:px-20 text-white"
+        >
+          <div className="flex flex-col md:flex-row">
+            <div className="md:w-1/2 text-left space-y-10 order-1 md:order-1 mb-4">
+              <p className="text-sm mt-4 text-start">
+                Copyright © 2025 Neftap. All rights reserved.
+              </p>
+            </div>
+
+            <div className="md:w-1/2 order-2 flex space-x-8">
+              <p
+                className="text-sm font-bold cursor-pointer hover:underline mt-4"
+                onClick={() => navigate("/privacy")}
+              >
+                Privacy Policy
+              </p>
+              <p
+                className="text-sm mt-4 font-bold cursor-pointer hover:underline"
+                onClick={() => navigate("/termcondition")}
+              >
+                Term & Condition
+              </p>
+              <p
+                className="text-sm mt-4 font-bold cursor-pointer hover:underline"
+                onClick={() => navigate("/returnrefund")}
+              >
+                Return & Refund policy
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </>

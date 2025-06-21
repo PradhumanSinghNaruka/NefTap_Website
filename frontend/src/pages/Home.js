@@ -5,7 +5,7 @@ import Naptap from '../components/Naptap'
 import Video from '../components/Video'
 import Steps from '../components/Steps'
 import Questions from '../components/Questions'
-import Animation from '../components/Animation'
+// import Animation from '../components/Animation'
 import Detail from '../components/Detail'
 
 function Home() {
@@ -16,7 +16,6 @@ function Home() {
         <Naptap/>
         <Steps/>
         <Questions/>
-        <Animation/>
         <Video/> 
         <Detail/>
     </>
