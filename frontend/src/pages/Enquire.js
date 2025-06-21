@@ -87,14 +87,14 @@ function Enquire() {
       >
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="block md:flex flex-col md:flex-row">
-            <div className="w-[365px] md:w-1/2 order-2 md:order-1">
+            <div className="w-[375px] md:w-1/2 order-2 md:order-1">
               <img
                 src={photo}
                 ref={cardRef}
-                className="w-[320px] h-[320px] md:w-full md:h-full"
+                className="w-[340px] h-[340px] md:w-full md:h-full"
               ></img>
             </div>
-            <div className="w-[365px] md:w-1/2 order-1 bg-gray-100">
+            <div className="w-[365px] md:w-1/2 order-1 bg-gray-50">
               <h1 ref={heidingRef} className="md:mt-4 ml-4 md:ml-24 text-2xl font-semibold">
                 Bulk Order Enquiry Form
               </h1>

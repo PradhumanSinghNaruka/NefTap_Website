@@ -36,7 +36,7 @@ function AddtoCart({ cartItems, onRemove }) {
                     />
                   </td>
                   <td className="border p-2">{item.name}</td>
-                  <td className="border p-2">${item.price}</td>
+                  <td className="border p-2">₹{item.price}</td>
                   <td className="border p-2">
                     <button
                       className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600"

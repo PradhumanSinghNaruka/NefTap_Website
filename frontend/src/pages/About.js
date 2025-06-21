@@ -214,7 +214,7 @@ function Login() {
                       <FaUsers className="h-[60px] w-[100px] md:h-[100px] md:ml-4 text-blue-900" />
                       <div className="block">
                         <h1 className="text-3xl md:text-5xl p-4 md:ml-8">
-                          75K+ user
+                          500+ user
                         </h1>
                       </div>
                     </h1>
@@ -222,7 +222,7 @@ function Login() {
                       <FaAddressCard className="h-[60px] w-[100px] md:h-[100px] md:ml-4 text-blue-900" />
                       <div className="block">
                         <h1 className="text-3xl md:text-5xl p-4 md:ml-8">
-                          85K+ card
+                          1k+ card
                         </h1>
                       </div>
                     </h1>
