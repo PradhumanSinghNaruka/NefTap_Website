@@ -111,7 +111,8 @@ function App() {
 
   return (
     <>
-      {!hideLayout && <Navbar />}
+      {!hideLayout && <Navbar cartItemCount={cartItems.length} />
+}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

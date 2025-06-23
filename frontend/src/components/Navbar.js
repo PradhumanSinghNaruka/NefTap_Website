@@ -75,7 +75,7 @@
 //             </div>
 //             <FaUserAlt
 //               className="hover:scale-125 duration-300"
-//               onClick={() => navigate("/login")} 
+//               onClick={() => navigate("/login")}
 //             />
 //             <IoBagAdd className="hover:scale-125 duration-300" />
 //           </div>
@@ -93,20 +93,21 @@ import photo from "../image/Logo-Png.png";
 // import { IoCloseSharp } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoBagAdd } from "react-icons/io5";
-import { FaUserAlt , FaHouseUser  } from "react-icons/fa";
+import { FaUserAlt, FaHouseUser } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 import Contactno from "./Contactno";
 import { useNavigate } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ cartItemCount }) {
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
+  console.log("🛒 Cart Count:", cartItemCount);
 
   const navItems = [
     { id: 1, text: "Home", path: "/" },
     { id: 2, text: "Enquire Now", path: "/enquire" },
-    { id: 3, text: "Company", path:"/about"},
-    { id: 4, text: "Contact Us", path:"/contact"},
+    { id: 3, text: "Company", path: "/about" },
+    { id: 4, text: "Contact Us", path: "/contact" },
   ];
 
   return (
@@ -114,7 +115,12 @@ function Navbar() {
       <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 h-20 shadow-md fixed top-0 left-0 right-0 z-50 bg-white text-black">
         <div className="flex justify-between items-center h-20 text-black">
           <div className="flex">
-            <img src={photo} className="h-10 w-25 cursor-pointer" alt="Logo" onClick={()=> navigate("/")} />
+            <img
+              src={photo}
+              className="h-10 w-25 cursor-pointer"
+              alt="Logo"
+              onClick={() => navigate("/")}
+            />
           </div>
           <div className="flex">
             <ul className="hidden md:flex space-x-12 font-thin text-xl">
@@ -136,10 +142,7 @@ function Navbar() {
                       {text}
                     </ScrollLink>
                   ) : (
-                    <span
-                      onClick={() => navigate(path)}
-                      className="text-black"
-                    >
+                    <span onClick={() => navigate(path)} className="text-black">
                       {text}
                     </span>
                   )}
@@ -165,13 +168,28 @@ function Navbar() {
               onClick={() => navigate("/login")}
             /> */}
             {localStorage.getItem("Contactus") ? (
-              <FaHouseUser className="hover:scale-125 duration-300"
-              onClick={() => navigate("/dashboard")}/>
+              <FaHouseUser
+                className="hover:scale-125 duration-300"
+                onClick={() => navigate("/dashboard")}
+              />
             ) : (
-              <FaUserAlt className="hover:scale-125 duration-300"
-              onClick={() => navigate("/login")}/>
+              <FaUserAlt
+                className="hover:scale-125 duration-300"
+                onClick={() => navigate("/login")}
+              />
             )}
-            <IoBagAdd className="hover:scale-125 duration-300" onClick={()=> navigate("/addtocart")}/>
+            {/* <IoBagAdd className="hover:scale-125 duration-300" onClick={()=> navigate("/addtocart")}/> */}
+            <div className="relative">
+              <IoBagAdd
+                className="hover:scale-125 duration-300 text-xl"
+                onClick={() => navigate("/addtocart")}
+              />
+              {cartItemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                  {cartItemCount}
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </div>

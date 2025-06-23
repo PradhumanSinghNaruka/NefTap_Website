@@ -283,9 +283,6 @@ function Address() {
             <h1 className="flex gap-6 text-lg mt-2">
               Delivery Charges <p>₹0</p>
             </h1>
-            <h1 className="flex gap-6 text-lg mt-2">
-              GST @ 18% <p>₹143.82</p>
-            </h1>
             <h1 className="flex gap-6 text-sm font-semibold mt-6 text-center">
               <p className="mt-2">Grand Total</p>{" "}
               <p className="text-2xl mb-2">₹1042.82</p>
