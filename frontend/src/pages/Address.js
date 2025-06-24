@@ -17,8 +17,54 @@ function Address() {
     formState: { errors },
   } = useForm();
 
+  // const onSubmit = async (data) => {
+  //   const userInfo = {
+  //     first: data.first,
+  //     last: data.last,
+  //     email: data.email,
+  //     number: data.number,
+  //     address: data.address,
+  //     country: data.country,
+  //     state: data.state,
+  //     city: data.city,
+  //     pin: data.pin,
+  //     card: data.card,
+  //   };
+  //   await axios
+  //     .post("https://neftap-website-2.onrender.com/address/address", userInfo)
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       if (res.data) {
+  //         const serviceId = "service_e36fvr6";
+  //         const templateId = "template_eb272io";
+  //         const publicKey = "VGPXJonQQJ9SNaVIZ";
+
+  //         const templateParams = {
+  //           from_email: data.email,
+  //           user_name: data.name,
+  //           to_email: data.email,
+  //           message: `Hi ${data.name}, your card order has been received successfully.`,
+  //         };
+
+  //         emailjs.send(serviceId, templateId, templateParams, publicKey);
+  //         alert(
+  //           "Order Place Successfully Make Payment & Send Mail For Register"
+  //         );
+  //         navigate(from, { replace: true });
+  //       }
+  //       localStorage.setItem("Address", JSON.stringify(res.data.user));
+  //     })
+  //     .catch((err) => {
+  //       if (err.message) {
+  //         console.log(err);
+  //         alert("Error :" + err.response.data.message);
+  //         setTimeout(() => {}, 3000);
+  //         window.location.reload();
+  //       }
+  //     });
+  // };
   const onSubmit = async (data) => {
-    const userInfo = {
+    const addressData = {
       first: data.first,
       last: data.last,
       email: data.email,
@@ -30,45 +76,74 @@ function Address() {
       pin: data.pin,
       card: data.card,
     };
-    await axios
-      .post("https://neftap-website-2.onrender.com/address/address", userInfo)
-      .then((res) => {
-        console.log(res.data);
-        if (res.data) {
+
+    localStorage.setItem("addressData", JSON.stringify(addressData));
+
+    const options = {
+      key: "rzp_test_aFf0yWJyGEwKNp",
+      amount: 104282,
+      currency: "INR",
+      name: "NefTap Card Payment",
+      description: "Card Order Payment",
+      prefill: {
+        name: data.first + " " + data.last,
+        email: data.email,
+        contact: data.number,
+      },
+      theme: {
+        color: "#3788ec",
+      },
+      handler: async function (response) {
+        const printingData = JSON.parse(localStorage.getItem("printingData"));
+        const addressData = JSON.parse(localStorage.getItem("addressData"));
+        try {
+          await axios.post(
+            "https://neftap-website-2.onrender.com/card/card",
+            printingData
+          );
+
+          await axios.post(
+            "https://neftap-website-2.onrender.com/address/address",
+            addressData
+          );
+
           const serviceId = "service_e36fvr6";
           const templateId = "template_eb272io";
           const publicKey = "VGPXJonQQJ9SNaVIZ";
 
           const templateParams = {
-            from_email: data.email,
-            user_name: data.name,
-            to_email: data.email,
-            message: `Hi ${data.name}, your card order has been received successfully.`,
+            from_email: addressData.email,
+            user_name: `${addressData.first} ${addressData.last}`,
+            to_email: addressData.email,
+            message: `Hi ${addressData.first}, your card order has been received successfully.`,
           };
 
           emailjs.send(serviceId, templateId, templateParams, publicKey);
-          alert(
-            "Order Place Successfully Make Payment & Send Mail For Register"
+
+          alert("Successfully Order placed & payment successful!");
+          localStorage.removeItem("printingData");
+          localStorage.removeItem("addressData");
+        } catch (error) {
+          console.error(
+            "Error details:",
+            error.response?.data || error.message
           );
-          navigate(from, { replace: true });
+          alert(
+            "Backend error after payment: " +
+              (error.response?.data?.message || error.message)
+          );
         }
-        localStorage.setItem("Address", JSON.stringify(res.data.user));
-      })
-      .catch((err) => {
-        if (err.message) {
-          console.log(err);
-          alert("Error :" + err.response.data.message);
-          setTimeout(() => {}, 3000);
-          window.location.reload();
-        }
-      });
+      },
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
   };
 
   const { pathname } = useLocation();
-  
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <div name="/address" className="mt-36">
       <div className="flex flex-col md:flex-row">
@@ -268,7 +343,7 @@ function Address() {
                   className="font-semibold text-xl border rounded-md p-2 w-[180px] bg-black text-white hover:bg-white hover:text-black hover:border-black duration-300 mt-4"
                   type="submit"
                 >
-                  Submit
+                  Proceed to Pay
                 </button>
               </div>
             </div>

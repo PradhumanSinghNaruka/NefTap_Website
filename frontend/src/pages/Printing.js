@@ -211,21 +211,7 @@ function Printing() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {
-    const userInfo = {
-      name: data.name,
-      email: data.email,
-      number: data.number,
-      name2: data.name2,
-      name1: data.name1,
-    };
-
-    try {
-      const res = await axios.post("https://neftap-website-2.onrender.com/card/card", userInfo);
-      console.log(res.data);
-
-      if (res.data) {
-        // EmailJS: send email
+  // EmailJS: send email
         // const serviceId = 'service_e36fvr6'; 
         // const templateId = 'template_eb272io';
         // const publicKey = 'VGPXJonQQJ9SNaVIZ';
@@ -238,22 +224,27 @@ function Printing() {
         // };
 
         // await emailjs.send(serviceId, templateId, templateParams, publicKey);
-
-        alert("Form submitted");
-        localStorage.setItem("Address", JSON.stringify(res.data.user));
-        navigate(from, { replace: true });
-      }
-    } catch (err) {
-      console.log(err);
-      alert("Error: " + (err.response?.data?.message || err.message));
-    }
+    const onSubmit = (data) => {
+  const userInfo = {
+    name: data.name,
+    email: data.email,
+    number: data.number,
+    name2: data.name2,
+    name1: data.name1,
   };
+
+  localStorage.setItem("printingData", JSON.stringify(userInfo));
+
+  navigate(from, { replace: true });
+
+  alert("Card details saved! Proceed to enter your address.");
+};
+
   const { pathname } = useLocation();
   
     useEffect(() => {
       window.scrollTo(0, 0);
     }, [pathname]);
-
   return (
     <>
       <div name="/printing" className="mt-36">

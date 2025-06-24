@@ -244,7 +244,7 @@ function Pvc({ onAddToCart }) {
       image:
         "http://neftap.digiroket.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-06-at-6.30.25-PM.jpeg",
       name: "Transparent Smart Card",
-      price: "1,021",
+      price: "899",
       rating: 5,
     },
     {
