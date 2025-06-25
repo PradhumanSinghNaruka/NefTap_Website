@@ -96,7 +96,7 @@ function Address() {
 
     const options = {
       key: "rzp_live_2fA2rKdt4wJhCl",
-      amount: 89900,
+      amount: 200,
       currency: "INR",
       name: "NefTap Card Payment",
       description: "Card Order Payment",
