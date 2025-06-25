@@ -25,7 +25,7 @@ function Contact() {
       message: data.message,
     };
     await axios
-      .post("https://neftap-website-2.onrender.com/contactus/contactus", userInfo)
+      .post("http://31.97.60.41/contactus/contactus", userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
