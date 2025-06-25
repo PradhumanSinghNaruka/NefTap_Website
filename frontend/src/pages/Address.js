@@ -95,7 +95,7 @@ function Address() {
     localStorage.setItem("addressData", JSON.stringify(addressData));
 
     const options = {
-      key: "rzp_test_aFf0yWJyGEwKNp",
+      key: "rzp_live_2fA2rKdt4wJhCl",
       amount: 89900,
       currency: "INR",
       name: "NefTap Card Payment",
