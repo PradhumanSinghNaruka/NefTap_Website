@@ -162,7 +162,7 @@ function Address() {
   return (
     <div name="/address" className="mt-36">
       <div className="flex flex-col md:flex-row">
-        <div className="w-[350px] ml-4 md:w-9/12 order-2 md:order-1 bg-gray-100 text-black md:ml-20 shadow-xl">
+        <div className="w-[330px] ml-4 md:w-9/12 order-2 md:order-1 bg-gray-100 text-black md:ml-20 shadow-xl">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="p-4 border border-black rounded-md block">
               <div className="flex space-x-64">
@@ -173,7 +173,7 @@ function Address() {
                   <div className="block">
                     <label className="block font-bold">First Name</label>
                     <input
-                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[250px] md:w-[350px]"
+                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
                       id="first"
                       type="text"
                       placeholder="First Name"
@@ -189,7 +189,7 @@ function Address() {
                   <div className="block">
                     <label className="font-bold block">Last Name</label>
                     <input
-                      className="shadow rounded-lg appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[250px] md:w-[350px]"
+                      className="shadow rounded-lg appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
                       id="last"
                       type="text"
                       placeholder="Last Name"
@@ -207,7 +207,7 @@ function Address() {
                   <div className="block mt-2">
                     <label className="block font-bold">Email Address</label>
                     <input
-                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[250px] md:w-[350px]"
+                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
                       id="email"
                       type="email"
                       placeholder="Email Address"
@@ -223,7 +223,7 @@ function Address() {
                   <div className="block mt-2">
                     <label className="block font-bold">Phone Number</label>
                     <input
-                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[250px] md:w-[350px]"
+                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
                       id="number"
                       type="number"
                       placeholder="Phone Number"
@@ -241,7 +241,7 @@ function Address() {
                   <div className="block mt-2">
                     <label className="block font-bold">Address</label>
                     <input
-                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[250px] md:w-[790px]"
+                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
                       id="address"
                       type="text"
                       placeholder="Address"
@@ -259,7 +259,7 @@ function Address() {
                   <div className="block mt-2">
                     <label className="block font-bold">Country</label>
                     <select
-                      className="shadow rounded-md border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[250px] md:w-[350px]"
+                      className="shadow rounded-md border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
                       id="country"
                       defaultValue=""
                       {...register("country", { required: true })}
@@ -279,7 +279,7 @@ function Address() {
                   <div className="block mt-2">
                     <label className="block font-bold">State</label>
                     <select
-                      className="shadow rounded-md border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[250px] md:w-[350px]"
+                      className="shadow rounded-md border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
                       id="state"
                       defaultValue=""
                       {...register("state", { required: true })}
@@ -304,7 +304,7 @@ function Address() {
                   <div className="block mt-2">
                     <label className="block font-bold">City</label>
                     <input
-                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[250px] md:w-[350px]"
+                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
                       id="city"
                       type="text"
                       placeholder="City"
@@ -320,7 +320,7 @@ function Address() {
                   <div className="block mt-2">
                     <label className="block font-bold">Pin Code</label>
                     <input
-                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[250px] md:w-[350px]"
+                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
                       id="pin"
                       type="number"
                       placeholder="Pin Code"
@@ -338,7 +338,7 @@ function Address() {
                   <div className="block mt-2">
                     <label className="block font-bold">Card Name</label>
                     <input
-                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[250px] md:w-[350px]"
+                      className="shadow rounded-md appearance-none border py-3 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
                       id="card"
                       type="text"
                       placeholder="Enter Your Card Name"
