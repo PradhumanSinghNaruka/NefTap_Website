@@ -76,7 +76,22 @@ function Address() {
       pin: data.pin,
       card: data.card,
     };
+    try {
+    const checkRes = await axios.post(
+      "https://neftap-website-2.onrender.com/address/check-email",
+      { email: data.email }
+    );
 
+    if (checkRes.data.exists) {
+      alert("Ye email se pehle hi card order kiya ja chuka hai.");
+      return;
+    }
+  } catch (err) {
+    alert("Email check failed. Try again.");
+    console.error("Email check error:", err);
+    return;
+  }
+  
     localStorage.setItem("addressData", JSON.stringify(addressData));
 
     const options = {

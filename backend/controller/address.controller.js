@@ -48,7 +48,6 @@ export const address = async(req, res) => {
   try{
     const { first, last, email, number, address, country, state, city, pin, card } = req.body;
     
-
     const [result] = await db.execute(
       "INSERT INTO addresses (first, last, email, number, address, country, state, city, pin, card) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
       [first, last, email, number, address, country, state, city, pin, card]
@@ -72,5 +71,20 @@ export const address = async(req, res) => {
   } catch (error) {
     console.log("Error: " + error.message);
     res.status(500).json({message: "Internal Server Error"});
+  }
+};
+
+export const checkEmailExists = async (req, res) => {
+  const { email } = req.body;
+  try {
+    const [rows] = await db.query("SELECT * FROM addresses WHERE email = ?", [email]);
+
+    if (rows.length > 0) {
+      res.status(200).json({ exists: true });
+    } else {
+      res.status(200).json({ exists: false });
+    }
+  } catch (err) {
+    res.status(500).json({ message: "Server error" });
   }
 };
