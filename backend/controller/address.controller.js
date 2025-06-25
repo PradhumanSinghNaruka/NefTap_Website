@@ -47,10 +47,7 @@ import db from "../config/db.js";
 export const address = async(req, res) => {
   try{
     const { first, last, email, number, address, country, state, city, pin, card } = req.body;
-    const [existingAddress] = await db.execute("SELECT * FROM addresses WHERE email = ?", [email]);
-    if(existingAddress.length > 0){
-      return res.status(400).json({ message: "Email already exist"});
-    }
+    
 
     const [result] = await db.execute(
       "INSERT INTO addresses (first, last, email, number, address, country, state, city, pin, card) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",

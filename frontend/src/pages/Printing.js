@@ -364,7 +364,7 @@ function Printing() {
                 </h1>
                 <h1 className="flex gap-4 font-semibold text-center mt-4">
                   <p className="flex mt-2">Grand Total</p>{" "}
-                  <p className="text-2xl">₹1042.82</p>
+                  <p className="text-2xl">₹899</p>
                 </h1>
               </div>
             </div>

@@ -81,7 +81,7 @@ function Address() {
 
     const options = {
       key: "rzp_test_aFf0yWJyGEwKNp",
-      amount: 104282,
+      amount: 89900,
       currency: "INR",
       name: "NefTap Card Payment",
       description: "Card Order Payment",
@@ -360,7 +360,7 @@ function Address() {
             </h1>
             <h1 className="flex gap-6 text-sm font-semibold mt-6 text-center">
               <p className="mt-2">Grand Total</p>{" "}
-              <p className="text-2xl mb-2">₹1042.82</p>
+              <p className="text-2xl mb-2">₹899</p>
             </h1>
           </div>
         </div>

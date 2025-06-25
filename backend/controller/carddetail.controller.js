@@ -37,10 +37,7 @@ import db from "../config/db.js";
 export const card = async(req, res) => {
   try{
     const { name, email, number, name2, name1 } = req.body;
-    const [existingCard] = await db.execute("SELECT * FROM cards WHERE email = ?", [email]);
-    if(existingCard.length > 0){
-      return res.status(400).json({ message: "Email already exist"});
-    }
+    
 
     const [result] = await db.execute(
       "INSERT INTO cards (name, email, number, name2, name1) VALUES (?, ?, ?, ?, ?)",
