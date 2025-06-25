@@ -683,13 +683,13 @@ export default function UserProfile() {
       let res;
       if (profileId) {
         res = await axios.put(
-          `https://neftap-website-2.onrender.com/userdetail/userdetail/${profileId}`,
+          `https://api.neftap.com/userdetail/userdetail/${profileId}`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
       } else {
         res = await axios.post(
-          "https://neftap-website-2.onrender.com/userdetail/userdetail",
+          "https://api.neftap.com/userdetail/userdetail",
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -753,7 +753,7 @@ export default function UserProfile() {
     }
 
     const response = await axios.get(
-      `https://neftap-website-2.onrender.com/api/visit/${profileId}` // 👈 MATCH THIS WITH BACKEND
+      `https://api.neftap.com/api/visit/${profileId}` // 👈 MATCH THIS WITH BACKEND
     );
 
     const count = Number(response.data.visitCount); // 👈 FIX: access via `response.data.visitCount`
@@ -776,7 +776,7 @@ export default function UserProfile() {
       setEmail(userdetail.email || "");
 
       axios
-        .get(`https://neftap-website-2.onrender.com/userdetail/userdetail/${userdetail.email}`)
+        .get(`https://api.neftap.com/userdetail/userdetail/${userdetail.email}`)
         .then((res) => {
           if (res.data.user) {
             const userDetail = res.data.user;

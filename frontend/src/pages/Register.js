@@ -137,7 +137,7 @@ function Register() {
       password: data.password,
     };
     await axios
-      .post("https://neftap-website-2.onrender.com/register/register", userInfo)  // Check yeh URL backend ke hisaab se sahi hai
+      .post("https://api.neftap.com/register/register", userInfo)  // Check yeh URL backend ke hisaab se sahi hai
       .then((res) => {
         if (res.data && res.data.message) {
           alert(res.data.message); // backend ka message show karega

@@ -132,7 +132,7 @@ function Login() {
 
     try {
       const res = await axios.post(
-        "https://neftap-website-2.onrender.com/register/login",
+        "https://api.neftap.com/register/login",
         userInfo
       );
 

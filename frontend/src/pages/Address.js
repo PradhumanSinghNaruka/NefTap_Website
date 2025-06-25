@@ -78,7 +78,7 @@ function Address() {
     };
     try {
     const checkRes = await axios.post(
-      "https://neftap-website-2.onrender.com/address/check-email",
+      "https://api.neftap.com/address/check-email",
       { email: data.email }
     );
 
@@ -113,12 +113,12 @@ function Address() {
         const addressData = JSON.parse(localStorage.getItem("addressData"));
         try {
           await axios.post(
-            "https://neftap-website-2.onrender.com/card/card",
+            "https://api.neftap.com/card/card",
             printingData
           );
 
           await axios.post(
-            "https://neftap-website-2.onrender.com/address/address",
+            "https://api.neftap.com/address/address",
             addressData
           );
 

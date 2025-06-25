@@ -160,11 +160,11 @@ const PublicProfile = () => {
   if (!id) return;
   console.log("✅ Visit Tracking for User ID:", id);
 
-  axios.post(`https://neftap-website-2.onrender.com/api/visit/${id}`)
+  axios.post(`https://api.neftap.com/api/visit/${id}`)
     .then(() => console.log("✅ Visit recorded"))
     .catch(err => console.error("❌ Track failed:", err));
 
-  axios.get(`https://neftap-website-2.onrender.com/api/visit/${id}`)
+  axios.get(`https://api.neftap.com/api/visit/${id}`)
     .then((res) => {
       console.log("✅ Visit Count:", res.data);
       setVisitCount(res.data.visitCount || 0);
@@ -176,7 +176,7 @@ const PublicProfile = () => {
     const fetchPublicProfile = async () => {
       try {
         const response = await axios.get(
-          `https://neftap-website-2.onrender.com/userdetail/profile/public/${id}`
+          `https://api.neftap.com/userdetail/profile/public/${id}`
         );
         const data = response.data.userdetail;
         setUserData(data);
