@@ -83,7 +83,7 @@ function Address() {
     );
 
     if (checkRes.data.exists) {
-      alert("Ye email se pehle hi card order kiya ja chuka hai.");
+      alert("This email has already been used to place a card order.");
       return;
     }
   } catch (err) {
@@ -91,7 +91,7 @@ function Address() {
     console.error("Email check error:", err);
     return;
   }
-  
+
     localStorage.setItem("addressData", JSON.stringify(addressData));
 
     const options = {
