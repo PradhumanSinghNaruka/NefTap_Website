@@ -198,7 +198,7 @@ function Register() {
 
                 <label className="block text-black font-bold mt-4 text-left">Password</label>
                 <input
-                  className="shadow rounded-lg appearance-none border py-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline md:mb-2"
+                  className="shadow rounded-lg appearance-none border py-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline md:mb-2 w-[300px] md:w-[350px]"
                   id="password"
                   type="password"
                   placeholder="Enter your Password"
@@ -209,7 +209,7 @@ function Register() {
                 )}
 
                 <button
-                  className="font-semibold text-xl border rounded-md p-2 w-[350px] bg-black text-white hover:bg-white hover:text-black hover:border-black duration-300 mt-4"
+                  className="font-semibold text-xl border rounded-md p-2 w-[300px] md:w-[350px] bg-black text-white hover:bg-white hover:text-black hover:border-black duration-300 mt-4"
                   type="submit"
                 >
                   Register
