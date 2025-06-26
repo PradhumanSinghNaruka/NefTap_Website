@@ -201,7 +201,7 @@ const PublicProfile = () => {
     return <div className="text-center mt-10">No profile data found</div>;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-9 text-black w-full h-full">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-6 text-black w-full h-full">
       <div className="bg-white w-full h-full p-6 border-black text-center">
         {userData.photo?.url && (
           <img
@@ -212,7 +212,7 @@ const PublicProfile = () => {
         )}
 
         <h2 className="text-3xl font-bold mb-1">{userData.name}</h2>
-        <h3 className="text-xl font-semibold mb-6">{userData.company}</h3>
+        <h3 className="text-xl font-semibold mb-4">{userData.company}</h3>
         <h3 className="text-2xl font-semibold">
           <span style={{ color: "#d2a75b" }}>Nef</span>
           <span style={{ color: "black" }}>Tap</span>
@@ -221,7 +221,7 @@ const PublicProfile = () => {
           style={{
             backgroundColor: "#d2a75b",
           }}
-          className="mt-6 w-full mb-6 sm:w-auto px-6 py-3 font-semibold rounded-5xl border text-white hover:bg-white hover:text-black duration-300"
+          className="mt-4 w-full mb-6 px-6 py-3 font-semibold rounded-full border text-white hover:bg-white hover:text-black duration-300"
           onClick={() => {
             const { name, number, email } = userData;
 
