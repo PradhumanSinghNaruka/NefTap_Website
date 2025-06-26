@@ -200,7 +200,7 @@ const PublicProfile = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-9 text-black w-full">
-      <div className="bg-white w-full p-6 border border-black text-center">
+      <div className="bg-white w-full p-6 border-black text-center">
         {/* Profile Photo */}
         {userData.photo?.url && (
           <img
