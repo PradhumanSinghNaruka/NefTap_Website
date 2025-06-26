@@ -213,19 +213,15 @@ const PublicProfile = () => {
 
         <h2 className="text-3xl font-bold mb-1">{userData.name}</h2>
         <h3 className="text-xl font-semibold mb-6">{userData.company}</h3>
-        <h3
-          className="text-2xl font-semibold mb-6"
-          style={{
-            color: "#d2a75b",
-          }}
-        >
-          Nef<h3 className="text-2xl font-semibold mb-6 text-black">Tap</h3>
+        <h3 className="text-2xl font-semibold">
+          <span style={{ color: "#d2a75b" }}>Nef</span>
+          <span style={{ color: "black" }}>Tap</span>
         </h3>
         <button
           style={{
             backgroundColor: "#d2a75b",
           }}
-          className="mt-6 w-full sm:w-auto px-6 py-3 font-semibold rounded-lg border text-white hover:bg-white hover:text-black duration-300"
+          className="mt-6 w-full mb-6 sm:w-auto px-6 py-3 font-semibold rounded-5xl border text-white hover:bg-white hover:text-black duration-300"
           onClick={() => {
             const { name, number, email } = userData;
 
@@ -252,7 +248,7 @@ END:VCARD
         >
           Save Contact
         </button>
-        <div className="flex justify-center space-x-10 md:space-x-20 mb-6 flex-wrap">
+        <div className="flex justify-center space-x-12 md:space-x-20 mb-6 flex-wrap">
           <a
             href={`mailto:${userData.email}`}
             style={{
@@ -284,7 +280,7 @@ END:VCARD
           </a>
         </div>
 
-        <div className="flex justify-center space-x-10 md:space-x-20 flex-wrap">
+        <div className="flex justify-center space-x-12 md:space-x-20 flex-wrap">
           <a
             href={`https://wa.me/${userData.whatsapp}`}
             style={{
