@@ -157,20 +157,22 @@ const PublicProfile = () => {
   const { id } = useParams();
   const [visitCount, setVisitCount] = useState(0);
   useEffect(() => {
-  if (!id) return;
-  console.log("✅ Visit Tracking for User ID:", id);
+    if (!id) return;
+    console.log("✅ Visit Tracking for User ID:", id);
 
-  axios.post(`https://api.neftap.com/api/visit/${id}`)
-    .then(() => console.log("✅ Visit recorded"))
-    .catch(err => console.error("❌ Track failed:", err));
+    axios
+      .post(`https://api.neftap.com/api/visit/${id}`)
+      .then(() => console.log("✅ Visit recorded"))
+      .catch((err) => console.error("❌ Track failed:", err));
 
-  axios.get(`https://api.neftap.com/api/visit/${id}`)
-    .then((res) => {
-      console.log("✅ Visit Count:", res.data);
-      setVisitCount(res.data.visitCount || 0);
-    })
-    .catch((err) => console.error("❌ Fetch failed:", err));
-}, [id]);
+    axios
+      .get(`https://api.neftap.com/api/visit/${id}`)
+      .then((res) => {
+        console.log("✅ Visit Count:", res.data);
+        setVisitCount(res.data.visitCount || 0);
+      })
+      .catch((err) => console.error("❌ Fetch failed:", err));
+  }, [id]);
 
   useEffect(() => {
     const fetchPublicProfile = async () => {
@@ -199,9 +201,8 @@ const PublicProfile = () => {
     return <div className="text-center mt-10">No profile data found</div>;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-9 text-black w-full">
-      <div className="bg-white w-full p-6 border-black text-center">
-        {/* Profile Photo */}
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-9 text-black w-full h-full">
+      <div className="bg-white w-full h-full p-6 border-black text-center">
         {userData.photo?.url && (
           <img
             src={userData.photo.url}
@@ -210,83 +211,20 @@ const PublicProfile = () => {
           />
         )}
 
-        {/* Name and Company */}
         <h2 className="text-3xl font-bold mb-1">{userData.name}</h2>
         <h3 className="text-xl font-semibold mb-6">{userData.company}</h3>
-
-        {/* Contact Icons Group 1 */}
-        <div className="flex justify-center space-x-8 md:space-x-20 mb-6 flex-wrap">
-          <a
-            href={`mailto:${userData.email}`}
-            style={{
-    backgroundColor: "#d2a75b"
-  }}
-            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300"
-          >
-            <MdAttachEmail />
-          </a>
-          <a
-            href={`tel:${userData.number}`}
-            style={{
-    backgroundColor: "#d2a75b"
-  }}
-            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300"
-          >
-            <FaPhoneAlt />
-          </a>
-          <a
-            href={userData.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-    backgroundColor: "#d2a75b"
-  }}
-            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300"
-          >
-            <FaSquareInstagram />
-          </a>
-        </div>
-
-        {/* Contact Icons Group 2 */}
-        <div className="flex justify-center space-x-8 md:space-x-20 flex-wrap">
-          <a
-            href={`https://wa.me/${userData.whatsapp}`}
-            style={{
-    backgroundColor: "#d2a75b"
-  }}
-            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300 mb-4"
-          >
-            <FaSquareWhatsapp />
-          </a>
-          <a
-            href={userData.facebook}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-    backgroundColor: "#d2a75b"
-  }}
-            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:border-black hover:text-black transition duration-300 mb-4"
-          >
-            <FaFacebook />
-          </a>
-          <a
-            href={userData.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-    backgroundColor: "#d2a75b"
-  }}
-            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300 mb-4"
-          >
-            <FaYoutube />
-          </a>
-        </div>
-
-        {/* Save Contact Button */}
+        <h3
+          className="text-2xl font-semibold mb-6"
+          style={{
+            color: "#d2a75b",
+          }}
+        >
+          Nef<h3 className="text-2xl font-semibold mb-6 text-black">Tap</h3>
+        </h3>
         <button
           style={{
-    backgroundColor: "#d2a75b"
-  }}
+            backgroundColor: "#d2a75b",
+          }}
           className="mt-6 w-full sm:w-auto px-6 py-3 font-semibold rounded-lg border text-white hover:bg-white hover:text-black duration-300"
           onClick={() => {
             const { name, number, email } = userData;
@@ -314,6 +252,71 @@ END:VCARD
         >
           Save Contact
         </button>
+        <div className="flex justify-center space-x-10 md:space-x-20 mb-6 flex-wrap">
+          <a
+            href={`mailto:${userData.email}`}
+            style={{
+              backgroundColor: "#d2a75b",
+            }}
+            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300"
+          >
+            <MdAttachEmail />
+          </a>
+          <a
+            href={`tel:${userData.number}`}
+            style={{
+              backgroundColor: "#d2a75b",
+            }}
+            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300"
+          >
+            <FaPhoneAlt />
+          </a>
+          <a
+            href={userData.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: "#d2a75b",
+            }}
+            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300"
+          >
+            <FaSquareInstagram />
+          </a>
+        </div>
+
+        <div className="flex justify-center space-x-10 md:space-x-20 flex-wrap">
+          <a
+            href={`https://wa.me/${userData.whatsapp}`}
+            style={{
+              backgroundColor: "#d2a75b",
+            }}
+            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300 mb-4"
+          >
+            <FaSquareWhatsapp />
+          </a>
+          <a
+            href={userData.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: "#d2a75b",
+            }}
+            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:border-black hover:text-black transition duration-300 mb-4"
+          >
+            <FaFacebook />
+          </a>
+          <a
+            href={userData.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: "#d2a75b",
+            }}
+            className="p-3 text-white rounded-full border text-2xl hover:bg-white hover:text-black hover:border-black transition duration-300 mb-4"
+          >
+            <FaYoutube />
+          </a>
+        </div>
       </div>
     </div>
   );
