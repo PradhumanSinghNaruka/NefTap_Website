@@ -209,17 +209,38 @@ function Steps() {
       });
   }, []);
 
+  const steps = [
+  {
+    number: 1,
+    title: "Order NefTap",
+    description:
+      "Check our cards, finalise your choice, and place the order. You will get our NFC-enabled classy business cards in a few days.",
+  },
+  {
+    number: 2,
+    title: "Setup & Activate",
+    description:
+      "Setup your profile with all your information, social links, and portfolio. Activate your NFC card to start sharing.",
+  },
+  {
+    number: 3,
+    title: "Start Networking",
+    description:
+      "Once your NefTap is active, you can start networking in style. Just tap on your prospect's smartphone and network!",
+  },
+];
+
   return (
     <>
       <div className="bg-white text-black">
         <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-white text-black mb-20 mt-0 md:mt-9">
           <div className="container">
-            <h1
-              ref={textRef}
-              className="text-2xl md:text-4xl font-bold text-center"
-            >
-              How Do I Get My Hands on NFC Business Cards?
-            </h1>
+            <h1 ref={textRef} className="font-bold text-2xl md:text-5xl text-center flex flex-wrap justify-center gap-2">
+            <span className="bg-gradient-to-tr from-[hsl(176,79%,34%)] via-[rgb(69,56,216)] to-[rgb(14,82,165)] leading-tight bg-clip-text text-transparent">How Do I Get My</span>
+            <span className="leading-tight bg-clip-text">
+              NFC Business Cards?
+            </span>
+          </h1>
             <p className="text-center mt-6 text-md md:text-xl">
               <span ref={leftRef}>
                 Own your smart business card today in three
@@ -228,7 +249,7 @@ function Steps() {
             </p>
           </div>
 
-          <div className="block md:flex space-x-3 md:space-x-32 justify-center md:mt-0 py-24">
+          {/* <div className="block md:flex space-x-3 md:space-x-32 justify-center md:mt-0 py-24">
             <div
               ref={(el) => (cardsRef.current[0] = el)}
               className="block text-center p-4 bg-black text-white cursor-pointer border rounded-xl w-[300px] ml-3 md:ml-0 space-y-6 hover:bg-white hover:text-black hover:border-black duration-300 shadow-2xl shadow-black"
@@ -266,7 +287,18 @@ function Steps() {
                 Just tap on your prospect's smartphone and network!
               </p>
             </div>
+          </div> */}
+          <div className="grid md:grid-cols-3 gap-8 mt-10 px-6">
+      {steps.map((step) => (
+        <div className="text-center border rounded-2xl shadow-lg shadow-gray-400 mt-6 p-4" key={step.number}>
+          <div className="w-20 h-20 bg-gradient-to-tr from-[hsl(176,79%,34%)] via-[rgb(69,56,216)] to-[rgb(14,82,165)] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <span className="text-white text-3xl font-bold">{step.number}</span>
           </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
+          <p className="text-gray-600 leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
         </div>
       </div>
     </>

@@ -1,17 +1,22 @@
 import React from "react";
 import photo from "../image/Logo-Png.png";
-import { FaInstagram } from "react-icons/fa";
-import { CiFacebook } from "react-icons/ci";
-import { FaYoutube } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+  FaMapMarkerAlt,
+  FaClock,
+  FaEnvelope,
+} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 function Footer() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="max-w-screen-2xl container mx-auto text-white bg-gradient-to-tr from-[rgb(43,160,152)] via-[#554db1] to-[#3788ec]">
-        <div className="flex flex-col md:flex-row mt-24">
+      {/* <div className="max-w-screen-2xl container mx-auto text-white bg-gradient-to-tr from-[#167972] via-[hsl(245,68%,45%)] to-[#2a65ad]">
+        <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 order-1 text-white mb-4">
             <div className="ml-4 md:ml-24 mt-16">
               <img src={photo} className="h-10 w-25 cursor-pointer" alt="" />
@@ -33,10 +38,10 @@ function Footer() {
               </p>
               <p className="mt-8 font-bold">Office Hours : 10:00 to 6:30</p>
               <p className="mt-2 font-bold cursor-pointer">
-                For Enquire : neftap@gmail.com/
+                For Enquire : info.neftap@gmail.com
               </p>
               <p className="mt-2 font-bold cursor-pointer">
-                For Sale : neftap@gmail.com/
+                For Sale : info.neftap@gmail.com
               </p>
               <br />
             </div>
@@ -143,6 +148,135 @@ function Footer() {
               >
                 Return & Refund policy
               </p>
+            </div>
+          </div>
+        </div>
+      </div> */}
+      <div className="max-w-screen-2xl container p-6 mx-auto text-white bg-gradient-to-tr from-[#177a74] via-[rgb(52,37,209)] to-[hsl(213,68%,40%)]">
+        <div className="grid md:grid-cols-4 gap-8">
+          <div>
+            <div className="text-2xl font-bold mb-4">
+              <img src={photo} className="h-10 w-25 cursor-pointer" alt="" />
+            </div>
+            <p className="text-white font-semibold mb-6">
+              NefTap NFC card is an essential tool for professionals to connect
+              with potential clients and stay organized and productive.
+            </p>
+            <div className="flex space-x-4">
+              <a
+                href="#"
+                className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
+              >
+                <FaFacebookF className="text-white" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
+              >
+                <FaTwitter className="text-white" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
+              >
+                <FaInstagram className="text-white" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
+              >
+                <FaLinkedinIn className="text-white" />
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Company</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <a href="#" className="hover:text-teal-400 transition-colors">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-teal-400 transition-colors">
+                  Enquire
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-teal-400 transition-colors">
+                  Company
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-teal-400 transition-colors">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Products</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <a href="#" className="hover:text-teal-400 transition-colors">
+                  Metal Cards
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-teal-400 transition-colors">
+                  PVC Cards
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-teal-400 transition-colors">
+                  Influencer Cards
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-teal-400 transition-colors">
+                  Engraved Cards
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
+            <div className="space-y-3 text-gray-400">
+              <div className="flex items-start space-x-3">
+                <FaMapMarkerAlt className="text-teal-400 mt-1" />
+                <div>
+                  <p>NEFTAP PRIVATE LIMITED</p>
+                  <p>2nd Floor Balaji Communication</p>
+                  <p>Sector4 Rajat Path, mansarovar</p>
+                  <p>Jaipur, Rajasthan, INDIA</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <FaClock className="text-teal-400" />
+                <p>Office Hours: 10:00 to 6:30</p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <FaEnvelope className="text-teal-400" />
+                <p>neftap@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 mb-4 md:mb-0">
+              Copyright © 2025 Neftap. All rights reserved.
+            </p>
+            <div className="flex space-x-6 text-gray-400">
+              <a href="#" className="hover:text-teal-400 transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="hover:text-teal-400 transition-colors">
+                Terms & Conditions
+              </a>
+              <a href="#" className="hover:text-teal-400 transition-colors">
+                Return & Refund Policy
+              </a>
             </div>
           </div>
         </div>

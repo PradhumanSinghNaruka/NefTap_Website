@@ -63,7 +63,7 @@ import {
   MdOutlinePhonelinkErase,
   MdUpdate,
 } from "react-icons/md";
-import photo from "../image/Capture-removebg-preview.png";
+import photo from "../image/banner1-removebg-preview.png";
 import gsap from "gsap";
 
 function Naptap() {
@@ -104,14 +104,14 @@ function Naptap() {
   }, []);
   return (
     <>
-      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20">
-        <h1
-          ref={textRef}
-          className="text-2xl md:text-4xl font-bold space-y-4 text-black mt-8 text-center"
-        >
-          Why NFC Smart Business Card Are Perfect for Events & Seminars?
-        </h1>
-      </div>
+      <div className=" p-3">
+          <h1 ref={textRef} className="font-bold text-2xl md:text-5xl text-center flex flex-wrap justify-center gap-2">
+            <span className="leading-tight bg-clip-text">Why Choose</span>
+            <span className="bg-gradient-to-tr from-[hsl(176,79%,34%)] via-[rgb(69,56,216)] to-[rgb(14,82,165)] leading-tight bg-clip-text text-transparent">
+              NefTap
+            </span>
+          </h1>
+        </div>
 
       <div className="max-w-screen-2xl container mx-auto text-white mt-2 md:mt-8">
         <div className="flex flex-col md:flex-row">
@@ -155,7 +155,7 @@ function Naptap() {
           <div className="md:w-1/3 mt-8 h-[575px] order-1 bg-gradient-to-tr from-[rgb(167,255,248)] via-[#948cdd] to-[#9dc9ff]">
             <img
               src={photo}
-              className="md:w-[400px] md:h-[400px] mt-4"
+              className="md:w-[400px] h-full mt-4"
               alt=""
             />
           </div>

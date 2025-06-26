@@ -84,9 +84,12 @@ function Questions() {
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 mt-6 md:mt-16 order-1 md:order-1 mb-10 md:mb-20">
             <p className="text-2xl md:text-4xl">FAQ</p>
-            <h2 className="text-5xl md:text-6xl font-bold mb-2 md:mb-20 mt-4">
-              Frequently Asked Questions
-            </h2>
+            <h1 className="text-4xl md:text-6xl font-bold mb-0 md:mb-20 mt-4">
+            <span className="leading-tight bg-clip-text">Frequently</span>
+            <span className="bg-gradient-to-tr from-[hsl(176,79%,34%)] via-[rgb(69,56,216)] to-[rgb(14,82,165)] leading-tight bg-clip-text text-transparent">
+              Asked Questions
+            </span>
+            </h1>
             <motion.div
               style={ball}
               className="hidden md:block"

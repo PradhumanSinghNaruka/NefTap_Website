@@ -7,6 +7,7 @@ import Steps from '../components/Steps'
 import Questions from '../components/Questions'
 // import Animation from '../components/Animation'
 import Detail from '../components/Detail'
+import Ready from "../components/Ready"
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
         <Steps/>
         <Questions/>
         <Video/> 
+        <Ready/>
         <Detail/>
     </>
   )
