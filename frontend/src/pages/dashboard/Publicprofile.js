@@ -221,7 +221,7 @@ const PublicProfile = () => {
           style={{
             backgroundColor: "#d2a75b",
           }}
-          className="mt-4 w-full mb-6 px-6 py-3 font-semibold rounded-full border text-white hover:bg-white hover:text-black duration-300"
+          className="mt-4 w-full md:w-36 mb-6 px-6 py-3 font-semibold rounded-full border text-white hover:bg-white hover:text-black duration-300"
           onClick={() => {
             const { name, number, email } = userData;
 
