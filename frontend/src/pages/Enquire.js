@@ -83,10 +83,10 @@ function Enquire() {
     <>
       <div
         name="/enquire"
-        className="max-w-screen-2xl container mx-auto text-black mt-20 h-full md:h-full mb-0"
+        className="w-full text-black mt-20 h-full md:h-full mb-0"
       >
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="block md:flex flex-col md:flex-row">
+          <div className="max-w-screen-2xl mx-auto block md:flex flex-col md:flex-row">
             <div className="w-[375px] md:w-1/2 order-2 md:order-1">
               <img
                 src={photo}

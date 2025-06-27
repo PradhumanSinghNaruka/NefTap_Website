@@ -12,6 +12,7 @@ import Ready from "../components/Ready"
 function Home() {
   return (
     <>
+      <div className="w-full overflow-x-hidden">
         <Banner /> 
         <Cards/>
         <Naptap/>
@@ -20,6 +21,7 @@ function Home() {
         <Video/> 
         <Ready/>
         <Detail/>
+      </div>
     </>
   )
 }

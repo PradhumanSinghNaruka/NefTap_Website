@@ -8,6 +8,7 @@ import {
   FaMapMarkerAlt,
   FaClock,
   FaEnvelope,
+  FaYoutube ,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -152,63 +153,63 @@ function Footer() {
           </div>
         </div>
       </div> */}
-      <div className="max-w-screen-2xl container p-6 mx-auto text-white bg-gradient-to-tr from-[#177a74] via-[rgb(52,37,209)] to-[hsl(213,68%,40%)]">
-        <div className="grid md:grid-cols-4 gap-8">
+      <div className="w-full mt-12 p-6 mx-auto text-white bg-gradient-to-tr from-[#177a74] via-[rgb(52,37,209)] to-[hsl(213,68%,40%)]">
+        <div className="max-w-screen-2xl mx-auto grid md:grid-cols-4 gap-8">
           <div>
-            <div className="text-2xl font-bold mb-4">
+            <div className="text-2xl mb-4">
               <img src={photo} className="h-10 w-25 cursor-pointer" alt="" />
             </div>
-            <p className="text-white font-semibold mb-6">
+            <p className="text-white font-thin mb-6 text-xl">
               NefTap NFC card is an essential tool for professionals to connect
               with potential clients and stay organized and productive.
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.instagram.com/neftap.in/"
                 className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
               >
                 <FaFacebookF className="text-white" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/neftap.in/"
                 className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
               >
                 <FaTwitter className="text-white" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/neftap.in/"
                 className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
               >
                 <FaInstagram className="text-white" />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@NefTap"
                 className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
               >
-                <FaLinkedinIn className="text-white" />
+                <FaYoutube className="text-white" />
               </a>
             </div>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Company</h3>
-            <ul className="space-y-2 text-gray-400">
+            <h3 className="text-lg font-bold mb-4">Company</h3>
+            <ul className="space-y-2 md:space-y-5 text-gray-400">
               <li>
-                <a href="#" className="hover:text-teal-400 transition-colors">
+                <a className="hover:text-teal-400 transition-colors text-white cursor-pointer" onClick={() => navigate("/")}>
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-teal-400 transition-colors">
+                <a href="#" className="hover:text-teal-400 transition-colors text-white cursor-pointer" onClick={() => navigate("/enquire")}>
                   Enquire
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-teal-400 transition-colors">
+                <a onClick={() => navigate("/about")} className="hover:text-teal-400 transition-colors text-white cursor-pointer">
                   Company
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-teal-400 transition-colors">
+                <a onClick={() => navigate("/contact")} className="hover:text-teal-400 transition-colors text-white cursor-pointer">
                   Contact Us
                 </a>
               </li>
@@ -216,24 +217,24 @@ function Footer() {
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Products</h3>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 md:space-y-5 text-gray-400">
               <li>
-                <a href="#" className="hover:text-teal-400 transition-colors">
+                <a onClick={() => navigate("/metal")} className="hover:text-teal-400 transition-colors text-white cursor-pointer">
                   Metal Cards
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-teal-400 transition-colors">
+                <a onClick={() => navigate("/pvc")} className="hover:text-teal-400 transition-colors text-white cursor-pointer">
                   PVC Cards
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-teal-400 transition-colors">
+                <a onClick={() => navigate("/influencer")} className="hover:text-teal-400 transition-colors text-white cursor-pointer">
                   Influencer Cards
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-teal-400 transition-colors">
+                <a onClick={() => navigate("/engraved")} className="hover:text-teal-400 transition-colors text-white cursor-pointer">
                   Engraved Cards
                 </a>
               </li>
@@ -241,10 +242,10 @@ function Footer() {
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
-            <div className="space-y-3 text-gray-400">
+            <div className="space-y-6 text-gray-400">
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="text-teal-400 mt-1" />
-                <div>
+                <div className="text-white">
                   <p>NEFTAP PRIVATE LIMITED</p>
                   <p>2nd Floor Balaji Communication</p>
                   <p>Sector4 Rajat Path, mansarovar</p>
@@ -253,28 +254,28 @@ function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <FaClock className="text-teal-400" />
-                <p>Office Hours: 10:00 to 6:30</p>
+                <p className="text-white">Office Hours: 10:00 to 6:30</p>
               </div>
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-teal-400" />
-                <p>neftap@gmail.com</p>
+                <p className="text-white cursor-pointer">info.neftap@gmail.com</p>
               </div>
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <div className="border-t border-white mt-12 pt-8 max-w-screen-2xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 mb-4 md:mb-0">
+            <p className="text-white ray-400 mb-4 md:mb-0">
               Copyright © 2025 Neftap. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-gray-400">
-              <a href="#" className="hover:text-teal-400 transition-colors">
+            <div className="flex space-x-6 text-white">
+              <a onClick={() => navigate("/privacy")} className="hover:text-teal-400 transition-colors cursor-pointer">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-teal-400 transition-colors">
+              <a onClick={() => navigate("/termcondition")} className="hover:text-teal-400 transition-colors cursor-pointer">
                 Terms & Conditions
               </a>
-              <a href="#" className="hover:text-teal-400 transition-colors">
+              <a onClick={() => navigate("/returnrefund")} className="hover:text-teal-400 transition-colors cursor-pointer">
                 Return & Refund Policy
               </a>
             </div>

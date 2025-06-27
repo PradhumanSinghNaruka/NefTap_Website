@@ -37,7 +37,7 @@ function Banner() {
     <>
       <div
         name="Home"
-        className="max-w-screen-2xl container mt-24 mx-auto px-4 md:px-20 bg-gradient-to-tr from-[hsl(176,80%,60%)] via-[rgb(85,73,219)] to-[hsl(213,82%,62%)] text-white"
+        className="w-full mt-24 mx-auto px-4 md:px-20 bg-gradient-to-tr from-[hsl(176,80%,60%)] via-[rgb(85,73,219)] to-[hsl(213,82%,62%)] text-white"
       >
         <div className="flex flex-col md:flex-row items-center justify-between">
           {/* LEFT TEXT SIDE */}

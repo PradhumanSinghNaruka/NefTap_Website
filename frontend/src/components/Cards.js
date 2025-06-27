@@ -209,27 +209,30 @@ function Cards() {
 
   return (
     <>
-      <div className="relative max-w-screen-2xl container mx-auto px-4 md:px-20 bg-white overflow-hidden">
-  {/* Left blur overlay */}
-  <div className="absolute top-0 left-0 h-full w-12 bg-white blur-lg z-10" />
+      <div className="relative max-w-screen-xl mx-auto px-4 md:px-20 bg-white overflow-hidden">
 
-  {/* Right blur overlay */}
-  <div className="absolute top-0 right-0 h-full w-12 bg-white blur-lg z-10" />
+        <div className="absolute top-0 left-0 h-full w-12 bg-white blur-lg z-10" />
 
-  <marquee>
-    <p className="text-2xl md:text-3xl font-bold text-black mt-6 z-20 relative">
-      SMART, CLASSY, SECURE, SAFE, SMART, CLASSY, SECURE, SAFE, SMART, CLASSY,
-      SECURE, SAFE
-    </p>
-  </marquee>
-</div>
+        <div className="absolute top-0 right-0 h-full w-12 bg-white blur-lg z-10" />
 
+        <marquee>
+          <p className="text-2xl md:text-3xl font-bold text-black mt-6 z-20 relative">
+            SMART, CLASSY, SECURE, SAFE, SMART, CLASSY, SECURE, SAFE, SMART,
+            CLASSY, SECURE, SAFE
+          </p>
+        </marquee>
+      </div>
 
-      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-white mt-4">
+      <div className="max-w-screen-xl mx-auto px-4 md:px-20 bg-white mt-4">
         <div className="mt-4 p-3">
           <h1 className="font-bold mt-4 text-2xl md:text-5xl text-center flex flex-wrap justify-center gap-2">
-            <span ref={leftRef} className="leading-tight bg-clip-text">Find the best digital</span>
-            <span ref={rightRef} className="bg-gradient-to-tr from-[hsl(176,79%,34%)] via-[rgb(69,56,216)] to-[rgb(14,82,165)] leading-tight bg-clip-text text-transparent">
+            <span ref={leftRef} className="leading-tight bg-clip-text">
+              Find the best digital
+            </span>
+            <span
+              ref={rightRef}
+              className="bg-gradient-to-tr from-[hsl(176,79%,34%)] via-[rgb(69,56,216)] to-[rgb(14,82,165)] leading-tight bg-clip-text text-transparent"
+            >
               NFC business card for you:
             </span>
           </h1>

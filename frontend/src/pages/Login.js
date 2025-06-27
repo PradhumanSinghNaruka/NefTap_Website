@@ -146,12 +146,12 @@ function Login() {
       const errorMsg = err.response?.data?.message || "Login failed";
       alert("Error: " + errorMsg);
       setTimeout(() => {
-        window.location.reload(); // Optional: only if needed
+        window.location.reload(); 
       }, 1000);
     }
   };
 
-  // Scroll to top on route change
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
@@ -160,26 +160,26 @@ function Login() {
     <>
       <div
         name="/login"
-        className="text-black mt-20 h-[410px] max-w-screen-2xl container mx-auto"
+        className="text-black mt-20 h-full w-full"
       >
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col md:flex-row">
-            {/* Image */}
+            
             <div className="md:w-1/2 order-2 md:order-1 hidden md:flex">
               <img
                 src={photo}
                 alt="Login Banner"
-                className="w-full h-[500px]"
+                className="w-full h-full"
               />
             </div>
 
-            {/* Form */}
-            <div className="md:w-1/2 order-1 h-[500px] bg-blue-100 p-8 md:p-12">
+           
+            <div className="md:w-1/2 order-1 bg-blue-100 p-8 md:p-12 w-full">
               <h1 className="md:mt-2 ml-6 md:ml-24 text-2xl md:text-3xl font-semibold">
                 Login Into Your Account
               </h1>
               <div className="md:ml-24 md:mt-6 space-y-2 inline-grid">
-                {/* Email */}
+                
                 <label className="block text-black font-bold mt-4">Email</label>
                 <input
                   className="shadow rounded-lg appearance-none border py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
@@ -193,7 +193,6 @@ function Login() {
                   </span>
                 )}
 
-                {/* Password */}
                 <label className="block text-black font-bold mt-4">
                   Password
                 </label>
@@ -214,7 +213,7 @@ function Login() {
                 >
                   Login
                 </button>
-                {/* Modal Link */}
+
                 <p className="flex">
                   Don't have login details?
                   <span

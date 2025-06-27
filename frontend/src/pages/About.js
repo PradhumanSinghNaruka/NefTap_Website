@@ -130,9 +130,9 @@ function Login() {
     <>
       <div
         name="/about"
-        className="text-black mb-0 mt-20 max-w-screen-2xl container mx-auto"
+        className="text-black mb-0 mt-20 w-full"
       >
-        <div className="">
+        <div className="max-w-screen-2xl mx-auto">
           <div className="">
             <h1
               ref={headingRef}

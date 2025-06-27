@@ -113,8 +113,8 @@ function Naptap() {
           </h1>
         </div>
 
-      <div className="max-w-screen-2xl container mx-auto text-white mt-2 md:mt-8">
-        <div className="flex flex-col md:flex-row">
+      <div className="w-full text-white mt-2 md:mt-8">
+        <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row">
           {/* LEFT SIDE */}
           <div className="md:w-1/3 mt-2 md:mt-8 order-2 md:order-1 mb-20">
             <div

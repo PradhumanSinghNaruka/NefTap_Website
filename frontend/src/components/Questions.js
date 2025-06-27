@@ -79,9 +79,9 @@ function Questions() {
     <>
       <div
         name="Home"
-        className="max-w-screen-2xl container mx-auto px-4 md:px-20 text-black mb-12 md:mb-2 md:mt-4"
+        className="w-full px-4 md:px-20 text-black mb-12 md:mb-2 md:mt-4"
       >
-        <div className="flex flex-col md:flex-row">
+        <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row">
           <div className="md:w-1/2 mt-6 md:mt-16 order-1 md:order-1 mb-10 md:mb-20">
             <p className="text-2xl md:text-4xl">FAQ</p>
             <h1 className="text-4xl md:text-6xl font-bold mb-0 md:mb-20 mt-4">

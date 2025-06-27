@@ -6,9 +6,9 @@ function Detail() {
       <hr className="mt-16 w-full " />
       <div
         name="Home"
-        className="max-w-screen-2xl container mx-auto px-4 text-black mb-12 md:mb-16 md:mt-16"
+        className="w-full px-4 text-black mb-12 md:mb-16 md:mt-16"
       >
-        <div className="">
+        <div className="max-w-screen-2xl mx-auto">
           <h1 className="text-xl font-semibold underline">
             Upgrade Your Contact Sharing Power With NFC Business Card
           </h1>{" "}
