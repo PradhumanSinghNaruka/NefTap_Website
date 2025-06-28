@@ -845,7 +845,7 @@ export default function UserProfile() {
                 ? profile.photo1
                 : "https://via.placeholder.com/150?text=Upload+Photo"
             }
-            alt="Profile"
+            alt="Upload Cover Photo"
             className="w-full h-full object-cover rounded-b-lg"
           />
         </label>
