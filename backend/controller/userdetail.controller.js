@@ -446,7 +446,7 @@ export const getPublicUserProfile = async (req, res) => {
 
     if (user.photo1) {
       try {
-        user.photo = JSON.parse(user.photo1);
+        user.photo1 = JSON.parse(user.photo1);
       } catch (err) {
         console.log("Failes to parse photo1 JSON:", err.message);
         user.photo1 = null;

@@ -203,13 +203,6 @@ const PublicProfile = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-6 text-black w-full h-full">
       <div className="bg-white w-full h-full p-6 border-black text-center">
-        {userData.photo?.url && (
-          <img
-            src={userData.photo.url}
-            alt={`${userData.name}'s profile`}
-            className="mx-auto w-36 h-36 rounded-full border-4 border-white mb-4 object-cover"
-          />
-        )}
         {userData.photo1?.url && (
           <img
             src={userData.photo1.url}
@@ -217,7 +210,13 @@ const PublicProfile = () => {
             className="w-full h-48 object-cover mb-4 rounded-t-lg"
           />
         )}
-
+        {userData.photo?.url && (
+          <img
+            src={userData.photo.url}
+            alt={`${userData.name}'s profile`}
+            className="mx-auto w-36 h-36 rounded-full border-4 border-white mb-4 object-cover"
+          />
+        )}
         <h2 className="text-3xl font-bold mb-1">{userData.name}</h2>
         <h3 className="text-xl font-semibold mb-4">{userData.company}</h3>
         <h3 className="text-2xl font-semibold">
