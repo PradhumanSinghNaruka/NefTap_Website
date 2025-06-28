@@ -201,14 +201,14 @@ const PublicProfile = () => {
     return <div className="text-center mt-10">No profile data found</div>;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-6 text-black w-full h-full">
-      <div className="bg-white w-full h-full p-6 border-black text-center">
+    <div className="max-w-6xl mx-auto text-black w-full h-full">
+      <div className="bg-white w-full h-full border-black text-center">
         {userData.photo1?.url && (
           <div className="relative w-full">
             <img
               src={userData.photo1.url}
               alt={`${userData.name}'s cover`}
-              className="w-full h-[220px] object-cover"
+              className="w-full h-[130px] md:h-[180px] object-cover border rounded-xl"
             />
             <div className="absolute -bottom-14 left-1/2 transform -translate-x-1/2">
               {userData.photo?.url && (
@@ -222,21 +222,22 @@ const PublicProfile = () => {
           </div>
         )}
 
-        <h2 className="text-3xl font-bold mb-1">{userData.name}</h2>
-        <h3 className="text-xl font-semibold mb-4">{userData.company}</h3>
-        <h3 className="text-2xl font-semibold">
-          <span style={{ color: "#d2a75b" }}>Nef</span>
-          <span style={{ color: "black" }}>Tap</span>
-        </h3>
-        <button
-          style={{
-            backgroundColor: "#d2a75b",
-          }}
-          className="mt-4 w-full md:w-96 mb-6 px-6 py-3 font-semibold rounded-full border text-white hover:bg-white hover:text-black duration-300"
-          onClick={() => {
-            const { name, number, email } = userData;
+        <div className="mt-14 px-4 sm:px-6 md:px-8">
+          <h2 className="text-3xl font-bold mb-1">{userData.name}</h2>
+          <h3 className="text-xl font-semibold mb-4">{userData.company}</h3>
+          <h3 className="text-2xl font-semibold">
+            <span style={{ color: "#d2a75b" }}>Nef</span>
+            <span style={{ color: "black" }}>Tap</span>
+          </h3>
+          <button
+            style={{
+              backgroundColor: "#d2a75b",
+            }}
+            className="mt-4 w-full md:w-96 mb-6 px-6 py-3 font-semibold rounded-full border text-white hover:bg-white hover:text-black duration-300"
+            onClick={() => {
+              const { name, number, email } = userData;
 
-            const vCardData = `
+              const vCardData = `
 BEGIN:VCARD
 VERSION:3.0
 FN:${name}
@@ -245,20 +246,21 @@ EMAIL:${email}
 END:VCARD
             `.trim();
 
-            const blob = new Blob([vCardData], { type: "text/vcard" });
-            const url = URL.createObjectURL(blob);
+              const blob = new Blob([vCardData], { type: "text/vcard" });
+              const url = URL.createObjectURL(blob);
 
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = `${name.replace(/\s+/g, "_")}.vcf`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-          }}
-        >
-          Save Contact
-        </button>
+              const a = document.createElement("a");
+              a.href = url;
+              a.download = `${name.replace(/\s+/g, "_")}.vcf`;
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+              URL.revokeObjectURL(url);
+            }}
+          >
+            Save Contact
+          </button>
+        </div>
         <div className="flex justify-center space-x-12 md:space-x-20 mb-6 flex-wrap">
           <a
             href={`mailto:${userData.email}`}
