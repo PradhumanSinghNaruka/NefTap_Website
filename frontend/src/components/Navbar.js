@@ -107,7 +107,8 @@ function Navbar({ cartItemCount }) {
     { id: 1, text: "Home", path: "/" },
     { id: 2, text: "Enquire Now", path: "/enquire" },
     { id: 3, text: "Company", path: "/about" },
-    { id: 4, text: "Contact Us", path: "/contact" },
+    { id: 4, text: "Product", path: "/pvc"},
+    { id: 5, text: "Contact Us", path: "/contact" },
   ];
 
   return (

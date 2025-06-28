@@ -296,7 +296,7 @@ function Steps() {
           <div className="grid md:grid-cols-3 gap-8 mt-10 px-6">
             {steps.map((step) => (
               <div
-                className="text-center border rounded-2xl shadow-lg shadow-gray-400 mt-6 p-4"
+                className="text-center border rounded-2xl shadow-lg shadow-gray-400 mt-6 p-4 hover:scale-105 duration-300 cursor-pointer"
                 key={step.number}
               >
                 <div className="w-20 h-20 bg-gradient-to-tr from-[hsl(176,79%,34%)] via-[rgb(69,56,216)] to-[rgb(14,82,165)] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">

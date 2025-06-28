@@ -198,6 +198,26 @@ export const userdetail = async (req, res) => {
       photoData.url = cloudinaryResponse.secure_url;
     }
 
+    let photo1Data = {};
+
+    if (req.files && req.files.photo1) {
+      const file = req.files.photo1;
+      const allowedFormats = ["image/jpeg", "image/png", "image/jpg"];
+      if(!allowedFormats.includes(file.minetype)){
+        return res
+          .status(400)
+          .json({message: "Invalid photo format, Only JPG and PNG image are upload"});
+      }
+      const cloudinaryResponse = await cloudinary.uploader.upload(
+        file.tempFilePath,
+        {
+          folder: "user_photos1",
+        }
+      );
+      photo1Data.public_id = cloudinaryResponse.public_id;
+      photo1Data.url = cloudinaryResponse.secure_url;
+    }
+
     if (existingUserdetail.length > 0) {
       return res.status(400).json({ message: "Email already exists" });
     }
@@ -250,6 +270,7 @@ export const updateUserDetail = async (req, res) => {
 
     let user = userRows[0];
     let updatedPhoto = user.photo ? JSON.parse(user.photo) : null;
+    let updatePhoto1 = user.photo1 ? JSON.parse(user.photo1) : null;
 
     if (req.files && req.files.photo) {
       const file = req.files.photo;
@@ -277,6 +298,29 @@ export const updateUserDetail = async (req, res) => {
       };
     }
 
+    if (req.files && req.files.photo1) {
+      const file = req.files.photo1;
+      const allowedFormats = ["image/jpeg", "image/jpg", "image/png"];
+      if(!allowedFormats.includes(file.mimetype)) {
+        return res
+          .status(400)
+          .json({message: "Invalid Photo format, Only JPG and PNG image are allowed"});
+      }
+      if(updatePhoto1?.public_id){
+        await cloudinary.uploader.destroy(updatePhoto1.public_id);
+      }
+      const cloudinaryResponse = await cloudinary.uploader.upload(
+        file.tempFilePath,
+        {
+          folder: "user_phoros1",
+        }
+      );
+      updatePhoto1 = {
+        public_id: cloudinaryResponse.public_id,
+        url: cloudinaryResponse.secure_url,
+      };
+    }
+
     const sql = `
       UPDATE userprofile
       SET name = ?, number = ?, whatsapp = ?, instagram = ?, facebook = ?, youtube = ?, email = ?, company = ?, photo = ?
@@ -293,6 +337,7 @@ export const updateUserDetail = async (req, res) => {
       email || user.email,
       company || user.company,
       updatedPhoto ? JSON.stringify(updatedPhoto) : user.photo,
+      updatePhoto1 ? JSON.stringify(updatePhoto1) : user.photo1,
       profileId,
     ];
 
@@ -309,6 +354,7 @@ export const updateUserDetail = async (req, res) => {
       email: params[6],
       company: params[7],
       photo: updatedPhoto || (user.photo ? JSON.parse(user.photo) : null),
+      photo1: updatePhoto1 || (user.photo ? JSON.parse(user.photo1) : null),
     };
 
     res.json({ message: "User updated successfully", userdetail: updatedUser });
@@ -334,6 +380,14 @@ export const getUserByEmail = async (req, res) => {
           user.photo = JSON.parse(user.photo);
         } catch (err) {
           console.error("Error parsing photo JSON:", err);
+        }
+      }
+
+      if (user.photo1) {
+        try {
+          user.photo1 = JSON.parse(user.photo1);
+        }catch (err) {
+          console.error("Error parsing photo1 JSON:", err);
         }
       }
 
@@ -387,6 +441,15 @@ export const getPublicUserProfile = async (req, res) => {
       } catch (err) {
         console.error("Failed to parse photo JSON:", err.message);
         user.photo = null; // fallback
+      }
+    }
+
+    if (user.photo1) {
+      try {
+        user.photo = JSON.parse(user.photo1);
+      } catch (err) {
+        console.log("Failes to parse photo1 JSON:", err.message);
+        user.photo1 = null;
       }
     }
 

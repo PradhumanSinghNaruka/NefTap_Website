@@ -638,6 +638,7 @@ export default function UserProfile() {
   const [editMode, setEditMode] = useState(false);
   const [email, setEmail] = useState("");
   const [photoFile, setPhotoFile] = useState(null);
+  const [photo1File, setPhoto1File] = useState(null);
   const [profileId, setProfileId] = useState(null);
   const [visitCount, setVisitCount] = useState(null);
   const { id } = useParams();
@@ -651,6 +652,7 @@ export default function UserProfile() {
     email: "",
     company: "",
     photo: "",
+    photo1: "",
   });
 
   const navigate = useNavigate();
@@ -679,6 +681,7 @@ export default function UserProfile() {
         formData.append(key, value)
       );
       if (photoFile) formData.append("photo", photoFile);
+      if (photo1File) formData.append("photo1", photo1File);
 
       let res;
       if (profileId) {
@@ -704,6 +707,12 @@ export default function UserProfile() {
             (typeof returnedUser.photo === "string"
               ? returnedUser.photo
               : profile.photo),
+          photo1:
+            returnedUser.photo1?.url ||
+            (typeof returnedUser.photo1 === "string"
+              ? returnedUser.photo1
+              : profile.photo1
+            ),
         };
         setProfile(updatedProfile);
         setProfileId(returnedUser.id);
@@ -737,6 +746,22 @@ export default function UserProfile() {
       reader.onloadend = () => {
         setProfile((prev) => {
           const updated = { ...prev, photo: reader.result };
+          localStorage.setItem("Contactus", JSON.stringify(updated));
+          return updated;
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handlePhoto1Change = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setPhoto1File(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProfile((prev) => {
+          const updated = { ...prev, photo1: reader.result};
           localStorage.setItem("Contactus", JSON.stringify(updated));
           return updated;
         });
@@ -803,6 +828,27 @@ export default function UserProfile() {
     <div className="min-h-screen bg-gray-100 mt-24 flex flex-col md:flex-row w-full max-w-screen-2xl mx-auto px-4">
       {/* Sidebar */}
       <div className="w-full md:w-72 bg-white shadow-md flex flex-col items-center p-6 space-y-6 mb-8 md:mb-0">
+        <label className="relative w-full h-full mb-4 cursor-pointer">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handlePhoto1Change}
+            className="hidden"
+          />
+          <img
+            src={
+              photo1File
+                ? profile.photo1
+                : profile?.photo1?.url
+                ? profile.photo1.url
+                : typeof profile.photo1 === "string"
+                ? profile.photo1
+                : "https://via.placeholder.com/150?text=Upload+Photo"
+            }
+            alt="Profile"
+            className="w-full h-full object-cover rounded-b-lg"
+          />
+        </label>
         <label className="relative w-32 h-32 mb-4 cursor-pointer">
           <input
             type="file"
