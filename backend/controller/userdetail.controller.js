@@ -323,7 +323,7 @@ export const updateUserDetail = async (req, res) => {
 
     const sql = `
       UPDATE userprofile
-      SET name = ?, number = ?, whatsapp = ?, instagram = ?, facebook = ?, youtube = ?, email = ?, company = ?, photo = ?
+      SET name = ?, number = ?, whatsapp = ?, instagram = ?, facebook = ?, youtube = ?, email = ?, company = ?, photo = ?, photo1 = ?
       WHERE id = ?
     `;
 
@@ -425,7 +425,7 @@ export const getPublicUserProfile = async (req, res) => {
     const userId = req.params.id;
 
     const [rows] = await db.execute(
-      "SELECT id, name, email, company, number, whatsapp, instagram, facebook, youtube, photo FROM userprofile WHERE id = ?",
+      "SELECT id, name, email, company, number, whatsapp, instagram, facebook, youtube, photo, photo1 FROM userprofile WHERE id = ?",
       [userId]
     );
 
