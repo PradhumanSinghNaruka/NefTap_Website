@@ -304,7 +304,7 @@ function Cards() {
                   <h1 className="text-3xl">PVC</h1>
                   <h1 className="font-bold text-3xl">NFC Cards</h1>
                   <p>
-                    PVC NFC cards by Rich Kardz is the perfect solution for a
+                    PVC NFC cards by NefTap is the perfect solution for a
                     cheaper but durable business visiting card.
                   </p>
                   <button
