@@ -93,6 +93,7 @@ import ReturnRefund from './pages/ReturnRefund';
 import Publicprofile from './pages/dashboard/Publicprofile.js';
 
 import React from 'react';
+import Google from './pages/Google.js';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -125,6 +126,7 @@ function App() {
         <Route path="/engraved" element={<Engraved onAddToCart={handleAddToCart} />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/printing" element={<Printing />} />
+        <Route path="/google" element={<Google/>}/>
         <Route path="/address" element={<Address />} />
         <Route path="/register" element={<Register />} />
         <Route path="/payment" element={<Payment />} />

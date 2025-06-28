@@ -252,8 +252,15 @@ function Printing() {
           <div className="flex flex-col md:flex-row">
             <div className="w-[330px] md:w-9/12 order-2 md:order-1 bg-gray-100 text-black ml-4 md:ml-20 shadow-xl">
               <div className="p-4 border border-black rounded-md block">
-                <h1 className="text-lg md:text-3xl font-semibold">
-                  1.Enter Details To be Printed On Card.
+                <h1 className="font-bold text-2xl md:text-3xl text-left flex flex-wrap gap-2 ml-0 md:ml-4">
+                  <span className="leading-tight bg-clip-text">
+                    1.Enter Details To be
+                  </span>
+                  <span
+                    className="bg-gradient-to-tr from-[hsl(176,79%,34%)] via-[rgb(69,56,216)] to-[rgb(14,82,165)] leading-tight bg-clip-text text-transparent"
+                  >
+                    Printed On Card.
+                  </span>
                 </h1>
                 <div className="md:ml-10 md:mt-6 space-y-6 inline-grid">
                   <div className="block md:flex space-x-0 md:space-x-12 md:gap-12">

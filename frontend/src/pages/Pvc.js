@@ -288,7 +288,9 @@ function Pvc({ onAddToCart }) {
                 {"★".repeat(Math.floor(item.rating))}
                 {"☆".repeat(5 - Math.floor(item.rating))}
               </p>
-              <p className="text-black text-xl font-semibold mt-1">₹{item.price}</p>
+              <p className="text-black text-xl font-semibold mt-1">
+                ₹{item.price}
+              </p>
               <div className="flex mt-4 gap-2">
                 <button
                   className="flex-1 p-2 bg-black text-white hover:bg-white hover:text-black border border-black duration-300 rounded-md text-sm font-bold"
@@ -298,7 +300,13 @@ function Pvc({ onAddToCart }) {
                 </button>
                 <button
                   className="flex-1 p-2 bg-black text-white hover:bg-white hover:text-black border border-black duration-300 rounded-md text-sm font-bold"
-                  onClick={() => navigate("/printing")}
+                  onClick={() => {
+                    if (item.id == 13) {
+                      navigate("/google");
+                    } else {
+                      navigate("/printing");
+                    }
+                  }}
                 >
                   Buy Now
                 </button>

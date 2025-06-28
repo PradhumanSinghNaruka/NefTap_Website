@@ -165,9 +165,16 @@ function Address() {
         <div className="w-[330px] ml-4 md:w-9/12 order-2 md:order-1 bg-gray-100 text-black md:ml-20 shadow-xl">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="p-4 border border-black rounded-md block">
-              <div className="flex space-x-64">
-                <h1 className="text-3xl font-semibold">2.Delivery Address.</h1>
-              </div>
+              <h1 className="font-bold text-2xl md:text-3xl text-left flex flex-wrap gap-2 ml-0 md:ml-4">
+                  <span className="leading-tight bg-clip-text">
+                    2.Delivery
+                  </span>
+                  <span
+                    className="bg-gradient-to-tr from-[hsl(176,79%,34%)] via-[rgb(69,56,216)] to-[rgb(14,82,165)] leading-tight bg-clip-text text-transparent"
+                  >
+                    Address
+                  </span>
+                </h1>
               <div className="md:ml-10 md:mt-6 space-y-6 inline-grid">
                 <div className="block md:flex md:space-x-12 md:gap-12 mt-4 md:mt-0">
                   <div className="block">
