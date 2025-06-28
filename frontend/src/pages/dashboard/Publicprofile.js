@@ -204,19 +204,24 @@ const PublicProfile = () => {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mt-6 text-black w-full h-full">
       <div className="bg-white w-full h-full p-6 border-black text-center">
         {userData.photo1?.url && (
-          <img
-            src={userData.photo1.url}
-            alt={`${userData.name}'s cover`}
-            className="w-full h-48 object-cover mb-4 rounded-t-lg"
-          />
+          <div className="relative w-full">
+            <img
+              src={userData.photo1.url}
+              alt={`${userData.name}'s cover`}
+              className="w-full h-[220px] object-cover"
+            />
+            <div className="absolute -bottom-14 left-1/2 transform -translate-x-1/2">
+              {userData.photo?.url && (
+                <img
+                  src={userData.photo.url}
+                  alt={`${userData.name}'s profile`}
+                  className="w-28 h-28 rounded-full border-4 border-white object-cover"
+                />
+              )}
+            </div>
+          </div>
         )}
-        {userData.photo?.url && (
-          <img
-            src={userData.photo.url}
-            alt={`${userData.name}'s profile`}
-            className="mx-auto w-36 h-36 rounded-full border-4 border-white mb-4 object-cover"
-          />
-        )}
+
         <h2 className="text-3xl font-bold mb-1">{userData.name}</h2>
         <h3 className="text-xl font-semibold mb-4">{userData.company}</h3>
         <h3 className="text-2xl font-semibold">
