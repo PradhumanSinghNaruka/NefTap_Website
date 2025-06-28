@@ -828,28 +828,7 @@ export default function UserProfile() {
     <div className="min-h-screen bg-gray-100 mt-24 flex flex-col md:flex-row w-full max-w-screen-2xl mx-auto px-4">
       {/* Sidebar */}
       <div className="w-full md:w-72 bg-white shadow-md flex flex-col items-center p-6 space-y-6 mb-8 md:mb-0">
-        <label className="relative w-full h-full mb-4 cursor-pointer">
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handlePhoto1Change}
-            className="hidden"
-          />
-          <img
-            src={
-              photo1File
-                ? profile.photo1
-                : profile?.photo1?.url
-                ? profile.photo1.url
-                : typeof profile.photo1 === "string"
-                ? profile.photo1
-                : "https://via.placeholder.com/150?text=Upload+Photo"
-            }
-            alt="Upload Cover Photo"
-            className="w-full h-full object-cover rounded-b-lg"
-          />
-        </label>
-        <label className="relative w-32 h-32 mb-4 cursor-pointer">
+        <label className="relative w-32 h-32 cursor-pointer">
           <input
             type="file"
             accept="image/*"
@@ -893,6 +872,28 @@ export default function UserProfile() {
       {/* Main Content */}
       <div className="flex-1 p-4 md:p-8">
         <div className="mb-6">
+          <h1>Upload at least 1000 x 150 pixels for better result</h1>
+          <label className="relative w-full h-[150px] cursor-pointer">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handlePhoto1Change}
+            className="hidden"
+          />
+          <img
+            src={
+              photo1File
+                ? profile.photo1
+                : profile?.photo1?.url
+                ? profile.photo1.url
+                : typeof profile.photo1 === "string"
+                ? profile.photo1
+                : "https://via.placeholder.com/150?text=Upload+Photo"
+            }
+            alt="Upload Cover Photo"
+            className="w-full h-[150px] object-cover rounded-b-lg"
+          />
+        </label>
           <h1 className="text-xl md:text-2xl font-bold">Add Your Details</h1>
           {profile && profile.id && (
             <p className="text-sm md:text-lg font-thin break-words">
