@@ -210,6 +210,13 @@ const PublicProfile = () => {
             className="mx-auto w-36 h-36 rounded-full border-4 border-white mb-4 object-cover"
           />
         )}
+         {userData.photo1?.url && (
+          <img
+            src={userData.photo1.url}
+            alt={`${userData.name}'s profile`}
+            className="mx-auto w-36 h-36 rounded-full border-4 border-white mb-4 object-cover"
+          />
+        )}
 
         <h2 className="text-3xl font-bold mb-1">{userData.name}</h2>
         <h3 className="text-xl font-semibold mb-4">{userData.company}</h3>
