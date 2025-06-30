@@ -110,11 +110,17 @@ function Address() {
       },
       handler: async function (response) {
         const printingData = JSON.parse(localStorage.getItem("printingData"));
+        const googleData = JSON.parse(localStorage.getItem("googleData"));
         const addressData = JSON.parse(localStorage.getItem("addressData"));
         try {
           await axios.post(
             "https://api.neftap.com/card/card",
             printingData
+          );
+
+          await axios.post(
+            "https://api.neftap.com/google/google",
+            googleData
           );
 
           await axios.post(
@@ -137,6 +143,7 @@ function Address() {
 
           alert("Successfully Order placed & payment successful!");
           localStorage.removeItem("printingData");
+          localStorage.removeItem("googleData");
           localStorage.removeItem("addressData");
         } catch (error) {
           console.error(

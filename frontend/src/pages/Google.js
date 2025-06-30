@@ -18,11 +18,10 @@ function Google() {
       name: data.name,
       email: data.email,
       number: data.number,
-      name2: data.name2,
-      name1: data.name1,
+      link: data.link,
     };
 
-    localStorage.setItem("printingData", JSON.stringify(userInfo));
+    localStorage.setItem("googleData", JSON.stringify(userInfo));
 
     navigate(from, { replace: true });
 
@@ -109,7 +108,7 @@ function Google() {
                       <label className="block font-bold">GMV Link</label>
                       <input
                         className="shadow rounded-md appearance-none border py-2 md:py-4 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-[300px] md:w-[350px]"
-                        id="text"
+                        id="link"
                         type="text"
                         placeholder="Enter Your GMV Link"
                         {...register("text", { required: true })}

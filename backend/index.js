@@ -128,6 +128,7 @@ import addressRoute from "./route/address.route.js";
 import userdetailRoute from "./route/userdetail.route.js";
 import expressFileUpload from "express-fileupload";
 import visitRoutes from "./route/visit.route.js";
+import googleRoute from "./route/google.route.js";
 
 dotenv.config();
 
@@ -176,6 +177,7 @@ app.use("/card", cardRoute);
 app.use("/address", addressRoute);
 app.use("/userdetail", userdetailRoute);
 app.use("/api", visitRoutes);
+app.use("/google", googleRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
