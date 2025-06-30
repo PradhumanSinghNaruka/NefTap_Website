@@ -76,21 +76,21 @@ function Address() {
       pin: data.pin,
       card: data.card,
     };
-    try {
-    const checkRes = await axios.post(
-      "https://api.neftap.com/address/check-email",
-      { email: data.email }
-    );
+  //   try {
+  //   const checkRes = await axios.post(
+  //     "https://api.neftap.com/address/check-email",
+  //     { email: data.email }
+  //   );
 
-    if (checkRes.data.exists) {
-      alert("This email has already been used to place a card order.");
-      return;
-    }
-  } catch (err) {
-    alert("Email check failed. Try again.");
-    console.error("Email check error:", err);
-    return;
-  }
+  //   if (checkRes.data.exists) {
+  //     alert("This email has already been used to place a card order.");
+  //     return;
+  //   }
+  // } catch (err) {
+  //   alert("Email check failed. Try again.");
+  //   console.error("Email check error:", err);
+  //   return;
+  // }
 
     localStorage.setItem("addressData", JSON.stringify(addressData));
 

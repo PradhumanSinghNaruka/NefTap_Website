@@ -74,17 +74,17 @@ export const address = async(req, res) => {
   }
 };
 
-export const checkEmailExists = async (req, res) => {
-  const { email } = req.body;
-  try {
-    const [rows] = await db.query("SELECT * FROM addresses WHERE email = ?", [email]);
+// export const checkEmailExists = async (req, res) => {
+//   const { email } = req.body;
+//   try {
+//     const [rows] = await db.query("SELECT * FROM addresses WHERE email = ?", [email]);
 
-    if (rows.length > 0) {
-      res.status(200).json({ exists: true });
-    } else {
-      res.status(200).json({ exists: false });
-    }
-  } catch (err) {
-    res.status(500).json({ message: "Server error" });
-  }
-};
+//     if (rows.length > 0) {
+//       res.status(200).json({ exists: true });
+//     } else {
+//       res.status(200).json({ exists: false });
+//     }
+//   } catch (err) {
+//     res.status(500).json({ message: "Server error" });
+//   }
+// };
