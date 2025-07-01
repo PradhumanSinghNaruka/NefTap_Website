@@ -94,6 +94,7 @@ import Publicprofile from './pages/dashboard/Publicprofile.js';
 
 import React from 'react';
 import Google from './pages/Google.js';
+import Forget from './pages/Forget.js';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -136,6 +137,7 @@ function App() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/returnrefund" element={<ReturnRefund />} />
         <Route path="/userdetail/profile/public/:id" element={<Publicprofile />} />
+        <Route path="/forget" element={<Forget/>} />
       </Routes>
       {!hideLayout && <Footer />}
     </>

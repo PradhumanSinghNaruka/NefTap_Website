@@ -964,11 +964,11 @@ export default function UserProfile() {
                       name={field.name}
                       onChange={handleInputChange}
                     />
-                    {errors[field.name] && (
+                    {/* {errors[field.name] && (
                       <span className="text-sm text-red-500">
                         This field is required
                       </span>
-                    )}
+                    )} */}
                   </>
                 ) : (
                   <p className="text-gray-800">{profile[field.name]}</p>
