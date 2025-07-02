@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Forget() {
@@ -22,7 +22,7 @@ function Forget() {
     }
 
     try {
-      const res = await axios.post("https://api.neftap.com/auth/reset-password", {
+      const res = await axios.post("https://api.neftap.com/update/update", {
         email,
         newPassword,
       });

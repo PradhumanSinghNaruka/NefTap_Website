@@ -130,8 +130,8 @@ import expressFileUpload from "express-fileupload";
 import visitRoutes from "./route/visit.route.js";
 import googleRoute from "./route/google.route.js";
 import forgeRoute from "./route/forget.route.js";
-
 import updateRoute from "./route/pasword.route.js";
+
 
 dotenv.config();
 
