@@ -32,6 +32,8 @@ export const checkEmail = async (req, res) => {
 
   } catch (err) {
     console.error("Error checking email:", err);
+    console.log(err);
+    console.log(message.err);
     res.status(500).json({ message: "Server error while checking email." });
   }
 };
