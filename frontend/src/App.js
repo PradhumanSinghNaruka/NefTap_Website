@@ -95,6 +95,7 @@ import Publicprofile from './pages/dashboard/Publicprofile.js';
 import React from 'react';
 import Google from './pages/Google.js';
 import Forget from './pages/Forget.js';
+import Password from './pages/Password.js';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -108,7 +109,6 @@ function App() {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
-  // ✅ Hide navbar & footer on specific route
   const hideLayout = location.pathname.startsWith('/userdetail/profile/public/'); 
 
   return (
@@ -137,7 +137,8 @@ function App() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/returnrefund" element={<ReturnRefund />} />
         <Route path="/userdetail/profile/public/:id" element={<Publicprofile />} />
-        <Route path="/forget" element={<Forget/>} />
+        <Route path="/password" element={<Password/>} />
+        <Route path="/forget98n76e54f32t10a98p76" element={<Forget/>} />
       </Routes>
       {!hideLayout && <Footer />}
     </>

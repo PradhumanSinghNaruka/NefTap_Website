@@ -214,14 +214,12 @@ function Login() {
                   ></span>
                   <Modal />
                 </p>
-                <p className="flex cursor-pointer hover:text-blue-800">
-                  <span
-                    onClick={() =>
-                      document.getElementById("my_modal_8").showModal()
-                    }
-                  ></span>
-                  <Password/>
-                </p>
+                <a
+                  onClick={() => navigate("/password")}
+                  className="hover:text-blue-700 text-bold transition-colors cursor-pointer"
+                >
+                  Forget Password ?
+                </a>
               </div>
             </div>
           </div>
