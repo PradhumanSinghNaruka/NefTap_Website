@@ -7,16 +7,16 @@ function Forget() {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
-  const [newPassword, setNewPassword] = useState("");
+  const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleReset = async () => {
-    if (!email || !newPassword || !confirmPassword) {
+    if (!email || !password || !confirmPassword) {
       alert("Please fill in all fields");
       return;
     }
 
-    if (newPassword !== confirmPassword) {
+    if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
@@ -24,7 +24,7 @@ function Forget() {
     try {
       const res = await axios.post("https://api.neftap.com/update/update", {
         email,
-        newPassword,
+        password,
       });
 
       alert(res.data.message);
@@ -55,8 +55,8 @@ function Forget() {
           <div className="grid">
             <label className="text-sm font-semibold">New Password</label>
             <input
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter new Strong Password"
               className="border border-black p-2 w-[300px] rounded-md"
               type="password"
