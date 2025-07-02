@@ -133,30 +133,32 @@ function Password() {
     <>
       <div
         class="password"
-        className="w-full p-6 rounded-xl mt-28 space-y-8 mb-6 border shadow-xl"
+        className="p-6 rounded-xl mt-28 space-y-8 mb-6 justify-center items-center text-center"
       >
-        <h3 className="font-bold text-xl md:text-2xl text-center">
-          Enter Your Registered Email
-        </h3>
+        <div className="border rounded-xl shadow-xl justify-center items-center text-center w-full space-y-6">                          
+          <h3 className="font-bold text-xl md:text-2xl text-center mt-4">
+            Enter Your Registered Email
+          </h3>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid space-y-6 justify-center items-center">
-            <input
-              placeholder="Enter Your Email"
-              {...register("email", { required: true })}
-              className="border border-lg border-black p-3 rounded-xl w-[300px] md:w-[350px]"
-              type="email"
-            />
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="grid space-y-6 justify-center items-center mb-6">
+              <input
+                placeholder="Enter Your Email"
+                {...register("email", { required: true })}
+                className="border border-lg border-black p-3 rounded-xl w-[300px] md:w-[350px]"
+                type="email"
+              />
 
-            {errors.email && (
-              <span className="text-red-500 text-sm">Email is required</span>
-            )}
+              {errors.email && (
+                <span className="text-red-500 text-sm">Email is required</span>
+              )}
 
-            <button className="p-2 w-[100px] md:w-[130px] border rounded-md bg-black text-white hover:bg-blue-50 hover:text-black hover:border-black duration-300">
-              Continue
-            </button>
-          </div>
-        </form>
+              <button className="p-2 w-[100px] md:w-[130px] border rounded-md bg-black text-white hover:bg-blue-50 hover:text-black hover:border-black duration-300">
+                Continue
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </>
   );

@@ -164,7 +164,7 @@ function Register() {
 
   return (
     <>
-      <div name="/registor" className="text-black mt-20 h-[500px] mb-0">
+      <div name="/registor98n76e54f32t10a98pNE98FT76AP54" className="text-black mt-20 h-[500px] mb-0">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col md:flex-row text-center">
             <div className="md:w-full order-1 h-[600px] bg-blue-50 p-12 text center">

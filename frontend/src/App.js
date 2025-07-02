@@ -129,7 +129,7 @@ function App() {
         <Route path="/printing" element={<Printing />} />
         <Route path="/google" element={<Google/>}/>
         <Route path="/address" element={<Address />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/registor98n76e54f32t10a98pNE98FT76AP54" element={<Register />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/termcondition" element={<Termcondition />} />
@@ -138,7 +138,7 @@ function App() {
         <Route path="/returnrefund" element={<ReturnRefund />} />
         <Route path="/userdetail/profile/public/:id" element={<Publicprofile />} />
         <Route path="/password" element={<Password/>} />
-        <Route path="/forget98n76e54f32t10a98p76" element={<Forget/>} />
+        <Route path="/forget98n76e54f32t10a98pNE98FT76AP54" element={<Forget/>} />
       </Routes>
       {!hideLayout && <Footer />}
     </>
