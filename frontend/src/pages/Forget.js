@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Forget() {
-  const { token } = useParams();
+  // const { token } = useParams();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -23,7 +23,6 @@ function Forget() {
 
     try {
       const res = await axios.post("https://api.neftap.com/auth/reset-password", {
-        token,
         email,
         newPassword,
       });
