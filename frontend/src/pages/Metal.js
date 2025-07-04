@@ -122,7 +122,8 @@ function Shop({onAddToCart}) {
           <div className="bg-white">
             <div className="">
               <h1 className="text-2xl md:text-4xl font-semibold mt-4 md:mt-8 ml-6 md:ml-20">
-                Metal Business Cards With QR Code
+                <span className="text-black leading tight bg-clip-text">Metal Business Cards </span>
+                <span className="bg-gradient-to-tr from-[hsl(176,79%,34%)] via-[rgb(69,56,216)] to-[rgb(14,82,165)] leading-tight bg-clip-text text-transparent"> With QR Code</span>
               </h1>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 md:ml-20 md:mr-20">
                 {carddata.map((item) => (
