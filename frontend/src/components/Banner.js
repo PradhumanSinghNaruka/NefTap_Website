@@ -231,13 +231,69 @@ function Banner() {
           </div>
         </div>
       </div> */}
+
       <div
+  name="Home"
+  className="w-full bg-gradient-to-tr from-[rgb(43,160,152)] via-[#554db1] to-[#3788ec] text-white"
+>
+  <div className="max-w-screen-xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-6 md:px-6 lg:px-10 py-10 gap-10 sm:gap-8 md:gap-10">
+    {/* LEFT TEXT */}
+    <div className="w-full sm:w-[60%] md:w-3/5 space-y-4 md:space-y-8 text-center md:text-left">
+      <p
+        ref={headingRef}
+        className="font-semibold text-sm sm:text-base md:text-lg font-inter"
+      >
+        INSTANTLY SHARE CONTACT DETAILS WITH A SINGLE TAP
+      </p>
+      <h1
+        ref={headingRef}
+        className="text-3xl sm:text-4xl md:text-6xl font-bold"
+      >
+        Your Digital Business Card Platform
+      </h1>
+      <p
+        ref={paraRef}
+        className="text-sm sm:text-base md:text-lg font-thin"
+      >
+        Make sharing information fun and easy with this smart business
+        card which utilises NFC technology. Say goodbye to traditional
+        paper visiting cards and embrace the future with
+        <span className="block text-xl font-thin mt-1">
+          NFC enabled business cards.
+        </span>
+      </p>
+      <div className="flex justify-center md:justify-start">
+        <button
+          ref={buttonRef}
+          className="border rounded-md px-6 py-2 font-bold text-lg md:text-2xl border-black bg-white hover:bg-gradient-to-tr from-[rgb(43,160,152)] via-[hsl(245,35%,51%)] to-[hsl(213,69%,50%)] text-black hover:text-white hover:border-white transition duration-300"
+          onClick={() => navigate("/pvc")}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+
+    {/* RIGHT IMAGE */}
+    <div className="w-full sm:w-[40%] md:w-2/5 flex justify-center">
+      <img
+        ref={cardRef}
+        src={photo}
+        className="w-full sm:w-[300px] md:w-[450px] h-auto"
+        alt="NFC Image"
+      />
+    </div>
+  </div>
+</div>
+
+
+      {/* <div
         name="Home"
         className="w-full bg-gradient-to-tr from-[rgb(43,160,152)] via-[#554db1] to-[#3788ec] text-white"
       >
-        <div className="max-w-screen-xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-4 md:px-10 py-10 md:py-10 gap-10">
-          {/* LEFT TEXT */}
-          <div className="w-full md:w-3/5 space-y-4 md:space-y-8 text-center md:text-left">
+        <div className="max-w-screen-xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-6 md:px-6 lg:px-10 py-10 md:py-10 gap-10">
+          <div className="w-full md:w-3/5 space-y-4 md:space-y-8 text-center md:text-left ">
             <p
               ref={headingRef}
               className="font-semibold text-sm sm:text-base md:text-lg font-inter"
@@ -273,8 +329,6 @@ function Banner() {
               </button>
             </div>
           </div>
-
-          {/* RIGHT IMAGE */}
           <div className="w-full md:w-2/5 flex justify-center">
             <img
               ref={cardRef}
@@ -284,7 +338,7 @@ function Banner() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

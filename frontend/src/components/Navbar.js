@@ -113,18 +113,18 @@ function Navbar({ cartItemCount }) {
 
   return (
     <>
-      <div className="w-full px-4 md:px-20 h-20 shadow-md fixed top-0 left-0 right-0 z-50 bg-white text-black">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-12 h-20 shadow-md fixed top-0 left-0 right-0 z-50 bg-white text-black">
         <div className="max-w-screen-xl mx-auto flex justify-between items-center h-20 text-black">
           <div className="flex">
             <img
               src={photo}
-              className="h-10 w-25 cursor-pointer"
+              className="h-10 w-25 sm:h-6 sm:w-16 md:h-8 md:w-20 lg:h-10 lg:w-28 cursor-pointer"
               alt="Logo"
               onClick={() => navigate("/")}
             />
           </div>
           <div className="flex">
-            <ul className="hidden md:flex space-x-12 font-thin text-xl">
+            <ul className="hidden md:flex md:space-x-6 lg:space-x-12 font-thin md:text-sm lg:text-xl">
               {navItems.map(({ id, text, path, scroll }) => (
                 <li
                   key={id}
@@ -153,7 +153,7 @@ function Navbar({ cartItemCount }) {
           </div>
           <div
             onClick={() => setMenu(!menu)}
-            className="text-black cursor-pointer mt-6 flex space-x-12"
+            className="text-black cursor-pointer mt-6 flex space-x-12 sm:space-x-5 md:space-x-6 lg:space-x-12"
           >
             <div>
               <FaPhoneAlt
