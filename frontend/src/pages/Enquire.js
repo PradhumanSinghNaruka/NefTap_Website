@@ -91,11 +91,11 @@ function Enquire() {
               <img
                 src={photo}
                 ref={cardRef}
-                className="w-[340px] h-[340px] md:w-full md:h-full"
+                className="w-[350px] h-[340px] md:w-full md:h-full"
               ></img>
             </div>
-            <div className="w-[365px] md:w-1/2 order-1 bg-gray-50">
-              <h1 ref={heidingRef} className="md:mt-4 ml-4 md:ml-24 text-2xl font-semibold">
+            <div className="w-[350px] md:w-1/2 order-1 bg-gray-50">
+              <h1 ref={heidingRef} className="md:mt-6 ml-4 md:ml-24 text-2xl font-semibold">
                 Bulk Order Enquiry Form
               </h1>
               <h1 ref={paraRef} className="text-black font-semibold text-sm md:text-3xl mt-4 md:mt-4 ml-4 md:ml-24 text-wrap">
