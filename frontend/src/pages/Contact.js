@@ -74,10 +74,10 @@ function Contact() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col md:flex-row shadow-lg">
             <div ref={heidingsRef} className="md:w-1/2 order-1 h-full p-8">
-              <h1 className="md:mt-2 ml-4 md:ml-12 text-4xl md:text-5xl font-bold">
+              <h1 className="md:mt-2 ml-4 md:ml-12 text-3xl md:text-5xl font-bold">
                 Make Us A Call
               </h1>
-              <p className="mt-4 mb-4 md:mb-0 md:ml-12 text-lg text-wrap">
+              <p className="mt-4 mb-4 md:mb-0 md:ml-12 text-sm md:text-lg text-wrap">
                 If you have any questions about our smart business card with NFC
                 technology, don’t hesitate to contact us. We here at NafTap are
                 happy to answer any of your questions.

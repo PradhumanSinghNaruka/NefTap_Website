@@ -55,7 +55,7 @@ function Video() {
         />
         <h1
           ref={textRef}
-          className="font-bold text-2xl md:text-5xl text-center flex flex-wrap justify-center gap-2"
+          className="font-bold text-3xl md:text-5xl text-center flex flex-wrap justify-center gap-2"
         >
           <span className="leading-tight bg-clip-text">Why</span>
           <span className="bg-gradient-to-tr from-[hsl(176,79%,34%)] via-[rgb(69,56,216)] to-[rgb(14,82,165)] leading-tight bg-clip-text text-transparent">
