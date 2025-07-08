@@ -130,7 +130,7 @@ function Address() {
 
           const serviceId = "service_6uf7gz7";
           const templateId = "template_09fcbta";
-          const publicKey = "PgFW2yvfbkcJLEE6X";
+          const publicKey = "PgFW2yvfbkcJLEE6X";  
 
           const templateParams = {
             from_email: addressData.email,
