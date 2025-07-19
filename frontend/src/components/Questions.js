@@ -81,8 +81,8 @@ function Questions() {
         name="Home"
         className="w-full px-4 md:px-20 text-black mb-12 md:mb-2 md:mt-4"
       >
-        <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row">
-          <div className="md:w-1/2 mt-6 md:mt-16 order-1 md:order-1 mb-10 md:mb-20">
+        <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row">
+          <div className="md:w-1/2 mt-6 md:mt-16 order-1 md:order-1 lg:order-1 mb-10 md:mb-2 lg:mb-20">
             <p className="text-2xl md:text-4xl">FAQ</p>
             <h1 className="text-4xl md:text-6xl font-bold mb-0 md:mb-20 mt-4">
             <span className="leading-tight bg-clip-text">Frequently</span>
@@ -92,7 +92,7 @@ function Questions() {
             </h1>
             <motion.div
               style={ball}
-              className="hidden md:block"
+              className="hidden lg:block"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{
                 opacity: 1,
@@ -113,7 +113,7 @@ function Questions() {
             />
             <motion.div
               style={ball2}
-              className="hidden md:block"
+              className="hidden lg:block"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{
                 opacity: 1,
@@ -133,7 +133,7 @@ function Questions() {
               }}
             />
           </div>
-          <div className="md:w-1/2 mt-12 order-2 space-y-2">
+          <div className="w-full lg:w-1/2 md:mt-2 lg:mt-12 order-2 md:order-2 space-y-2">
             {faqs.map((faq, index) => (
               <div key={index} className="mb-4 border-b pb-4 space-y-4">
                 <button

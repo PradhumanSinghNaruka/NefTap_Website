@@ -166,25 +166,25 @@ function Footer() {
             <div className="flex space-x-4">
               <a
                 href="https://www.instagram.com/neftap.in/"
-                className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
+                className="w-10 h-10 md:w-14 md:h-8 lg:w-10 lg:h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
               >
                 <FaFacebookF className="text-white" />
               </a>
               <a
                 href="https://www.instagram.com/neftap.in/"
-                className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
+                className="w-10 h-10 md:w-14 md:h-8 lg:w-10 lg:h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
               >
                 <FaTwitter className="text-white" />
               </a>
               <a
                 href="https://www.instagram.com/neftap.in/"
-                className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
+                className="w-10 h-10 md:w-14 md:h-8  lg:w-10 lg:h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
               >
                 <FaInstagram className="text-white" />
               </a>
               <a
                 href="https://www.youtube.com/@NefTap"
-                className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
+                className="w-10 h-10 md:w-14 md:h-8 lg:w-10 lg:h-10 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition-colors"
               >
                 <FaYoutube className="text-white" />
               </a>
