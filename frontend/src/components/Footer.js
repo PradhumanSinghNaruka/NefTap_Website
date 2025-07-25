@@ -153,7 +153,7 @@ function Footer() {
           </div>
         </div>
       </div> */}
-      <div className="w-full mt-12 p-6 mx-auto text-white bg-gradient-to-tr from-[#177a74] via-[rgb(52,37,209)] to-[hsl(213,68%,40%)]">
+      <div className="w-full p-6 mx-auto text-white bg-gray-900">
         <div className="max-w-screen-2xl mx-auto grid md:grid-cols-4 gap-8">
           <div>
             <div className="text-2xl mb-4">

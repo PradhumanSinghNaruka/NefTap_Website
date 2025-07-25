@@ -70,7 +70,7 @@ function Contact() {
     },[])
   return (
     <>
-      <div name="/contact" className="text-black mt-20 mb-0 h-full w-full">
+      <div name="/contact" className="text-black mt-20 mb-8 md:mb-12 h-full w-full">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col md:flex-row shadow-lg">
             <div ref={heidingsRef} className="md:w-1/2 order-1 h-full p-8">

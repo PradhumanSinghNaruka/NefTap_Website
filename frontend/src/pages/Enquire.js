@@ -83,7 +83,7 @@ function Enquire() {
     <>
       <div
         name="/enquire"
-        className="w-full text-black mt-20 h-full md:h-full mb-0"
+        className="w-full text-black mt-20 h-full md:h-full mb-8 md:mb-12"
       >
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="max-w-screen-2xl mx-auto block md:flex flex-col md:flex-row">

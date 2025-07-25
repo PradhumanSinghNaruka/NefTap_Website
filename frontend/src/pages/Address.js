@@ -167,7 +167,7 @@ function Address() {
     window.scrollTo(0, 0);
   }, [pathname]);
   return (
-    <div name="/address" className="mt-36">
+    <div name="/address" className="mt-36 mb-8 md:mb-12">
       <div className="flex flex-col md:flex-row">
         <div className="w-[330px] ml-4 md:w-9/12 order-2 md:order-1 bg-gray-100 text-black md:ml-20 shadow-xl">
           <form onSubmit={handleSubmit(onSubmit)}>

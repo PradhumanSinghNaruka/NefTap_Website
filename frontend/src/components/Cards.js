@@ -628,7 +628,7 @@ function Cards() {
 
         <div className="flex flex-col md:flex-row">
           <div className="w-full mt-12 space-y-10 mb-20">
-            <div className="grid md:grid-cols-2 gap-6 mt-4 px-6">
+            <div className="grid md:grid-cols-2 gap-6 mt-4 px-2">
               {items.map((item) => (
                 <div
                   className="border rounded-md shadow-lg shadow-gray-300 mt-6 p-4 hover:scale-105 duration-300 cursor-pointer hover:bg-black hover:text-white"

@@ -247,7 +247,7 @@ function Printing() {
     }, [pathname]);
   return (
     <>
-      <div name="/printing" className="mt-36">
+      <div name="/printing" className="mt-36 mb-8 md:mb-12">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col md:flex-row">
             <div className="w-[330px] md:w-9/12 order-2 md:order-1 bg-gray-100 text-black ml-4 md:ml-20 shadow-xl">

@@ -122,7 +122,7 @@ function Engraved({onAddToCart}) {
     const navigate = useNavigate();
   return (
     <>
-      <div className="max-w-screen-2xl container mx-auto">
+      <div className="max-w-screen-2xl container mx-auto mb-8 md:mb-12">
         <div name="/influencer" className="text-black mb-0 mt-24">
           <div className="bg-white">
             <div className="">

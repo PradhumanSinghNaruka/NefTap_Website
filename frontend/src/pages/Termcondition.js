@@ -8,7 +8,7 @@ function Termcondition() {
     window.scrollTo(0, 0);
   }, [pathname]);
   return (
-    <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-white mt-10 md:mt-24">
+    <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-white mt-10 md:mt-24 mb-8 md:mb-12">
       <h1 className="text-3xl md:text-5xl mt-28 font-bold text-center">
         Terms And Conditions
       </h1>

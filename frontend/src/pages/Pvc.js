@@ -265,7 +265,7 @@ function Pvc({ onAddToCart }) {
   }, [pathname]);
 
   return (
-    <div name="/pvc" className="max-w-screen-2xl container mx-auto">
+    <div name="/pvc" className="max-w-screen-2xl container mx-auto mb-8 md:mb-12">
       <div className="text-black mb-0 mt-24">
         <h1 className="text-2xl md:text-5xl font-semibold mt-4 md:mt-8 ml-6 md:ml-20 py-3">
           <span className="text-black leading tight bg-clip-text ">PVC Business Cards </span>

@@ -133,7 +133,7 @@ function Password() {
     <>
       <div
         class="password"
-        className="p-6 rounded-xl mt-28 space-y-8 mb-6 justify-center items-center text-center"
+        className="p-6 rounded-xl mt-28 space-y-8 mb-8 md:mb-12 justify-center items-center text-center"
       >
         <div className="border rounded-xl shadow-xl justify-center items-center text-center w-full space-y-6">                          
           <h3 className="font-bold text-xl md:text-2xl text-center mt-4">

@@ -8,7 +8,7 @@ function PrivacyPolicy() {
     window.scrollTo(0, 0);
   }, [pathname]);
   return (
-    <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-white mt-10 md:mt-24">
+    <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 bg-white mt-10 md:mt-24 mb-8 md:mb-12">
       <h1 className="text-3xl md:text-5xl mt-28 font-bold text-center">Privacy Policy</h1>
       <div className="text-gray-600 mt-14">
         <h1 className="text-start text-xl md:text-3xl font-semibold text-black">

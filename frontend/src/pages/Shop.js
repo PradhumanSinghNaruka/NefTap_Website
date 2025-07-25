@@ -80,7 +80,7 @@ function Shop() {
   }
   return (
     <>
-      <div name="/shop" className="text-black mt-20 mb-0 ">
+      <div name="/shop" className="text-black mt-20 mb-8 md:mb-12">
         <div className="flex flex-col md:flex-row bg-blue-50">
           <div className="container mx-auto px-4 md:px-20 bg-blue-50">
             <h1 className="text-xl md:text-4xl font-semibold mt-4 md:mt-8">

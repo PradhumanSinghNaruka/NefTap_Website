@@ -36,7 +36,7 @@ function Forget() {
   };
 
   return (
-    <div name="forget98n76e54f32t10a98pNE98FT76AP54" className="p-2 md:p-32 ml-4 md:ml-44 mt-28 md:mt-0">
+    <div name="forget98n76e54f32t10a98pNE98FT76AP54" className="p-2 md:p-32 ml-4 md:ml-44 mt-28 md:mt-0 mb-8 md:mb-12">
       <div className="w-full flex">
         <div className="block border shadow-2xl w-full md:w-3/4 space-y-8 rounded-lg p-8">
           <h1 className="text-xl md:text-2xl font-bold">Reset Your Password</h1>
