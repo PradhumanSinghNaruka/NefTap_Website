@@ -153,9 +153,9 @@ function Footer() {
           </div>
         </div>
       </div> */}
-      <div className="w-full p-6 mx-auto text-white bg-gray-900">
+      <div className="w-full p-6 mx-auto text-white bg-gray-900 h-auto">
         <div className="max-w-screen-2xl mx-auto grid md:grid-cols-4 gap-8">
-          <div>
+          <div className="space-y-0 md:space-y-8">
             <div className="text-2xl mb-4">
               <img src={photo} className="h-10 w-25 cursor-pointer" alt="" />
             </div>
@@ -191,8 +191,8 @@ function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="text-lg font-bold mb-4">Company</h3>
-            <ul className="space-y-2 md:space-y-5 text-gray-400">
+            <h3 className="text-lg md:text-xl font-bold mb-4">Company</h3>
+            <ul className="space-y-2 md:space-y-6 text-gray-400">
               <li>
                 <a className="hover:text-teal-400 transition-colors text-white cursor-pointer" onClick={() => navigate("/")}>
                   Home
@@ -216,8 +216,8 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Products</h3>
-            <ul className="space-y-2 md:space-y-5 text-gray-400">
+            <h3 className="text-lg md:text-xl font-semibold mb-4">Products</h3>
+            <ul className="space-y-2 md:space-y-6 text-gray-400">
               <li>
                 <a onClick={() => navigate("/metal")} className="hover:text-teal-400 transition-colors text-white cursor-pointer">
                   Metal Cards
@@ -241,7 +241,7 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
+            <h3 className="text-lg md:text-xl font-semibold mb-4">Contact Info</h3>
             <div className="space-y-6 text-gray-400">
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="text-teal-400 mt-1" />

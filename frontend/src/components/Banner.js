@@ -236,7 +236,7 @@ function Banner() {
   name="Home"
   className="w-full bg-gradient-to-tr from-[rgb(43,160,152)] via-[#554db1] to-[#3788ec] text-white"
 >
-  <div className="max-w-screen-xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-6 md:px-6 lg:px-10 py-10 gap-10 sm:gap-8 md:gap-10">
+  <div className="max-w-screen-xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-6 md:px-6 lg:px-10 py-10 gap-10 sm:gap-8 md:gap-12">
     {/* LEFT TEXT */}
     <div className="w-full sm:w-[60%] md:w-3/5 space-y-4 md:space-y-8 text-center md:text-left">
       <p

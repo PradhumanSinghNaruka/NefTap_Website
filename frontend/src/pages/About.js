@@ -244,7 +244,7 @@ function Login() {
                 </div>
               </div>
             </div>
-            <div className="w-full grid md:flex px-20 mt-16 mb-24 gap-14">
+            <div className="w-full grid md:flex px-8 md:px-20 mt-16 mb-24 gap-14">
               <div className="w-full md:w-1/2">
                 <img
                   src={photo2}
@@ -280,7 +280,7 @@ function Login() {
                 </button>
               </div>
             </div>
-            <div className="w-full grid md:flex px-20 mt-16 mb-24 gap-14">
+            <div className="w-full grid md:flex px-8 md:px-20 mt-16 mb-24 gap-14">
               <div className="w-full md:w-1/2 order-1 md:order-2">
                 <img
                   src={photo3}
@@ -317,9 +317,9 @@ function Login() {
               </div>
             </div>
           </div>
-          <div>
-            <Ready/>
-          </div>
+        </div>
+        <div className="w-full">
+          <Ready />
         </div>
       </div>
     </>

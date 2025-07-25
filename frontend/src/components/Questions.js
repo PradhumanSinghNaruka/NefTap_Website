@@ -92,7 +92,7 @@ function Questions() {
             </h1>
             <motion.div
               style={ball}
-              className="hidden lg:block"
+              className="hidden lg:block justify-center items-center text-center"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{
                 opacity: 1,
